@@ -55,11 +55,15 @@ df = pd.read_csv(url, encoding='utf-8')
 # Columns that are necessary to generate the schema
 kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)",
                 'Allowed Values\n(for JSON schema file)', 'Example value', 'Description', 
-                'Front-end user-friendly question', 'GC DMP Requirement', 'required when',
+                'Front-end user-friendly question', 'GC DMP Requirement', 'required when (For machine actionable)',
                 ## newly added column
                 '"required IF/WHEN" dependency', 'Cardinality', 'conditional appear prerequisite path', 
                 'conditional appear prerequisite value', 'Logic order of subquestions under each chapter'
                 ]
+
+# minimum required columns
+require_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)", 
+                   "GC DMP Requirement", 'Cardinality', 'Logic order of subquestions under each chapter']
 
 # Adjust data types based on patterns
 df["Data type"] = np.where(df["Data type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['Data type'])
@@ -112,10 +116,9 @@ chapter_1_dict = {}
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
     
-    # filter out the rows with empty values
-    for column in kept_columns:
-        if pd.isna(row[column]):
-            continue
+    # Skip the entire row if any of the `required_columns` has an empty value
+    if any(pd.isna(row[column]) for column in require_columns):
+        continue
 
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
@@ -125,7 +128,7 @@ for _, row in df_sorted.iterrows():
     question = row['Front-end user-friendly question']
     format = row['format']
     requirement = row['GC DMP Requirement']  # New column for requirement
-    required_when = row['required when']
+    required_when = row['required when (For machine actionable)']
     ## newly added column
     required_IF_dependency = row['"required IF/WHEN" dependency']
     cardinality = row['Cardinality']
@@ -275,8 +278,8 @@ def assign_required_fields(schema, path=""):
                 prop_value["required"].extend(require_when_nested_structure_exist[current_path])
 
             # convert https to http links in the description
-            #if "description" in prop_value:
-            #    prop_value["description"] = convert_links_to_html(prop_value["description"])
+            if "description" in prop_value:
+                prop_value["description"] = convert_links_to_html(prop_value["description"])
 
             assign_required_fields(prop_value, current_path)
 

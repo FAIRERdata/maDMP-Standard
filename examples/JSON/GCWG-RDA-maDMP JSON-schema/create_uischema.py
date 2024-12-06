@@ -61,10 +61,9 @@ chapter_1_dict = {}
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
     
-    # filter out the rows with empty values
-    for column in kept_columns:
-        if pd.isna(row[column]):
-            continue
+    # Skip the entire row if any of the `required_columns` has an empty value
+    if any(pd.isna(row[column]) for column in kept_columns):
+        continue
 
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     order = str(row['Logic order of subquestions under each chapter']).split('.')

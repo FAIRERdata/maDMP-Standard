@@ -8,6 +8,11 @@
       "name_n_version": "GCWG RDA maDMP Schema v2.0 Department X",
       "schema_path": "tempSchemas/GCWG-RDA-maDMP-schema_v2.0_departementX.json",
       "uischema_path": "tempSchemas/ui_schema_v2.0_departmentX.json"
+    },
+    {
+      "name_n_version": "test schema with html links",
+      "schame_path": "tempSchemas/schema_with_links.json",
+      "uischema_path": "tempSchemas/ui_schema.json"
     }
   ]
   

@@ -108,26 +108,6 @@
                 "date"
             ]
         },
-        "cost": {
-            "items": {
-                "cost_documentation": {
-                    "items": {
-                        "ui:order": [
-                            "download_url",
-                            "name",
-                            "access_url"
-                        ]
-                    }
-                },
-                "ui:order": [
-                    "title",
-                    "description",
-                    "currency_code",
-                    "value",
-                    "cost_documentation"
-                ]
-            }
-        },
         "project": {
             "items": {
                 "ui:order": [
@@ -189,6 +169,26 @@
                                 "type"
                             ]
                         }
+                    }
+                }
+            }
+        },
+        "cost": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "description",
+                    "currency_code",
+                    "value",
+                    "cost_documentation"
+                ],
+                "cost_documentation": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "access_url",
+                            "download_url"
+                        ]
                     }
                 }
             }

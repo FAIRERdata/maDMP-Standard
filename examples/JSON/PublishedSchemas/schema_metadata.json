@@ -17,7 +17,7 @@
     {
       "name_n_version": "test schema small size",
       "schema_path": "tempSchemas/small_schema.json",
-      "uischema_path": "tempSchemas/ui_schema.json"
+      "uischema_path": ""
     }
   ]
   

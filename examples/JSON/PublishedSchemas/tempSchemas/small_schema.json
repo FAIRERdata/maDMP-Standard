@@ -1,0 +1,475 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GCWG-RDA-maDMP JSON-schema/GCWG-RDA-maDMP-schema.json",
+  "title": "GCWG-RDA-maDMP-Schema",
+  "type": "object",
+  "properties": {
+    "dmp": {
+      "$id": "#/properties/dmp",
+      "type": "object",
+      "title": "The Dmp Schema",
+      "properties": {
+        "access": {
+          "type": "string",
+          "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf",
+          "enum": [
+            "open",
+            "shared",
+            "closed"
+          ],
+          "example": "open",
+          "question": "Is access to the maDMP open, shared, or closed?",
+          "$id": "#/properties/dmp/properties/access",
+          "title": "The Access schema"
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "affiliation": {
+                "type": "object",
+                "description": "Contributor affiliation status with an outside organization and organization type",
+                "$id": "#/properties/dmp/properties/contributor/properties/affiliation",
+                "title": "The Affiliation Schema",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Contributors affiliation type",
+                    "enum": [
+                      "business",
+                      "educational institution",
+                      "government",
+                      "non-profit",
+                      "retired",
+                      "no affiliation",
+                      "self-employed"
+                    ],
+                    "example": "No affiliation",
+                    "question": "What is the contributor's affiliation (type)?",
+                    "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/type",
+                    "title": "The Type schema"
+                  },
+                  "country": {
+                    "type": "object",
+                    "description": "Country affiliated with the contributor ",
+                    "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/country",
+                    "title": "The Country Schema",
+                    "properties": {
+                      "country_code": {
+                        "type": "string",
+                        "description": "Country code of the contributor written with ISO 3166 Alpha-2 ",
+                        "enum": [
+                          "AD",
+                          "AE",
+                          "AF",
+                          "AG",
+                          "AI",
+                          "AL",
+                          "AM",
+                          "AO",
+                          "AQ",
+                          "AR",
+                          "AS",
+                          "AT",
+                          "AU",
+                          "AW",
+                          "AX",
+                          "AZ",
+                          "BA",
+                          "BB",
+                          "BD",
+                          "BE",
+                          "BF",
+                          "BG",
+                          "BH",
+                          "BI",
+                          "BJ",
+                          "BL",
+                          "BM",
+                          "BN",
+                          "BO",
+                          "BQ",
+                          "BR",
+                          "BS",
+                          "BT",
+                          "BV",
+                          "BW",
+                          "BY",
+                          "BZ",
+                          "CA",
+                          "CC",
+                          "CD",
+                          "CF",
+                          "CG",
+                          "CH",
+                          "CI",
+                          "CK",
+                          "CL",
+                          "CM",
+                          "CN",
+                          "CO",
+                          "CR",
+                          "CU",
+                          "EE",
+                          "EG",
+                          "EH",
+                          "ER",
+                          "ES",
+                          "ET",
+                          "FI",
+                          "FJ",
+                          "FK",
+                          "FM",
+                          "FO",
+                          "FR",
+                          "GA",
+                          "TV",
+                          "TW",
+                          "TZ",
+                          "UA",
+                          "UG",
+                          "UM",
+                          "US",
+                          "UY",
+                          "UZ",
+                          "VA",
+                          "VC",
+                          "VE",
+                          "VG",
+                          "VI",
+                          "VN",
+                          "VU",
+                          "WF",
+                          "WS",
+                          "YE",
+                          "YT",
+                          "ZA",
+                          "ZM",
+                          "ZW"
+                        ],
+                        "example": "US",
+                        "question": "Where is the contributor located (country code)?",
+                        "requiredWhen": [
+                          "country"
+                        ],
+                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/country/properties/country_code",
+                        "title": "The Country_code schema"
+                      },
+                      "country_name": {
+                        "type": "string",
+                        "description": "Country name of the contributor",
+                        "example": "United States of America",
+                        "question": "Where is the contributor located (country name)?",
+                        "requiredWhen": [
+                          "country"
+                        ],
+                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/country/properties/country_name",
+                        "title": "The Country_name schema"
+                      }
+                    }
+                  },
+                  "province_state": {
+                    "type": "object",
+                    "description": "Contributor's affiliation location.",
+                    "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/province_state",
+                    "title": "The Province_state Schema",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "description": "Use ISO 3166 Alpha-2 province/state/territory code",
+                        "example": "QC",
+                        "question": "What province or state is the contributor working in?",
+                        "requiredWhen": [
+                          "province_state"
+                        ],
+                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/province_state/properties/code",
+                        "title": "The Code schema"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Use ISO 3166 Alpha-2 province/state/territory name",
+                        "example": "Quebec",
+                        "question": "What province or state does the contributor work in?",
+                        "requiredWhen": [
+                          "province_state"
+                        ],
+                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/province_state/properties/name",
+                        "title": "The Name schema"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "type": {
+                          "const": "business"
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "business": {
+                          "type": "object",
+                          "description": "Contributor's business affiliation",
+                          "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business",
+                          "title": "The Business Schema",
+                          "properties": {
+                            "business_id": {
+                              "type": "object",
+                              "description": "Business ID",
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id",
+                              "title": "The Business_id Schema",
+                              "properties": {
+                                "identifier": {
+                                  "type": "string",
+                                  "description": "Business identifier ",
+                                  "question": "What is the contributor's business affiliaton identifier?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/identifier",
+                                  "title": "The Identifier schema"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "description": "Business identifier type",
+                                  "question": "What type of identification system uniquely identifies the business?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/type",
+                                  "title": "The Type schema"
+                                }
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Business affiliation name",
+                              "question": "What is the contributor's business affiliation name?",
+                              "requiredWhen": [
+                                "business"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/name",
+                              "title": "The Name schema"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "business"
+                      ]
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "type": {
+                          "const": "educational institution"
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "educational_institution": {
+                          "type": "object",
+                          "description": "Educational institution of the contributor",
+                          "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution",
+                          "title": "The Educational_institution Schema",
+                          "properties": {
+                            "department": {
+                              "type": "string",
+                              "description": "Name of department within an educational institution.",
+                              "question": "What is the contributor's educational institution department?",
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/department",
+                              "title": "The Department schema"
+                            },
+                            "educational_institution_id": {
+                              "type": "object",
+                              "description": "Educational institution identifier\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html \n",
+                              "requiredWhen": [
+                                "educational_institution"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id",
+                              "title": "The Educational_institution_id Schema",
+                              "properties": {
+                                "identifier": {
+                                  "type": "string",
+                                  "description": "Educational institute identifier",
+                                  "question": "What is the contributor's educational instituation identifier?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/identifier",
+                                  "title": "The Identifier schema"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "description": "Educational institute identifier type",
+                                  "question": "What is the contributor's educational institution identifier type?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/type",
+                                  "title": "The Type schema"
+                                }
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Name of educational_institution.\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html ",
+                              "question": "What is the contributor's educational institution name?",
+                              "requiredWhen": [
+                                "educational_institution"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/name",
+                              "title": "The Name schema"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "educational_institution_id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "educational_institution"
+                      ]
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "type": {
+                          "const": "government"
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "government_department_or_agency": {
+                          "type": "object",
+                          "description": "Government department or agency affiliated with the contributor ",
+                          "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency",
+                          "title": "The Government_department_or_agency Schema",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "description": "Government department code. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
+                              "example": "7",
+                              "question": "What is the contributor's government department code?",
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/code",
+                              "title": "The Code schema"
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Government department name. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
+                              "example": "Environment (Department of the)",
+                              "question": "What is the contributor's government department name?",
+                              "requiredWhen": [
+                                "government_department_or_agency"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/name",
+                              "title": "The Name schema"
+                            },
+                            "organizational_group": {
+                              "type": "string",
+                              "description": "Organizational group of the government department affiliated with the contributor",
+                              "question": "What is the contributor's government affiliation ?",
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/organizational_group",
+                              "title": "The Organizational_group schema"
+                            },
+                            "organizational_subgroup": {
+                              "type": "string",
+                              "description": "Organizational subgroup of the government department affiliated with the contributor",
+                              "question": "What organizational subgroup does the contributor belong to?",
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/organizational_subgroup",
+                              "title": "The Organizational_subgroup schema"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "government_department_or_agency"
+                      ]
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "type": {
+                          "const": "non-profit"
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "non_profit": {
+                          "type": "object",
+                          "description": "Non-profit organization affiliated with the contributor for the DMP",
+                          "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit",
+                          "title": "The Non_profit Schema",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "description": "Name of the non-profit organization affiliated with the contributor",
+                              "question": "What is the non-profit's name?",
+                              "requiredWhen": [
+                                "non-profit"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/name",
+                              "title": "The Name schema"
+                            },
+                            "non_profit_id": {
+                              "type": "object",
+                              "description": "Identifier for the non-profit organization itself",
+                              "requiredWhen": [
+                                "non-profit"
+                              ],
+                              "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id",
+                              "title": "The Non_profit_id Schema",
+                              "properties": {
+                                "identifier": {
+                                  "type": "string",
+                                  "description": "Non-profit organization identifier",
+                                  "question": "What is the non-profit's identifier?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/identifier",
+                                  "title": "The Identifier schema"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "description": "Non-profit organization identifier type",
+                                  "question": "What type of identifier does the non-profit use?",
+                                  "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/type",
+                                  "title": "The Type schema"
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "non_profit_id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "non_profit"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "access",
+        "contributors"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+      "dmp"
+  ]
+}

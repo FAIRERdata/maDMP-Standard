@@ -45,6 +45,8 @@ go build -o ../rda_dmp_common_standard_doc_generator.exe
 
 This utility uses a [single configuration file](config.yaml) for all of it's configuration (i.e. it takes no arguments). The configuration file must exist in the same directory as the executable. In most circumstances, you should be able to use the configuration file provided in this repository.
 
+The title of the readme is added by the documentation.go code.
+
 ### 4. Run the utility
 
 Use `cd ..` to go back to `rda_dmp_common_standard_doc_generator` folder and run: 

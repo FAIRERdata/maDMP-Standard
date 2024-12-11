@@ -13,6 +13,11 @@
       "name_n_version": "test schema with html links",
       "schame_path": "tempSchemas/schema_with_links.json",
       "uischema_path": "tempSchemas/ui_schema.json"
+    },
+    {
+      "name_n_version": "test schema small size",
+      "schame_path": "tempSchemas/small_schema.json",
+      "uischema_path": "tempSchemas/ui_schema.json"
     }
   ]
   

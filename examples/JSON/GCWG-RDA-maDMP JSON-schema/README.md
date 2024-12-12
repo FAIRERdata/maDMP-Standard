@@ -4,11 +4,13 @@
 
 This folder contains the scripts to create JSON schemas and its corresponding uischemas. The published and temperary schemas are moved to [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) and [tempSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas/tempSchemas). 
 
-There are `2 scripts` here that are important:
+## File Explained
 
 1. `create_schema.py`: fetches the data from Orange Tab and transform it to machina actionable JSON schema.
    
 2. `create_uischema.py`: also fetches data from Orange Tab and generates the uiSchema for corresponding JSON schema. Currently the only purpose of  (note: uiSchema is not offically used in JSON. It is introduced in RJSF to help render JSON schemas)
+
+3. `schema_metadata.py` in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas): __name_n_version__ and __schema_path__ are required, __uischema_path__ can be empty string.
 
 
 ## Instructions to create a new version of maDMP
@@ -21,13 +23,13 @@ There are `2 scripts` here that are important:
 
 3. Ensure that you have the correct ouput file names in the scripts.
 
-4. Run the 2 Python scripts `create_schema.py` and `create_uischema.py`. If successfully completed, 2 JSON files should appear
+4. Run the 2 Python scripts `create_schema.py` and `create_uischema.py`. If successfully completed, 2 JSON files should appear. Make sure you add them to the [GCWG-RDA-maDMP JSON-schema folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/GCWG-RDA-maDMP%20JSON-schema)
 
 ## Adding Schema Choices to maDMP Generation Form
 
  If you wish to add newly created schemas to the
   [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/), 
-  you need to manually move the schemas to the [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) or the [tempSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas/tempSchemas). You must also add information of the generated files to _schema_metadata.json_ in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) in order for the [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/) to fetch it.
+  you need to manually copy the schemas to the [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) or the [tempSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas/tempSchemas), and modify the name so it includes the version information. You must also add information of the generated files to _schema_metadata.json_ in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) in order for the [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/) to fetch it.
 
 
 ## Adding new keys to the JSON file

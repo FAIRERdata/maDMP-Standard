@@ -53,7 +53,7 @@ column_header = ['New row numbers (sorted on fieldname)',
 
 # columns that are necessary for properties sheet
 kept_columns = ['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)','Property ID', 'Description', 'Cardinality RDA', 'Cardinality', 
-                 'GC DMP Requirement', ' "required IF/WHEN" dependency', 
+                 'GC DMP Requirement', '"required IF/WHEN" dependency', 
                  'Front-end user-friendly question', 'Example value', 'Data type', 
                  'Allowed Values\n(controlled vocabulary)']
 

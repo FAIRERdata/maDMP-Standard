@@ -30,7 +30,7 @@ go get -u github.com/jinzhu/gorm/dialects/sqlite@v1.9.16
 
 ### 2. Compile the sources
 
-From a command line, change into the `src` sub-directory and run: 
+From a command line, go into the `src` sub-directory and run: 
 
 ```bash
 go build -o ../rda_dmp_common_standard_doc_generator

@@ -233,14 +233,10 @@
             "community_approval": {
                 "items": {
                     "ui:order": [
-                        "status"
+                        "status",
+                        "description"
                     ]
                 }
-            },
-            "community": {
-                "ui:order": [
-                    "approval_description"
-                ]
             }
         },
         "dataset": {

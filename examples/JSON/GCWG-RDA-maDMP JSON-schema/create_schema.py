@@ -59,10 +59,6 @@ kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlin
                 'conditional appear prerequisite value', 'Logic order of subquestions under each chapter'
                 ]
 
-# minimum required columns to generate the schema
-require_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)", 
-                   "GC DMP Requirement", 'Cardinality', 'Logic order of subquestions under each chapter']
-
 # Adjust data types based on patterns
 df["Data type"] = np.where(df["Data type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['Data type'])
 df["Data type"] = np.where(df["Data type"].str.contains('DateTime.', case=True, na=False), "date-time", df['Data type'])
@@ -117,11 +113,6 @@ chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
-    
-    # Skip the entire row if any of the `required_columns` has an empty value
-    if any(pd.isna(row[column]) for column in require_columns):
-        continue
-
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
     allowed_values = row['Allowed Values\n(for JSON schema file)']
@@ -147,7 +138,7 @@ for _, row in df_sorted.iterrows():
         continue
     """
     # filters top level fields
-    #if "cost" not in field_path: # and "cost" not in field_path:
+    #if "indigenous_considerations" not in field_path: # and "cost" not in field_path:
     #    continue
     #if order[0] > '2':
     #    continue

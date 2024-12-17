@@ -7,8 +7,6 @@ import re
 
 """
 Python script to generate a JSON schema from a Orange Tab
-
-need to add title to general_info
 """
 
 # Function to build a nested dictionary for a given path
@@ -61,7 +59,7 @@ kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlin
                 'conditional appear prerequisite value', 'Logic order of subquestions under each chapter'
                 ]
 
-# minimum required columns
+# minimum required columns to generate the schema
 require_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)", 
                    "GC DMP Requirement", 'Cardinality', 'Logic order of subquestions under each chapter']
 
@@ -81,8 +79,10 @@ df.loc[df['Data type'] == 'URI', 'format'] = 'uri'
 df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
 
 # sort the dataframe based on the 'logic order of subquestions under each chapter' column
-# Define a function to split the string into a list of integers
 def sort_key(value):
+    '''
+    Function to parse the logic order of subquestions under each chapter
+    '''
     if pd.isna(value):
         return [100]
     #print(value)
@@ -91,7 +91,6 @@ def sort_key(value):
 df_sorted = df.sort_values(by='Logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
 # Reset index if necessary
 df_sorted = df_sorted.reset_index(drop=True)
-
 
 # Initialize the base schema
 json_schema = {
@@ -106,11 +105,14 @@ json_schema = {
 
 # A dictionary to track the required fields at each level
 required_fields_dict = {}
-## newly added column
+## dictionary to track the conditional appear fields
 conditional_appear_dict = {}
+## dictionary to track fields with cardinality of 0..n or 1..n
 one_to_n_array_list = []
 zero_to_n_array_list = []
+## dictionary to track the required when fields
 require_when_nested_structure_exist = {}
+## dictionary to track properties that should be moved to chapter 1
 chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
@@ -129,15 +131,12 @@ for _, row in df_sorted.iterrows():
     format = row['format']
     requirement = row['GC DMP Requirement']  # New column for requirement
     required_when = row['required when (For machine actionable)']
-    ## newly added column
     required_IF_dependency = row['"required IF/WHEN" dependency']
     cardinality = row['Cardinality']
     prerequisite_path = row['conditional appear prerequisite path']
     prerequisite_values = row['conditional appear prerequisite value']
     order = str(row['Logic order of subquestions under each chapter']).split('.')
 
-
-    # delete filters certain fields
     # filters nested fields
     """
     if "dataset" in field_path:
@@ -147,7 +146,7 @@ for _, row in df_sorted.iterrows():
     else:
         continue
     """
-    # filters level 1 fields
+    # filters top level fields
     #if "cost" not in field_path: # and "cost" not in field_path:
     #    continue
     #if order[0] > '2':
@@ -214,7 +213,6 @@ for _, row in df_sorted.iterrows():
             required_fields_dict[parent_path] = []
         required_fields_dict[parent_path].append(child_name)
 
-    ## newly added column
     # build dependencies, check "required IF" condition
     if pd.notna(required_IF_dependency) and requirement.strip().lower() == 'required if':
         if pd.notna(prerequisite_path) and pd.notna(prerequisite_values):
@@ -285,6 +283,7 @@ def assign_required_fields(schema, path=""):
 
 def apply_conditionals_appear(schema, path=""):
     """
+    Add conditional appear fields to the schema.
     for now, conditions are all required IF
     1. some options are chosen in the prerequisite fields
     2. some values are entered into the prerequisite fields
@@ -301,7 +300,8 @@ def apply_conditionals_appear(schema, path=""):
                     prerequisite = child_name_pair[1]
                     prerequisite_values = child_name_pair[2]
 
-                    if prerequisite_values[0] == "special!!!": # condition2
+                    # condition2
+                    if prerequisite_values[0] == "special!!!": 
                         appearing_sub_schemas = {
                                             "if": {
                                                 "properties": {
@@ -320,7 +320,8 @@ def apply_conditionals_appear(schema, path=""):
                                             }
                                         }
                         temp_list.append(appearing_sub_schemas)
-                    else: # condition1
+                    # condition1
+                    else: 
                         appearing_sub_schemas = {
                                             "if": {
                                                 "properties": {
@@ -399,8 +400,6 @@ def move_to_chapter_1(schema, path=""):
                     "properties": chapter_1_properties,
                     "required": chapter_1_required_list
                 }
-
-
 
             move_to_chapter_1(prop_value, current_path)
 

@@ -10,7 +10,7 @@ This folder contains the scripts to create JSON schemas and its corresponding ui
    
 2. `create_uischema.py`: also fetches data from Orange Tab and generates the uiSchema for corresponding JSON schema. Currently the only purpose of  (note: uiSchema is not offically used in JSON. It is introduced in RJSF to help render JSON schemas)
 
-3. `schema_metadata.py` in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas): __name_n_version__ and __schema_path__ are required, __uischema_path__ can be empty string.
+3. `schema_metadata.py` in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas): stores metadata requied for [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/).  __name_n_version__ and __schema_path__ fields are required, __uischema_path__ can be empty string.
 
 
 ## Instructions to create a new version of maDMP

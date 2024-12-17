@@ -6,6 +6,7 @@ import urllib.parse
 Python script to generate the UI schema of the maDMP JSON schema based on the Orange Tab.
 """
 
+# Define a function to create the nested structure of the schema based on the property path list
 def create_nested_structure(schema, prop_path_list, prop_names):
     if prop_path_list[0] not in schema:
         schema[prop_path_list[0]] = {}

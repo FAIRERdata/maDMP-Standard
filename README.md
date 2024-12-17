@@ -9,7 +9,7 @@
 
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
 
- 
+
 <h3>maDMP</h3>
 Provides high level information about the maDMP, e.g. its title, modification date, classification and protection level, metadata schema version, etc. It is the root of the metadata application profile. The majority of its fields are mandatory.
 

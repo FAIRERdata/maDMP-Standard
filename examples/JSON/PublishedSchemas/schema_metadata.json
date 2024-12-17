@@ -5,6 +5,11 @@
       "uischema_path": "ui_schema_v2.0.json"
     },
     {
+      "name_n_version": "GCWG RDA maDMP Schema v2.1",
+      "schema_path": "GCWG-RDA-maDMP-schema_v2.1.json",
+      "uischema_path": "ui_schema_v2.1.json"
+    },
+    {
       "name_n_version": "GCWG RDA maDMP Schema v2.0 Department X",
       "schema_path": "tempSchemas/GCWG-RDA-maDMP-schema_v2.0_departementX.json",
       "uischema_path": "tempSchemas/ui_schema_v2.0_departmentX.json"

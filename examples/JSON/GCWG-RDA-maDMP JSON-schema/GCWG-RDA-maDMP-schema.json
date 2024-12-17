@@ -9355,7 +9355,15 @@
                                 "description": "to describe approvals by indigenous communities",
                                 "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval",
                                 "title": "Community_approval",
-                                "properties": {},
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "description": "To provide any free-form text information on the project approval from the Indigenous communities.",
+                                        "question": "Describe the Indigenous community approval.",
+                                        "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval/properties/description",
+                                        "title": "Description"
+                                    }
+                                },
                                 "allOf": [
                                     {
                                         "if": {
@@ -9390,20 +9398,6 @@
                                         }
                                     }
                                 ]
-                            }
-                        },
-                        "community": {
-                            "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community",
-                            "type": "object",
-                            "title": "Community",
-                            "properties": {
-                                "approval_description": {
-                                    "type": "string",
-                                    "description": "To provide any free-form text information on the project approval from the Indigenous communities.",
-                                    "question": "Describe the Indigenous community approval.",
-                                    "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community/properties/approval_description",
-                                    "title": "Approval_description"
-                                }
                             }
                         },
                         "group_identification": {
@@ -28807,40 +28801,44 @@
                                             "title": "Operating_system_description"
                                         },
                                         "software_management_plan": {
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
-                                            "type": "object",
-                                            "title": "Software_management_plan",
-                                            "properties": {
-                                                "name": {
-                                                    "type": "string",
-                                                    "description": "Title of the external document documenting the  cost",
-                                                    "question": "What is the name or title of the SMP",
-                                                    "requiredWhen": [
-                                                        "software_management_plan"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
-                                                    "title": "Name"
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "description": "To reference an external software management plan",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
+                                                "title": "Software_management_plan",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "Title of the external document documenting the  cost",
+                                                        "question": "What is the name or title of the SMP",
+                                                        "requiredWhen": [
+                                                            "software_management_plan"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
+                                                        "title": "Name"
+                                                    },
+                                                    "access_url": {
+                                                        "type": "string",
+                                                        "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
+                                                        "question": "What is the access url to the SMP",
+                                                        "format": "uri",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
+                                                        "title": "Access_url"
+                                                    },
+                                                    "download_url": {
+                                                        "type": "string",
+                                                        "description": "Download URL to the Software Management Plan (SMP)",
+                                                        "question": "What is the dowload url of the SMP",
+                                                        "format": "uri",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
+                                                        "title": "Download_url"
+                                                    }
                                                 },
-                                                "access_url": {
-                                                    "type": "string",
-                                                    "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
-                                                    "question": "What is the access url to the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
-                                                    "title": "Access_url"
-                                                },
-                                                "download_url": {
-                                                    "type": "string",
-                                                    "description": "Download URL to the Software Management Plan (SMP)",
-                                                    "question": "What is the dowload url of the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
-                                                    "title": "Download_url"
-                                                }
-                                            },
-                                            "required": [
-                                                "name"
-                                            ]
+                                                "required": [
+                                                    "name"
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [

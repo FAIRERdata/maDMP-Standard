@@ -7629,11 +7629,11 @@
                             "title": "Security_classification_level"
                         },
                         "schema_version": {
-                            "type": "string",
-                            "description": "DMP schema version ",
-                            "question": "Which maDMP metadata schema version was used when creating this maDMP?",
+                            "const": "v2.1",
+                            "title": "Schema_version",
+                            "description": "The version you are using is v2.1, you should not edit this field.",
                             "$id": "#/properties/dmp/properties/schema_version",
-                            "title": "Schema_version"
+                            "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
                         "schema_version_uri": {
                             "type": "string",
@@ -8242,28 +8242,28 @@
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/type",
                                                                         "title": "Type"
                                                                     },
-                                                                    "reference_name": {
+                                                                    "registry_name": {
                                                                         "type": "string",
                                                                         "description": "To indicate what reference is used to identify the business when selecting \"other\" as id type.",
                                                                         "example": "Registre des entreprises de la chambre de commerce",
                                                                         "question": "What is the name or title of the reference  used to identify the business?",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/reference_name",
-                                                                        "title": "Reference_name"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/registry_name",
+                                                                        "title": "Registry_name"
                                                                     },
-                                                                    "reference_URI": {
+                                                                    "registry_URI": {
                                                                         "type": "string",
                                                                         "description": "Link to the reference used to identify the business",
                                                                         "question": "Where can the reference be found",
                                                                         "format": "uri",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/reference_URI",
-                                                                        "title": "Reference_uri"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/registry_URI",
+                                                                        "title": "Registry_uri"
                                                                     },
-                                                                    "reference_version": {
+                                                                    "registry_version": {
                                                                         "type": "string",
                                                                         "description": "To indicate the version number or date of the reference",
                                                                         "question": "what version of the reference was used at the time where the identifier was entered",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/reference_version",
-                                                                        "title": "Reference_version"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/registry_version",
+                                                                        "title": "Registry_version"
                                                                     }
                                                                 }
                                                             }
@@ -8336,28 +8336,28 @@
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/type",
                                                                         "title": "Type"
                                                                     },
-                                                                    "reference_name": {
+                                                                    "registry_name": {
                                                                         "type": "string",
                                                                         "description": "To indicate what reference is used to identify the business when selecting \"other\" as id type.",
                                                                         "example": "Liste des universités du réseau européen",
                                                                         "question": "What is the name or title of the reference  used to identify the educational institution?",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/reference_name",
-                                                                        "title": "Reference_name"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_name",
+                                                                        "title": "Registry_name"
                                                                     },
-                                                                    "reference_URI": {
+                                                                    "registry_URI": {
                                                                         "type": "string",
                                                                         "description": "Link to the reference used to identify the business",
                                                                         "question": "Where can the reference be found",
                                                                         "format": "uri",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/reference_URI",
-                                                                        "title": "Reference_uri"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_URI",
+                                                                        "title": "Registry_uri"
                                                                     },
-                                                                    "reference_version": {
+                                                                    "registry_version": {
                                                                         "type": "string",
                                                                         "description": "To indicate the version number or date of the reference",
                                                                         "question": "what version of the reference was used at the time where the identifier was entered",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/reference_version",
-                                                                        "title": "Reference_version"
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_version",
+                                                                        "title": "Registry_version"
                                                                     }
                                                                 }
                                                             }
@@ -8481,7 +8481,7 @@
                                                                     },
                                                                     "type": {
                                                                         "type": "string",
-                                                                        "description": "Non-profit organization identifier type",
+                                                                        "description": "Non-profit organization identifier type (name of registry)",
                                                                         "question": "What type of identifier does the non-profit use?",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/type",
                                                                         "title": "Type"
@@ -8919,6 +8919,9 @@
                                                     "description": "Grant ID",
                                                     "example": "12345-987654",
                                                     "question": "Provide the grant ID.",
+                                                    "requiredWhen": [
+                                                        "grant_id"
+                                                    ],
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/identifier",
                                                     "title": "Identifier"
                                                 },
@@ -8934,7 +8937,10 @@
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/type",
                                                     "title": "Type"
                                                 }
-                                            }
+                                            },
+                                            "required": [
+                                                "identifier"
+                                            ]
                                         }
                                     },
                                     "required": [
@@ -9404,7 +9410,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "description": "To indicate which Indigenous group this dataset is related to (e.g., Indian Band, Inuit, Metis, self-identification)",
+                                "description": "To indicate which Indigenous group(s) this dataset is related to. For example, in Canada (Indian Band, Inuit, Metis), in Europe (Sami), in New Zealand (Maori), or self-identification. ",
                                 "example": "First Nations",
                                 "question": "Which Indigenous group is this dataset related to?",
                                 "$id": "#/properties/dmp/properties/indigenous_considerations/properties/group_identification",
@@ -27849,7 +27855,8 @@
                                                 "not protected",
                                                 "protected A",
                                                 "protected B",
-                                                "protected C"
+                                                "protected C",
+                                                "other"
                                             ],
                                             "example": "protected A",
                                             "question": "What is the protection level for these data?",
@@ -28379,6 +28386,108 @@
                                         "security_classification_level",
                                         "format",
                                         "distribution_id"
+                                    ],
+                                    "allOf": [
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "security_classification_level": {
+                                                        "enum": [
+                                                            "other"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "security_classification_level_other_level": {
+                                                        "type": "string",
+                                                        "description": "to indicate the level of the classified information held by the distribution if not using the following  <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html.\">www.tpsgc-pwgsc.gc.ca</a> For example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified.",
+                                                        "question": "What other classification level applies to the distribution?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/security_classification_level_other_level",
+                                                        "title": "Security_classification_level_other_level"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "security_classification_level_other_level"
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "protection_level": {
+                                                        "enum": [
+                                                            "other"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "protection_level_other_classification": {
+                                                        "type": "string",
+                                                        "description": "to indicate which classification system is used to qualify the distribution protection level when \"other\" was chosen in distribution_protection_level",
+                                                        "question": "What other classification is used to indicate the distribution protection level?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/protection_level_other_classification",
+                                                        "title": "Protection_level_other_classification"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "protection_level_other_classification"
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "security_classification_level": {
+                                                        "enum": [
+                                                            "other"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "security_classification_level_other_classification": {
+                                                        "type": "string",
+                                                        "description": "to indicate which classification system is used to qualify the level of classified information",
+                                                        "question": "What other classification is used to indicate the distribution protection level?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/security_classification_level_other_classification",
+                                                        "title": "Security_classification_level_other_classification"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "security_classification_level_other_classification"
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "protection_level": {
+                                                        "enum": [
+                                                            "other"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "protection_level_other_level": {
+                                                        "type": "string",
+                                                        "description": "to indicate the protection level of the distribution if not using <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a> (not protected, protected A, protected B, protected C)",
+                                                        "question": "What other classification level applies to the distribution?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/protection_level_other_level",
+                                                        "title": "Protection_level_other_level"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "protection_level_other_level"
+                                                ]
+                                            }
+                                        }
                                     ]
                                 }
                             },

@@ -23,7 +23,9 @@ This folder contains the scripts to create JSON schemas and its corresponding ui
 
 3. Ensure that you have the correct ouput file names in the scripts.
 
-4. Run the 2 Python scripts `create_schema.py` and `create_uischema.py`. If successfully completed, 2 JSON files should appear. Make sure you add them to the [GCWG-RDA-maDMP JSON-schema folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/GCWG-RDA-maDMP%20JSON-schema)
+4. Run `create_schema.py`, you should be prompted to enter the version of the schema, the version must be a float, eg 2.2, 12.0. If the version is unknown, enter "nan". Then run `create_uischema.py`. 
+   
+5. If successfully completed, 2 JSON files should appear. Make sure you add them to the [GCWG-RDA-maDMP JSON-schema folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/GCWG-RDA-maDMP%20JSON-schema)
 
 ## Adding Schema Choices to maDMP Generation Form
 

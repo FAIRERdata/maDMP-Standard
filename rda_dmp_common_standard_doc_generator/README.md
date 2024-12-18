@@ -47,6 +47,10 @@ This utility uses a [single configuration file](config.yaml) for all of it's con
 
 The title of the readme is added by the documentation.go code.
 
+To update the version number in the header, there are two ways:
+1. Directly modify the version number in the README file after you create it
+2. Edit the document title in the config.yaml
+
 ### 4. Run the utility
 
 Use `cd ..` to go back to `rda_dmp_common_standard_doc_generator` folder and run: 

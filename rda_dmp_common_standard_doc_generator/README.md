@@ -3,17 +3,17 @@
 A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
 
 Written by Paul Walk (paul@paulwalk.net)\
-Revised by Esther Liu (esther.liu@uwaterloo.ca), Emily Chu (ewchu@uwaterloo.ca)
+Revised by [Esther Liu](https://github.com/estherliu02), [Emily Chu](https://github.com/emily0c), [Dominique Charles](https://github.com/dominiquecharlesECCC), [Jackie Cao](https://github.com/UWtheshy)  
 
 ## Prerequisites
 
 1. A working [Go](https://golang.org) environment (with `GOPATH` environment variable set correctly)
-2. This Github repository, checked out into a working copy
+2. This Github repository, checked out into a working copy or downloaded
 3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the path 
 
 ## Instructions to compile and run this utility
 
-These instruction work as written for VS Code. If using other editors or the Command Prompt, syntax may need to be slightly modified. 
+These instructions work as written for VS Code. If using other editors or the Command Prompt, syntax may need to be slightly modified. 
 
 ### 1. Initialize the module and download required packages
 ```bash

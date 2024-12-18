@@ -38,6 +38,22 @@ def merge_dicts(d1, d2):
         else:
             d1[key] = d2[key]
 
+# prompt for version number
+version = input("Enter the version number(a float), enter 'nan' if version is unknown: ")
+# Check if the input is 'nan'
+if version.lower() == 'nan':
+    print("The input is 'nan'.")
+# Check if the input is a valid float
+else:
+    try:
+        # Attempt to convert the input to a float
+        float_value = float(version)
+        print(f"The input version '{version}' is valid.")
+    except ValueError:
+        # Raise an error if it's not 'nan' or a valid float
+        raise ValueError("Invalid input. The input must be 'nan' or a valid float.")
+version = "v"+version
+
 
 # Load the CSV file (adjust the path as necessary)
 google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
@@ -393,6 +409,17 @@ def move_to_chapter_1(schema, path=""):
                 }
 
             move_to_chapter_1(prop_value, current_path)
+
+# modify schema_version
+if version.lower() != 'nan':
+    old_schema_version = json_schema["properties"]["dmp"]["properties"]["schema_version"]
+    json_schema["properties"]["dmp"]["properties"]["schema_version"] = {
+        "const": version,
+        "title": old_schema_version["title"],
+        "description": f"The version you are using is {version}, you should not edit this field.",
+        "$id": old_schema_version["$id"],
+        "question": old_schema_version["question"]
+    }
 
 assign_required_fields(json_schema)
 apply_conditionals_appear(json_schema)

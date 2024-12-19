@@ -1,9 +1,9 @@
-#Update the standard to refelct changes made in the GC-RDA maDMP Excel Workbook 
+# Update the standard to refelct changes made in the GC-RDA maDMP Excel Workbook 
 
 ## Update the application profile
 Code and instructions in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion)
 
-##RDA DMP Common Standard Documentation Generator
+## RDA DMP Common Standard Documentation Generator
 
 A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
 

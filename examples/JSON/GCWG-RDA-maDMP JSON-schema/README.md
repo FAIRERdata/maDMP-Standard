@@ -31,9 +31,9 @@ This folder contains the scripts to create JSON schemas and its corresponding ui
 
  If you wish to add newly created schemas to the
   [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/), 
-  you need to manually copy the schemas to the [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) or the [tempSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas/tempSchemas), and modify the name so it includes the version information. You must also add information of the generated files to _schema_metadata.json_ in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) in order for the [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/) to fetch it.
+  you need to manually copy the schemas to the [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) or the [tempSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas/tempSchemas), and modify the name so it includes the version information. You must also add information of the generated files to `schema_metadata.json` in [PublishedSchemas folder](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/examples/JSON/PublishedSchemas) in order for the [maDMP Generation Form](https://fairerdata.github.io/maDMP-Generation-Form/) to fetch it.
 
-  You should always keep a newest version of schema in this folder, as the [maDMP-standard](https://fairerdata.github.io/maDMP-Standard/) links to this folder.
+  You should always keep a newest version of schema in this folder where README is, as the [maDMP-standard](https://fairerdata.github.io/maDMP-Standard/) links to this folder.
 
 
 ## Adding new keys to the JSON file

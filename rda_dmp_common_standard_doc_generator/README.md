@@ -7,9 +7,10 @@ Revised by [Esther Liu](https://github.com/estherliu02), [Emily Chu](https://git
 
 ## Prerequisites
 
-1. A working [Go](https://golang.org) environment (with `GOPATH` environment variable set correctly)
-2. This Github repository, checked out into a working copy or downloaded
-3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the path 
+1. A working [Go](https://golang.org) environment (check the `GOPATH` system environment variable was set correctly after you installed GO)
+2. This Github repository, checked out into a working copy or downloaded locally
+3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the 'path' system enviornment variable. If working in a Windows environment, the path is found in System properties > System environment variables. Find the path for VScode, path to install GCC is the VScode path without the /bin at the end.
+   ![Screenshot of Windows "Edit the system environment variables" feature](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/Capture%20Path.PNG "System environement variables")
 
 ## Instructions to compile and run this utility
 

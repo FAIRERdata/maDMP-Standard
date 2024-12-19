@@ -1,4 +1,4 @@
-# Update the standard to refelct changes made in the GC-RDA maDMP Excel Workbook 
+# Update the [human readable version of the maMDP standard](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) to reflect changes made to the GC-RDA maDMP Excel Workbook 
 
 ## Update the application profile
 Code and instructions in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion)

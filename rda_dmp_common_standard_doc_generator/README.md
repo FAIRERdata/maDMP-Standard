@@ -1,22 +1,27 @@
-# RDA DMP Common Standard Documentation Generator
+#Update the standard to refelct changes made in the GC-RDA maDMP Excel Workbook 
+
+## Update the application profile
+Code and instructions in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion)
+
+##RDA DMP Common Standard Documentation Generator
 
 A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
 
 Written by Paul Walk (paul@paulwalk.net)\
 Revised by [Esther Liu](https://github.com/estherliu02), [Emily Chu](https://github.com/emily0c), [Dominique Charles](https://github.com/dominiquecharlesECCC), [Jackie Cao](https://github.com/UWtheshy)  
 
-## Prerequisites
+### Prerequisites
 
 1. A working [Go](https://golang.org) environment (check the `GOPATH` system environment variable was set correctly after you installed GO)
 2. This Github repository, checked out into a working copy or downloaded locally
 3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the 'path' system enviornment variable. If working in a Windows environment, the path is found in System properties > System environment variables. Find the path for VScode, path to install GCC is the VScode path without the /bin at the end.
    ![Screenshot of Windows "Edit the system environment variables" feature](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/Capture%20Path.PNG "System environement variables")
 
-## Instructions to compile and run this utility
+### Instructions to compile and run this utility
 
 These instructions work as written for VS Code. If using other editors or the Command Prompt, syntax may need to be slightly modified. 
 
-### 1. Initialize the module and download required packages
+#### 1. Initialize the module and download required packages
 ```bash
 go mod init github.com/FAIRERdata/maDMP-Standard/tree/tests/rda_dmp_common_standard_doc_generator
 
@@ -29,7 +34,7 @@ go get -u github.com/goki/ki/ki
 go get -u github.com/jinzhu/gorm/dialects/sqlite@v1.9.16
 ```
 
-### 2. Compile the sources
+#### 2. Compile the sources
 
 From a command line, go into the `src` sub-directory and run: 
 
@@ -42,7 +47,7 @@ This will build an executable file called `rda_dmp_common_standard_doc_generator
 go build -o ../rda_dmp_common_standard_doc_generator.exe
 ```
 
-### 3. Set up your configuration file
+#### 3. Set up your configuration file
 
 This utility uses a [single configuration file](config.yaml) for all of it's configuration (i.e. it takes no arguments). The configuration file must exist in the same directory as the executable. In most circumstances, you should be able to use the configuration file provided in this repository.
 
@@ -52,7 +57,7 @@ To update the version number in the header, there are two ways:
 1. Directly modify the version number in the README file after you create it
 2. Edit the document title in the config.yaml
 
-### 4. Run the utility
+#### 4. Run the utility
 
 Use `cd ..` to go back to `rda_dmp_common_standard_doc_generator` folder and run: 
 
@@ -68,10 +73,10 @@ This should create two new files, both in the `output` folder:
 Anytime you want to 'refresh' the local documentation file from the Google Spreadsheet sources, simply delete the `db.sqlite` file from the `output` folder, and re-run the utility. This will rebuild the database from the Google Spreadsheet data, and then rebuild the documentation file (`README.md`)in the `output` folder.
 
 
-### 5. Publish the new documentation
+#### 5. Publish the new documentation
 Simply copy or move the `README.md` file from the `output` folder to the top level folder of this Github repository (replacing the one that is there).
 
-## Styling Github Pages Website
+### Styling Github Pages Website
 After the `README.md` file is uploaded, the [website](https://fairerdata.github.io/maDMP-Standard/) is automatically deployed. 
 
 The current website theme is the Jekyll theme [Cayman](https://github.com/pages-themes/cayman). 
@@ -93,7 +98,3 @@ For changing the text in the header banner of the Github page, edit the 'descrip
 For changing the title of the Github page, change the `document_title` in [config.yaml](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/config.yaml).
 
 Changes to the html layout theme can be done in the file [default.html](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/_layouts/default.html).
-
-
-
-

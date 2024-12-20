@@ -1,20 +1,22 @@
-# Update the [human readable version of the maMDP standard](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) to reflect changes made to the GC-RDA maDMP Excel Workbook 
+# Instructions to update the [MAP README file](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) to reflect changes made to the GC-RDA maDMP Excel Workbook 
 
-## Update the application profile
-Code and instructions in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion)
+## 1. Update the Application Profile Google Sheets
+Code and instructions to update the [GC-RDA maDMP Application Profile](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) are found in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion).
 
-## RDA DMP Common Standard Documentation Generator
+## 2. Generate a new README file
 
-A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
+A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of 5 Google Sheets [GC-RDA maDMP Application Profile](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
+
+Anytime you want to 'refresh' the local documentation file from the Google Spreadsheet sources, simply delete the `db.sqlite` file from the `output` folder, and re-run the utility. This will rebuild the database from the Google Spreadsheet data, and then rebuild the documentation file (`README.md`)in the `output` folder.
 
 Written by Paul Walk (paul@paulwalk.net)\
 Revised by [Esther Liu](https://github.com/estherliu02), [Emily Chu](https://github.com/emily0c), [Dominique Charles](https://github.com/dominiquecharlesECCC), [Jackie Cao](https://github.com/UWtheshy)  
 
 ### Prerequisites
 
-1. A working [Go](https://golang.org) environment (check the `GOPATH` system environment variable was set correctly after you installed GO)
+1. A working [Go](https://golang.org) environment (check the `GOPATH` system environment variable was set correctly after you installed GO, see how to check and edit system environment variables on the screenshot below)
 2. This Github repository, checked out into a working copy or downloaded locally
-3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the 'path' system enviornment variable. If working in a Windows environment, the path is found in System properties > System environment variables. Find the path for VScode, path to install GCC is the VScode path without the /bin at the end.
+3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the 'path' system enviornment variable. If working in a Windows environment, the path is found in System properties > System environment variables. Find the 'path' for VScode, and install GCC using that path without the /bin at the end.
    ![Screenshot of Windows "Edit the system environment variables" feature](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/Capture%20Path.PNG "System environement variables")
 
 ### Instructions to compile and run this utility
@@ -51,11 +53,7 @@ go build -o ../rda_dmp_common_standard_doc_generator.exe
 
 This utility uses a [single configuration file](config.yaml) for all of it's configuration (i.e. it takes no arguments). The configuration file must exist in the same directory as the executable. In most circumstances, you should be able to use the configuration file provided in this repository.
 
-The title of the readme is added by the documentation.go code.
-
-To update the version number in the header, there are two ways:
-1. Directly modify the version number in the README file after you create it
-2. Edit the document title in the config.yaml
+To update the version number in the header, edit the document title in the config.yaml (you can also directly modify the version number in the README file after you create it).
 
 #### 4. Run the utility
 
@@ -69,9 +67,6 @@ This should create two new files, both in the `output` folder:
 
 1. `db.sqlite`
 2. `README.md`
-
-Anytime you want to 'refresh' the local documentation file from the Google Spreadsheet sources, simply delete the `db.sqlite` file from the `output` folder, and re-run the utility. This will rebuild the database from the Google Spreadsheet data, and then rebuild the documentation file (`README.md`)in the `output` folder.
-
 
 #### 5. Publish the new documentation
 Simply copy or move the `README.md` file from the `output` folder to the top level folder of this Github repository (replacing the one that is there).
@@ -95,6 +90,6 @@ Modifying a specific element on the website may need an `id` associated with the
 Modifying the structure of the README.md file can be done through modifying the [documentation.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/documentation.go) or [tree.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/tree.go).
 
 For changing the text in the header banner of the Github page, edit the 'description' of the repository in the About section (gear icon in the right panel on the repository landing page).
-For changing the title of the Github page, change the `document_title` in [config.yaml](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/config.yaml).
+For changing the title of the Github page, change the `document_title` in [config.yaml](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/config.yaml) before you run the Go code.
 
 Changes to the html layout theme can be done in the file [default.html](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/_layouts/default.html).

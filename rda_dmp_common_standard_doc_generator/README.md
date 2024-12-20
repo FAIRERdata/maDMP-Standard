@@ -1,6 +1,11 @@
-# Instructions to update the [MAP README file](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) to reflect changes made to the GC-RDA maDMP Excel Workbook 
+# Instructions to update the user-friendly Application Profile visible on [GitHub pages](https://fairerdata.github.io/maDMP-Standard/) 
+
+The <b>GC-RDA maDMP Excel Workbook</b> contains information such as fieldnames, property ids, descriptions, example values, user-friendly questions, data types, allowed values, cardinalities, requirements, and dependencies. The information is specifically present in the worksheet, GC maDMP Master sheet; which is commonly referred to as the “orange tab”. Follow these instructions when changes have been made to the standard in the <b>GC-RDA maDMP Excel Workbook</b> by the working group and you want to publish them.
 
 ## 1. Update the Application Profile Google Sheets
+
+The GC-RDA maDMP Excel Workbook contains all relevant information for the the user-friendly Application Profile visible on [GitHub pages](https://fairerdata.github.io/maDMP-Standard/). First step is to change the formatting and convert to the <b>GC-RDA maDMP Application Profile</b> Google Sheets. 
+
 Code and instructions to update the [GC-RDA maDMP Application Profile](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) are found in [conversion](https://github.com/FAIRERdata/maDMP-Standard/tree/Master/rda_dmp_common_standard_doc_generator/Conversion).
 
 ## 2. Generate a new README file

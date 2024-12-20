@@ -17,7 +17,7 @@ This folder contains the scripts to create JSON schemas and its corresponding ui
 
 1. Install relevant libraries
    ```bash
-   py -m pip install pandas numpy re json
+   py -m pip install pandas numpy
    ```
 2. Ensure that that the google sheet name is the same or updated to the relevant sheet name. For example, if <b>GC maDMP Master Sheet</b> is changed to a different name, please change the sheet name in the python code to reflect this. Additionally make sure that the input file has all columns in `kept_columns` variable in `create_schema.py`. If names are updated in the source sheet, please update the python code to reflect the changes. Whatsmore, the sheet's share property in the up right corner should also be set to "Anyone with the link".
 

@@ -7654,6 +7654,20 @@
                             "$id": "#/properties/dmp/properties/protection_level",
                             "title": "Protection_level"
                         },
+                        "protection_level_other_nomenclature": {
+                            "type": "string",
+                            "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
+                            "question": "What other nomenclature is used to indicate the distribution protection level?",
+                            "$id": "#/properties/dmp/properties/protection_level_other_nomenclature",
+                            "title": "Protection_level_other_nomenclature"
+                        },
+                        "protection_level_other_level": {
+                            "type": "string",
+                            "description": "To indicate the protection level of the dmp according to the nomenclature found in dmp_protection_level_other_nomenclature",
+                            "question": "What protection level applies to the distribution according to the nomenclature?",
+                            "$id": "#/properties/dmp/properties/protection_level_other_level",
+                            "title": "Protection_level_other_level"
+                        },
                         "security_classification_level": {
                             "type": "string",
                             "description": "Security classification that designates the level of protection against access the DMP requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
@@ -7670,6 +7684,20 @@
                             "question": "What is the security classification of the maDMP?",
                             "$id": "#/properties/dmp/properties/security_classification_level",
                             "title": "Security_classification_level"
+                        },
+                        "security_classification_level_other_nomenclature": {
+                            "type": "string",
+                            "description": "To indicate which nomenclature is used to qualify classified information",
+                            "question": "What other nomenclature is used to describe classified information?",
+                            "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
+                            "title": "Security_classification_level_other_nomenclature"
+                        },
+                        "security_classification_level_other_level": {
+                            "type": "string",
+                            "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
+                            "question": "Indicate the level of classified information of the dmp according to the nomenclature",
+                            "$id": "#/properties/dmp/properties/security_classification_level_other_level",
+                            "title": "Security_classification_level_other_level"
                         },
                         "schema_version": {
                             "const": "v2.2",
@@ -27900,6 +27928,21 @@
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/type",
                                                     "title": "Type"
                                                 },
+                                                "registry_URI": {
+                                                    "type": "string",
+                                                    "description": "Link to the reference used to identify the partner organization",
+                                                    "question": "Where can the registry or system be found?",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_URI",
+                                                    "title": "Registry_uri"
+                                                },
+                                                "registry_version": {
+                                                    "type": "string",
+                                                    "description": "To indicate the version number or date of the reference",
+                                                    "question": "What version of the registry/system was used or what date was the registry/system consulted?",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_version",
+                                                    "title": "Registry_version"
+                                                },
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "Partner organization identifier",
@@ -27907,7 +27950,34 @@
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/identifier",
                                                     "title": "Identifier"
                                                 }
-                                            }
+                                            },
+                                            "allOf": [
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "type": {
+                                                                "enum": [
+                                                                    "Other"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "registry_name": {
+                                                                "type": "string",
+                                                                "description": "To indicate what reference is used to identify the partner organization when selecting \"other\" as id type.",
+                                                                "question": "What registry or system was used to identify the partner organization?",
+                                                                "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_name",
+                                                                "title": "Registry_name"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "registry_name"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 }
@@ -27926,62 +27996,6 @@
                             "title",
                             "funding"
                         ]
-                    }
-                },
-                "partner_organization": {
-                    "$id": "#/properties/dmp/properties/partner_organization",
-                    "type": "object",
-                    "title": "Partner_organization",
-                    "properties": {
-                        "partner_organization_id": {
-                            "$id": "#/properties/dmp/properties/partner_organization/properties/partner_organization_id",
-                            "type": "object",
-                            "title": "Partner_organization_id",
-                            "properties": {
-                                "registry_URI": {
-                                    "type": "string",
-                                    "description": "Link to the reference used to identify the partner organization",
-                                    "question": "Where can the registry or system be found?",
-                                    "format": "uri",
-                                    "$id": "#/properties/dmp/properties/partner_organization/properties/partner_organization_id/properties/registry_URI",
-                                    "title": "Registry_uri"
-                                },
-                                "registry_version": {
-                                    "type": "string",
-                                    "description": "To indicate the version number or date of the reference",
-                                    "question": "What version of the registry/system was used or what date was the registry/system consulted?",
-                                    "$id": "#/properties/dmp/properties/partner_organization/properties/partner_organization_id/properties/registry_version",
-                                    "title": "Registry_version"
-                                }
-                            },
-                            "allOf": [
-                                {
-                                    "if": {
-                                        "properties": {
-                                            "type": {
-                                                "enum": [
-                                                    "Other"
-                                                ]
-                                            }
-                                        }
-                                    },
-                                    "then": {
-                                        "properties": {
-                                            "registry_name": {
-                                                "type": "string",
-                                                "description": "To indicate what reference is used to identify the partner organization when selecting \"other\" as id type.",
-                                                "question": "What registry or system was used to identify the partner organization?",
-                                                "$id": "#/properties/dmp/properties/partner_organization/properties/partner_organization_id/properties/registry_name",
-                                                "title": "Registry_name"
-                                            }
-                                        },
-                                        "required": [
-                                            "registry_name"
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
                     }
                 },
                 "cost": {
@@ -30392,108 +30406,6 @@
                 "indigenous_considerations",
                 "dataset",
                 "contact"
-            ],
-            "allOf": [
-                {
-                    "if": {
-                        "properties": {
-                            "protection_level": {
-                                "enum": [
-                                    "other"
-                                ]
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "protection_level_other_nomenclature": {
-                                "type": "string",
-                                "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
-                                "question": "What other nomenclature is used to indicate the distribution protection level?",
-                                "$id": "#/properties/dmp/properties/protection_level_other_nomenclature",
-                                "title": "Protection_level_other_nomenclature"
-                            }
-                        },
-                        "required": [
-                            "protection_level_other_nomenclature"
-                        ]
-                    }
-                },
-                {
-                    "if": {
-                        "properties": {
-                            "protection_level": {
-                                "enum": [
-                                    "other"
-                                ]
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "protection_level_other_level": {
-                                "type": "string",
-                                "description": "To indicate the protection level of the dmp according to the nomenclature found in dmp_protection_level_other_nomenclature",
-                                "question": "What protection level applies to the distribution according to the nomenclature?",
-                                "$id": "#/properties/dmp/properties/protection_level_other_level",
-                                "title": "Protection_level_other_level"
-                            }
-                        },
-                        "required": [
-                            "protection_level_other_level"
-                        ]
-                    }
-                },
-                {
-                    "if": {
-                        "properties": {
-                            "security_classification_level": {
-                                "enum": [
-                                    "other"
-                                ]
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "security_classification_level_other_nomenclature": {
-                                "type": "string",
-                                "description": "To indicate which nomenclature is used to qualify classified information",
-                                "question": "What other nomenclature is used to describe classified information?",
-                                "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
-                                "title": "Security_classification_level_other_nomenclature"
-                            }
-                        },
-                        "required": [
-                            "security_classification_level_other_nomenclature"
-                        ]
-                    }
-                },
-                {
-                    "if": {
-                        "properties": {
-                            "security_classification_level": {
-                                "enum": [
-                                    "other"
-                                ]
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "security_classification_level_other_level": {
-                                "type": "string",
-                                "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
-                                "question": "Indicate the level of classified information of the dmp according to the nomenclature",
-                                "$id": "#/properties/dmp/properties/security_classification_level_other_level",
-                                "title": "Security_classification_level_other_level"
-                            }
-                        },
-                        "required": [
-                            "security_classification_level_other_level"
-                        ]
-                    }
-                }
             ]
         }
     },

@@ -546,20 +546,14 @@
                         "partner_organization_id": {
                             "ui:order": [
                                 "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
                                 "identifier"
                             ]
                         }
                     }
                 }
-            }
-        },
-        "partner_organization": {
-            "partner_organization_id": {
-                "ui:order": [
-                    "registry_name",
-                    "registry_URI",
-                    "registry_version"
-                ]
             }
         },
         "cost": {

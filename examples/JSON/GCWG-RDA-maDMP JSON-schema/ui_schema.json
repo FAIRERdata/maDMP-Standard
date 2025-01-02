@@ -29,8 +29,11 @@
                 ],
                 "contributor_id": {
                     "ui:order": [
-                        "identifier",
-                        "type"
+                        "type",
+                        "registry_name",
+                        "registry_URI",
+                        "registry_version",
+                        "identifier"
                     ]
                 },
                 "affiliation": {
@@ -54,9 +57,9 @@
                                 "ui:order": [
                                     "identifier",
                                     "type",
-                                    "reference_name",
-                                    "reference_URI",
-                                    "reference_version"
+                                    "registry_name",
+                                    "registry_URI",
+                                    "registry_version"
                                 ]
                             }
                         },
@@ -68,11 +71,11 @@
                             ],
                             "educational_institution_id": {
                                 "ui:order": [
-                                    "identifier",
                                     "type",
-                                    "reference_name",
-                                    "reference_URI",
-                                    "reference_version"
+                                    "registry_URI",
+                                    "registry_name",
+                                    "registry_version",
+                                    "identifier"
                                 ]
                             }
                         },
@@ -118,129 +121,17 @@
                 }
             }
         },
-        "approval": {
-            "ui:order": [
-                "status",
-                "description",
-                "by_name",
-                "by_position",
-                "by_mbox",
-                "date"
-            ]
-        },
-        "project": {
-            "items": {
-                "ui:order": [
-                    "title",
-                    "description",
-                    "start",
-                    "end",
-                    "funding",
-                    "partner_organization",
-                    "succession_plan"
-                ],
-                "funding": {
-                    "items": {
-                        "ui:order": [
-                            "source",
-                            "funder_id",
-                            "funding_status",
-                            "grant_id"
-                        ],
-                        "source": {
-                            "items": {
-                                "ui:order": [
-                                    "type",
-                                    "description"
-                                ]
-                            }
-                        },
-                        "funder_id": {
-                            "ui:order": [
-                                "identifier",
-                                "type"
-                            ]
-                        },
-                        "grant_id": {
-                            "ui:order": [
-                                "identifier",
-                                "type"
-                            ]
-                        }
-                    }
-                },
-                "partner_organization": {
-                    "items": {
-                        "ui:order": [
-                            "name",
-                            "agreement",
-                            "partner_organization_id"
-                        ],
-                        "agreement": {
-                            "ui:order": [
-                                "description",
-                                "type",
-                                "agreement_download_url"
-                            ]
-                        },
-                        "partner_organization_id": {
-                            "ui:order": [
-                                "identifier",
-                                "type"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "cost": {
-            "items": {
-                "ui:order": [
-                    "title",
-                    "description",
-                    "value",
-                    "currency_code",
-                    "cost_documentation"
-                ],
-                "cost_documentation": {
-                    "items": {
-                        "ui:order": [
-                            "name",
-                            "access_url",
-                            "download_url"
-                        ]
-                    }
-                }
-            }
-        },
-        "indigenous_considerations": {
-            "ui:order": [
-                "exist",
-                "description",
-                "dmp_discussion",
-                "community_approval",
-                "group_identification",
-                "government_name",
-                "indigenous_control_over_data",
-                "language",
-                "characters",
-                "research_method",
-                "indian_band_name",
-                "indian_band_number",
-                "traditional_knowledge",
-                "traditional_knowledge_description"
-            ],
-            "community_approval": {
-                "items": {
-                    "ui:order": [
-                        "status",
-                        "description"
-                    ]
-                }
-            }
-        },
         "dataset": {
             "items": {
+                "dataset_id": {
+                    "ui:order": [
+                        "registry_name",
+                        "registry_URI",
+                        "registry_version",
+                        "identifier",
+                        "type"
+                    ]
+                },
                 "ui:order": [
                     "title",
                     "dataset_id",
@@ -276,12 +167,6 @@
                     "disposition_completed",
                     "computing_environment"
                 ],
-                "dataset_id": {
-                    "ui:order": [
-                        "identifier",
-                        "type"
-                    ]
-                },
                 "subject": {
                     "items": {
                         "ui:order": [
@@ -377,8 +262,11 @@
                         ],
                         "metadata_standard_id": {
                             "ui:order": [
-                                "identifier",
-                                "type"
+                                "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
+                                "identifier"
                             ]
                         }
                     }
@@ -406,8 +294,12 @@
                             "license",
                             "data_access",
                             "protection_level",
+                            "protection_level_other_nomenclature",
+                            "protection_level_other_level",
                             "security_classification_level",
+                            "security_classification_level_other_nomenclature",
                             "data_security-privacy_measures",
+                            "security_classification_level_other_level",
                             "preservation_flag",
                             "disposition_completed",
                             "host",
@@ -417,6 +309,7 @@
                             "file_path",
                             "access_url",
                             "download_url",
+                            "online_service",
                             "byte_size",
                             "data_size",
                             "data_size_units"
@@ -463,7 +356,8 @@
                                 "data_processing_minimum_machine_type",
                                 "data_processing_minimum_RAM_Gb",
                                 "data_transfer_maximum_latency_msec",
-                                "data_transfer_minimum_throughput_Mbps"
+                                "data_transfer_minimum_throughput_Mbps",
+                                "geo_location"
                             ]
                         },
                         "physical_data_asset": {
@@ -480,20 +374,25 @@
                         },
                         "distribution_id": {
                             "ui:order": [
-                                "identifier",
-                                "type"
+                                "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
+                                "identifier"
                             ]
                         },
                         "online_service": {
-                            "ui:order": [
-                                "protocol",
-                                "service_language",
-                                "service_url",
-                                "name",
-                                "content_type",
-                                "format",
-                                "language"
-                            ]
+                            "items": {
+                                "ui:order": [
+                                    "protocol",
+                                    "service_language",
+                                    "service_url",
+                                    "name",
+                                    "content_type",
+                                    "format",
+                                    "language"
+                                ]
+                            }
                         }
                     }
                 },
@@ -573,6 +472,142 @@
                 }
             }
         },
+        "approval": {
+            "ui:order": [
+                "status",
+                "description",
+                "by_name",
+                "by_position",
+                "by_mbox",
+                "date"
+            ]
+        },
+        "project": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "description",
+                    "start",
+                    "end",
+                    "funding",
+                    "partner_organization",
+                    "succession_plan"
+                ],
+                "funding": {
+                    "items": {
+                        "ui:order": [
+                            "source",
+                            "funder_id",
+                            "funding_status",
+                            "grant_id"
+                        ],
+                        "source": {
+                            "items": {
+                                "ui:order": [
+                                    "type",
+                                    "description"
+                                ]
+                            }
+                        },
+                        "funder_id": {
+                            "ui:order": [
+                                "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
+                                "identifier"
+                            ]
+                        },
+                        "grant_id": {
+                            "ui:order": [
+                                "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
+                                "identifier"
+                            ]
+                        }
+                    }
+                },
+                "partner_organization": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "agreement",
+                            "partner_organization_id"
+                        ],
+                        "agreement": {
+                            "ui:order": [
+                                "description",
+                                "type",
+                                "agreement_download_url"
+                            ]
+                        },
+                        "partner_organization_id": {
+                            "ui:order": [
+                                "type",
+                                "identifier"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "partner_organization": {
+            "partner_organization_id": {
+                "ui:order": [
+                    "registry_name",
+                    "registry_URI",
+                    "registry_version"
+                ]
+            }
+        },
+        "cost": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "description",
+                    "value",
+                    "currency_code",
+                    "cost_documentation"
+                ],
+                "cost_documentation": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "access_url",
+                            "download_url"
+                        ]
+                    }
+                }
+            }
+        },
+        "indigenous_considerations": {
+            "ui:order": [
+                "exist",
+                "description",
+                "dmp_discussion",
+                "community_approval",
+                "group_identification",
+                "government_name",
+                "indigenous_control_over_data",
+                "language",
+                "characters",
+                "research_method",
+                "indian_band_name",
+                "indian_band_number",
+                "traditional_knowledge",
+                "traditional_knowledge_description"
+            ],
+            "community_approval": {
+                "items": {
+                    "ui:order": [
+                        "status",
+                        "description"
+                    ]
+                }
+            }
+        },
         "contact": {
             "ui:order": [
                 "name",
@@ -593,8 +628,11 @@
             ],
             "contact_id": {
                 "ui:order": [
-                    "identifier",
-                    "type"
+                    "type",
+                    "registry_name",
+                    "registry_URI",
+                    "registry_version",
+                    "identifier"
                 ]
             },
             "province_state": {
@@ -620,7 +658,11 @@
                 "language",
                 "access",
                 "protection_level",
+                "protection_level_other_nomenclature",
+                "protection_level_other_level",
                 "security_classification_level",
+                "security_classification_level_other_nomenclature",
+                "security_classification_level_other_level",
                 "schema_version",
                 "schema_version_uri",
                 "ethical_issues_exist",
@@ -630,8 +672,11 @@
             ],
             "dmp_id": {
                 "ui:order": [
-                    "identifier",
-                    "type"
+                    "type",
+                    "registry_name",
+                    "registry_URI",
+                    "registry_version",
+                    "identifier"
                 ]
             },
             "linked_dmp": {
@@ -639,14 +684,17 @@
                     "ui:order": [
                         "access_url",
                         "download_url",
-                        "id",
-                        "relationship"
+                        "relationship",
+                        "linked_dmp_id"
                     ],
-                    "id": {
+                    "linked_dmp_id": {
                         "items": {
                             "ui:order": [
-                                "identifier",
-                                "type"
+                                "type",
+                                "registry_name",
+                                "registry_URI",
+                                "registry_version",
+                                "identifier"
                             ]
                         }
                     }

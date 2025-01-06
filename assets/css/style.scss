@@ -7,12 +7,12 @@
 
 .main-content table {
   word-break: break-word; /* changes from default keep-all to break-word which separates a word to the next line if the width is too small */
-  font-size: 15px; /* changes table font-size */
+  font-size: 13px; /* changes table font-size */
 }
 
 @media screen and (min-width: 30em) {
     .main-content {
-        max-width:80rem; /* sets the max-width of the content (in this case the tables) */
+        max-width:100rem; /* sets the max-width of the content (in this case the tables) */
         padding: 1rem 2rem;
         margin: 0 auto;
         font-size: 1.0rem

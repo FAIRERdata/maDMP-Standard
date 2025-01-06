@@ -2,6 +2,7 @@
 
 <table id="table1"><tr><td valign="top">
  
+</br>
 <Div Align=RIGHT> VALUE PROPOSITION (TBD)<br>USER STORIES (TBD)<br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.docx">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.docx">REFERENCES</a>
 </Div>
 <h3>PREAMBLE</h3>

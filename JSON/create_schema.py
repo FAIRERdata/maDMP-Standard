@@ -107,7 +107,7 @@ df_sorted = df_sorted.reset_index(drop=True)
 # Initialize the base schema
 json_schema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GCWG-RDA-maDMP JSON-schema/GCWG-RDA-maDMP-schema.json",  # Update this to the appropriate $id
+    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/JSON/GCWG-RDA-maDMP-schema.json",  # Update this to the appropriate $id
     "title": "GCWG-RDA-maDMP-Schema",  # schema title
     "type": "object",
     "properties": {},

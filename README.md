@@ -2,8 +2,11 @@
 
 <table id="table1"><tr><td valign="top">
 
-<Div Align=RIGHT> <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Elevator%20pitch.md" target="_blank">ELEVATOR PITCH</a>
+<Div Align=RIGHT> <details>
+  <summary>Supporting material</summary>
+   <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Elevator%20pitch.md" target="_blank">ELEVATOR PITCH</a>
  <br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Value%20proposition%20-%20maDMP's.md" target="_blank">VALUE PROPOSITION </a><br>USER STORIES (TBD)<br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.md" target="_blank">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.md" target="_blank">REFERENCES</a>
+</details>
 </Div>
 <h3>PREAMBLE</h3>
 <p><b>Context</b>: <a href= "https://github.com/FAIRERdata">FAIRER</a> (Findable, Accessible, Interoperable, Reusable, Ethical, and Reproducible) data principles underpin data, analytics, and artificial intelligence. Machine-actionable Data Management Plans (maDMP) support implementation of FAIRER principles and enable an organization’s enterprise maturity with the return on investment (ROI) being reduced administrative costs, improved data management efficiency, and mitigation of risks. maDMPs are the basis for collecting information about data holdings in a consistent manner to enable an organization to plan more easily for the future, automate tasks, provide customized reports, ensure transparency, and identify ethical concerns and Indigenous considerations related to the data. maDMPs are the means for rapidly building reliable, lightweight, and easily customized automated systems with appropriate access controls while maximizing interoperability.</p>

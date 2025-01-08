@@ -1,13 +1,13 @@
 <center>DRAFT</center><center><h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.2</h1></center>
-
-<table id="table1"><tr><td valign="top">
-
 <Div Align=RIGHT> <details>
   <summary>Supporting material</summary>
    <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Elevator%20pitch.md" target="_blank">ELEVATOR PITCH</a>
  <br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Value%20proposition%20-%20maDMP's.md" target="_blank">VALUE PROPOSITION </a><br>USER STORIES (TBD)<br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.md" target="_blank">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.md" target="_blank">REFERENCES</a>
 </details>
 </Div>
+
+<table id="table1"><tr><td valign="top">
+
 <h3>PREAMBLE</h3>
 <p><b>Context</b>: <a href= "https://github.com/FAIRERdata">FAIRER</a> (Findable, Accessible, Interoperable, Reusable, Ethical, and Reproducible) data principles underpin data, analytics, and artificial intelligence. Machine-actionable Data Management Plans (maDMP) support implementation of FAIRER principles and enable an organization’s enterprise maturity with the return on investment (ROI) being reduced administrative costs, improved data management efficiency, and mitigation of risks. maDMPs are the basis for collecting information about data holdings in a consistent manner to enable an organization to plan more easily for the future, automate tasks, provide customized reports, ensure transparency, and identify ethical concerns and Indigenous considerations related to the data. maDMPs are the means for rapidly building reliable, lightweight, and easily customized automated systems with appropriate access controls while maximizing interoperability.</p>
  <p><b>The maDMP Standard</b>: This GCWG-RDA maDMP metadata application profile (MAP) and companion <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GCWG-RDA-maDMP JSON-schema/GCWG-RDA-maDMP-schema.json" target="_blank">GCWG-RDA JSON schema</a> are an extension of the international Research Data Alliance (RDA) common maDMP consensus standard and has been developed to collect additional information required in the context of government or other large organizations building automated systems to support Enterprise Information Management. This will enable programs and services to plan and improve delivery of data and information about the data, and to comply with new policy requirements while increasing efficiency and reducing costs. An <a href="https://fairerdata.github.io/maDMP-Generation-Form/">Interactive form</a> to generate maDMPs has also been developed to help facilitate implementation.</p>

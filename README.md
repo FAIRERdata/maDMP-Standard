@@ -1,7 +1,7 @@
 <center>DRAFT</center><center><h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.2</h1></center>
 <Div Align=RIGHT> <details>
   <summary>Link to HIGH LEVEL BRIEF »   </summary>
-   <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Elevator%20pitch.md" target="_blank">Elevator Pitch</a>
+   <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Elevator%20pitch.html" target="_blank">Elevator Pitch</a>
  <br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Value%20proposition%20-%20maDMP's.md" target="_blank">Value Proposition </a><br>User Stories (TBD)<br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.md" target="_blank">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.md" target="_blank">References</a>
 </details>
 </Div>

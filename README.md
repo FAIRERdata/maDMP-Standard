@@ -2,7 +2,7 @@
 <Div Align=RIGHT> <details>
   <summary>Link to HIGH LEVEL BRIEF »   </summary>
    <a href="https://sites.google.com/view/gcwg-madmp-standard/elevator-pitch" target="_blank">Elevator Pitch</a>
- <br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/Value%20proposition%20-%20maDMP's.md" target="_blank">Value Proposition </a><br>User Stories (TBD)<br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.md" target="_blank">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.md" target="_blank">References</a>
+ <br><a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">Value Proposition </a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/user-stories" target="_blank">User Stories</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/FAQ-GC%20RDA%20DMP.md" target="_blank">FAQ</a><br><a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/docs/references.md" target="_blank">References</a>
 </details>
 </Div>
 

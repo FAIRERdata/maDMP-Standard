@@ -17,6 +17,9 @@
 <p><b>Applicability</b>: The maDMP MAP is intended to cover a wide range of use cases and does not set any business requirements. It represents information collected over the whole data lifecycle from conception through to disposition. The required (mandatory) information is minimized to apply across all use cases at the beginning of the data lifecycle. The remaining information in the MAP is set to optional. Some of this optional information becomes mandatory as the data move through the data lifecycle. Organizations can choose to make the remaining optional information mandatory during implementation if it is relevant to them. </p>
 <p><b>GC maDMP working group</b>: If you see opportunities for improvement to this MAP, we invite you to join the GC maDMP working group. Contact: Claire.Austin@canada.ca or Dominique.Charles@canada.ca.  </p>
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
+<h3>Safeguarding Science </h3>
+An important risk mitigation measure is development of a data management plan. The maDMP contains a number of elements that mitigate risks (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, redundant backups, retention/disposition planning, security classification, succession plan, versioning). The purpose of the Safeguarding Science section is to link the maDMP to more comprehensive safeguarding science measures that are described elsewhere (e.g., risk assessment, risk mitigation plan, cybersecurity plan).
+
 <h3>maDMP</h3>
 Provides high level information about the maDMP, e.g. its title, modification date, classification and protection level, metadata schema version, etc. It is the root of the metadata application profile. The majority of its fields are mandatory.
 <h3>Contact</h3>

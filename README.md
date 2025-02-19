@@ -1,10 +1,11 @@
 <center>DRAFT</center><center><h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.2</h1></center>
-<Div Align=RIGHT> <details>
-  <summary>Link to HIGH LEVEL BRIEF »   </summary>
+<Div Align=RIGHT>
+  <details>
+  <summary style="color:blue;">Link to HIGH LEVEL BRIEF »</summary>
    <a href="https://sites.google.com/view/gcwg-madmp-standard/elevator-pitch" target="_blank">Elevator Pitch</a>
  <br><a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">Value Proposition </a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/user-stories" target="_blank">User Stories</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/faq" target="_blank">FAQ</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/definitions" target="_blank">Definitions</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/references" target="_blank">References</a>
-</details>
-  <a href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">Create your maDMP here »</a>
+</details> <a style="color:blue;" href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">Create your maDMP here »</a>
+    <br>
 </Div>
 
 <table id="table1"><tr><td valign="top">

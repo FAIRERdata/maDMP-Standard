@@ -4,6 +4,7 @@
    <a href="https://sites.google.com/view/gcwg-madmp-standard/elevator-pitch" target="_blank">Elevator Pitch</a>
  <br><a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">Value Proposition </a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/user-stories" target="_blank">User Stories</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/faq" target="_blank">FAQ</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/definitions" target="_blank">Definitions</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/references" target="_blank">References</a>
 </details>
+  <a href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">Create your maDMP here »</a>
 </Div>
 
 <table id="table1"><tr><td valign="top">

@@ -47,8 +47,7 @@ From a command line, go into the `src` sub-directory and run:
 ```bash
 go build -o ../rda_dmp_common_standard_doc_generator.exe
 ```
-This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). If this does not build an executable file, add the extension `.exe` to the end of the code 
-
+This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). 
 
 #### 3. Set up your configuration file
 

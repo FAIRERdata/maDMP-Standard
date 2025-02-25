@@ -44,15 +44,11 @@ go get -u github.com/jinzhu/gorm/dialects/sqlite@v1.9.16
 #### 2. Compile the sources
 
 From a command line, go into the `src` sub-directory and run: 
-
-```bash
-go build -o ../rda_dmp_common_standard_doc_generator
-```
-
-This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). If this does not build an executable file, add the extension `.exe` to the end of the code 
 ```bash
 go build -o ../rda_dmp_common_standard_doc_generator.exe
 ```
+This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). If this does not build an executable file, add the extension `.exe` to the end of the code 
+
 
 #### 3. Set up your configuration file
 

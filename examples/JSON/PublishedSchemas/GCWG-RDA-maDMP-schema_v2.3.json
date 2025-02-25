@@ -27528,10 +27528,8 @@
                             "data_governance_description",
                             "personal_data",
                             "sensitive_data",
-                            "security_and_privacy",
                             "linked_data_star_rating",
-                            "intellectual_property",
-                            "metadata"
+                            "intellectual_property"
                         ]
                     },
                     "minItems": 1

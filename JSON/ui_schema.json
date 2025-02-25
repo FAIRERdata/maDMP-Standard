@@ -72,8 +72,8 @@
                             "educational_institution_id": {
                                 "ui:order": [
                                     "type",
-                                    "registry_URI",
                                     "registry_name",
+                                    "registry_URI",
                                     "registry_version",
                                     "identifier"
                                 ]
@@ -234,8 +234,24 @@
                         "synthetic_data_ai",
                         "synthetic_data_description",
                         "algorithmic_impact_assessment_conducted",
-                        "algorithmic_impact_assessment_conducted_uri"
-                    ]
+                        "algorithmic_impact_assessment_conducted_uri",
+                        "data_source_redundant_backups"
+                    ],
+                    "data_source_redundant_backups": {
+                        "ui:order": [
+                            "exist",
+                            "information"
+                        ],
+                        "information": {
+                            "items": {
+                                "ui:order": [
+                                    "description",
+                                    "name",
+                                    "download_url\t"
+                                ]
+                            }
+                        }
+                    }
                 },
                 "technical_resource": {
                     "items": {
@@ -491,7 +507,8 @@
                     "end",
                     "funding",
                     "partner_organization",
-                    "succession_plan"
+                    "succession_plan",
+                    "safeguarding_science_measures"
                 ],
                 "funding": {
                     "items": {
@@ -550,6 +567,22 @@
                                 "registry_URI",
                                 "registry_version",
                                 "identifier"
+                            ]
+                        }
+                    }
+                },
+                "safeguarding_science_measures": {
+                    "ui:order": [
+                        "exist",
+                        "documentation"
+                    ],
+                    "documentation": {
+                        "items": {
+                            "ui:order": [
+                                "name",
+                                "description",
+                                "access_url",
+                                "download_url"
                             ]
                         }
                     }

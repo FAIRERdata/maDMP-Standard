@@ -16867,8 +16867,7 @@
                                         "title",
                                         "privacy_impact_assessment"
                                     ]
-                                },
-                                "minItems": 1
+                                }
                             },
                             "preservation_statement": {
                                 "type": "string",
@@ -24927,8 +24926,7 @@
                                         "language",
                                         "metadata_standard_id"
                                     ]
-                                },
-                                "minItems": 1
+                                }
                             },
                             "distribution": {
                                 "type": "array",

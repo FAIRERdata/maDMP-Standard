@@ -1,4 +1,9 @@
 [
+     {
+      "name_n_version": "GCWG RDA maDMP Schema v2.4",
+      "schema_path": "GCWG-RDA-maDMP-schema_v2.4.json",
+      "uischema_path": "ui_schema_v2.4.json"
+    },
     {
       "name_n_version": "GCWG RDA maDMP Schema v2.3",
       "schema_path": "GCWG-RDA-maDMP-schema_v2.3.json",

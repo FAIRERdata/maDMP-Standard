@@ -8971,16 +8971,16 @@
                                 "type": "string",
                                 "description": "Main format of the dataset according to DDI General_DATA_Format controlled vocabulary  <a href=\"https://rdf-vocabulary.ddialliance.org/ddi-cv/GeneralDataFormat/2.0.3/GeneralDataFormat.html.\">rdf-vocabulary.ddialliance.org</a>",
                                 "enum": [
-                                    "continuous",
-                                    "discrete (point data)",
-                                    "geospatial (GIS raster)",
-                                    "geospatial (GIS vector)",
-                                    "longitudinal (panel)",
-                                    "qualitative - nominal",
-                                    "qualitative - ordinal",
-                                    "quantitative - continuous",
-                                    "quantitative - discrete",
-                                    "time series"
+                                    "numeric",
+                                    "text",
+                                    "stillImage",
+                                    "geospatial",
+                                    "audio",
+                                    "video",
+                                    "software",
+                                    "interactive resources",
+                                    "threeD",
+                                    "other"
                                 ],
                                 "example": "stillimage",
                                 "question": "What is the main format of the dataset?",
@@ -25553,9 +25553,9 @@
                                             "type": "string",
                                             "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
                                             "enum": [
-                                                "OPEN ACCESS available to anyone based on an open license (e.g. CC0 CC-BY Open Government License)",
-                                                "SHARED ACCESS Public access with a license that limits use that is available to anyone under terms and conditions that are not open (e.g. CC-BY-NC) shared only with named people or organisations or via authentication for specific groups that meet certain criteria",
-                                                "CLOSED ACCESS Internal access only. https://theodi.org/insights/tools/the-data-spectrum/  https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf"
+                                                "open",
+                                                "shared",
+                                                "closed"
                                             ],
                                             "example": "open",
                                             "question": "Is access to the data open, shared, or closed?",
@@ -27808,6 +27808,11 @@
                                     "exist": {
                                         "type": "string",
                                         "description": "To indicate if any measure has have been taken to safeguard the project",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
                                         "example": "yes",
                                         "question": "Has any measure been taken related to science safeguarding?",
                                         "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/exist",
@@ -27816,6 +27821,11 @@
                                     "redundant_backups_exist": {
                                         "type": "string",
                                         "description": "To indicate if any redundant backup of the source data exists",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
                                         "question": "Does any back up of the source data exist?",
                                         "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
                                         "title": "Redundant_backups_exist"

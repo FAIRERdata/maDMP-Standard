@@ -72,8 +72,8 @@
                             "educational_institution_id": {
                                 "ui:order": [
                                     "type",
-                                    "registry_name",
                                     "registry_URI",
+                                    "registry_name",
                                     "registry_version",
                                     "identifier"
                                 ]
@@ -96,13 +96,9 @@
                                 "ui:order": [
                                     "identifier",
                                     "type",
-                                    "reference_URI"
-                                ],
-                                "": {
-                                    "ui:order": [
-                                        "reference_version"
-                                    ]
-                                }
+                                    "reference_URI",
+                                    "reference_version"
+                                ]
                             }
                         },
                         "country": {
@@ -139,10 +135,9 @@
                     "subject",
                     "keyword",
                     "type",
-                    "data_class",
+                    "general_data_format",
                     "geodetic_datum",
                     "geographic_coverage",
-                    "industry_NAICS",
                     "dataset_documentation",
                     "data_completeness",
                     "issued",
@@ -157,7 +152,6 @@
                     "collection",
                     "technical_resource",
                     "data_quality_assurance",
-                    "linked_data_star_rating",
                     "intellectual_property",
                     "disclaimer",
                     "metadata",
@@ -177,12 +171,6 @@
                             "scheme_version"
                         ]
                     }
-                },
-                "industry_NAICS": {
-                    "ui:order": [
-                        "code",
-                        "name"
-                    ]
                 },
                 "dataset_documentation": {
                     "items": {
@@ -214,44 +202,16 @@
                 },
                 "collection": {
                     "ui:order": [
+                        "description",
                         "data_earliest_date",
+                        "data_latest_date",
                         "dataset_update_frequency",
                         "dataset_last_updated",
-                        "data_latest_date",
                         "dataset_size",
                         "dataset_size_units",
-                        "growth_annual_terabytes",
-                        "data_source",
-                        "data_source_description",
-                        "data_source_external",
-                        "data_source_external_description",
-                        "data_aggreagation",
-                        "data_aggregation_description",
-                        "data_integration",
-                        "data_integration_description",
-                        "data_integration_sources",
-                        "synthetic_data",
-                        "synthetic_data_ai",
-                        "synthetic_data_description",
-                        "algorithmic_impact_assessment_conducted",
-                        "algorithmic_impact_assessment_conducted_uri",
-                        "data_source_redundant_backups"
-                    ],
-                    "data_source_redundant_backups": {
-                        "ui:order": [
-                            "exist",
-                            "information"
-                        ],
-                        "information": {
-                            "items": {
-                                "ui:order": [
-                                    "description",
-                                    "name",
-                                    "download_url\t"
-                                ]
-                            }
-                        }
-                    }
+                        "growth_end_date",
+                        "growth_annual_terabytes"
+                    ]
                 },
                 "technical_resource": {
                     "items": {
@@ -309,6 +269,9 @@
                             "quality_control_level",
                             "license",
                             "data_access",
+                            "linked_data_star_rating",
+                            "openess_other_rating",
+                            "openess_other_rating_system",
                             "protection_level",
                             "protection_level_other_nomenclature",
                             "protection_level_other_level",
@@ -507,8 +470,10 @@
                     "end",
                     "funding",
                     "partner_organization",
+                    "safeguarding_science_measures",
                     "succession_plan",
-                    "safeguarding_science_measures"
+                    "algorithmic_impact_assessment_conducted",
+                    "algorithmic_impact_assessment_conducted_uri"
                 ],
                 "funding": {
                     "items": {
@@ -574,7 +539,9 @@
                 "safeguarding_science_measures": {
                     "ui:order": [
                         "exist",
-                        "documentation"
+                        "documentation",
+                        "redundant_backups_exist",
+                        "redundant_backups"
                     ],
                     "documentation": {
                         "items": {
@@ -582,6 +549,14 @@
                                 "name",
                                 "description",
                                 "access_url",
+                                "download_url"
+                            ]
+                        }
+                    },
+                    "redundant_backups": {
+                        "items": {
+                            "ui:order": [
+                                "description",
                                 "download_url"
                             ]
                         }
@@ -709,10 +684,10 @@
             "linked_dmp": {
                 "items": {
                     "ui:order": [
-                        "access_url",
-                        "download_url",
+                        "linked_dmp_id",
                         "relationship",
-                        "linked_dmp_id"
+                        "access_url",
+                        "download_url"
                     ],
                     "linked_dmp_id": {
                         "items": {

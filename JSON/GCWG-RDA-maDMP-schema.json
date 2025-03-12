@@ -7656,15 +7656,15 @@
                         },
                         "protection_level_other_nomenclature": {
                             "type": "string",
-                            "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
-                            "question": "What other nomenclature is used to indicate the distribution protection level?",
+                            "description": "To indicate the protection level of the dmp according to the nomenclature found in dmp_protection_level_other_nomenclature",
+                            "question": "What protection level applies to the distribution according to the nomenclature?",
                             "$id": "#/properties/dmp/properties/protection_level_other_nomenclature",
                             "title": "Protection_level_other_nomenclature"
                         },
                         "protection_level_other_level": {
                             "type": "string",
-                            "description": "To indicate the protection level of the dmp according to the nomenclature found in dmp_protection_level_other_nomenclature",
-                            "question": "What protection level applies to the distribution according to the nomenclature?",
+                            "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
+                            "question": "What other nomenclature is used to indicate the distribution protection level?",
                             "$id": "#/properties/dmp/properties/protection_level_other_level",
                             "title": "Protection_level_other_level"
                         },
@@ -7687,22 +7687,22 @@
                         },
                         "security_classification_level_other_nomenclature": {
                             "type": "string",
-                            "description": "To indicate which nomenclature is used to qualify classified information",
-                            "question": "What other nomenclature is used to describe classified information?",
+                            "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
+                            "question": "Indicate the level of classified information of the dmp according to the nomenclature",
                             "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
                             "title": "Security_classification_level_other_nomenclature"
                         },
                         "security_classification_level_other_level": {
                             "type": "string",
-                            "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
-                            "question": "Indicate the level of classified information of the dmp according to the nomenclature",
+                            "description": "To indicate which nomenclature is used to qualify classified information",
+                            "question": "What other nomenclature is used to describe classified information?",
                             "$id": "#/properties/dmp/properties/security_classification_level_other_level",
                             "title": "Security_classification_level_other_level"
                         },
                         "schema_version": {
-                            "const": "v2.3",
+                            "const": "v2.4",
                             "title": "Schema_version",
-                            "description": "The version you are using is v2.3, you should not edit this field.",
+                            "description": "The version you are using is v2.4, you should not edit this field.",
                             "$id": "#/properties/dmp/properties/schema_version",
                             "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
@@ -7747,32 +7747,20 @@
                         "linked_dmp": {
                             "type": "array",
                             "items": {
-                                "$id": "#/properties/dmp/properties/linked_dmp",
                                 "type": "object",
+                                "description": "to link related dmps , for example official-language-equivalent dmps",
+                                "$id": "#/properties/dmp/properties/linked_dmp",
                                 "title": "Linked_dmp",
                                 "properties": {
-                                    "access_url": {
-                                        "type": "string",
-                                        "description": "URL where the linked dmp can be accessed",
-                                        "question": "Where can the linked dmp be accessed",
-                                        "format": "uri",
-                                        "$id": "#/properties/dmp/properties/linked_dmp/properties/access_url",
-                                        "title": "Access_url"
-                                    },
-                                    "download_url": {
-                                        "type": "string",
-                                        "description": "URL where the linked dmp can be downloaded",
-                                        "example": "http://some.repo.../download/...",
-                                        "question": "Where can the linked dmp be downloaded",
-                                        "format": "uri",
-                                        "$id": "#/properties/dmp/properties/linked_dmp/properties/download_url",
-                                        "title": "Download_url"
-                                    },
                                     "linked_dmp_id": {
                                         "type": "array",
                                         "items": {
-                                            "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id",
                                             "type": "object",
+                                            "description": "identifier of the related dmp",
+                                            "requiredWhen": [
+                                                "linked_dmp"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id",
                                             "title": "Linked_dmp_id",
                                             "properties": {
                                                 "type": {
@@ -7821,10 +7809,6 @@
                                                     "title": "Identifier"
                                                 }
                                             },
-                                            "description": "identifier of the related dmp",
-                                            "requiredWhen": [
-                                                "linked_dmp"
-                                            ],
                                             "required": [
                                                 "type",
                                                 "identifier"
@@ -7869,12 +7853,28 @@
                                         ],
                                         "$id": "#/properties/dmp/properties/linked_dmp/properties/relationship",
                                         "title": "Relationship"
+                                    },
+                                    "access_url": {
+                                        "type": "string",
+                                        "description": "URL where the linked dmp can be accessed",
+                                        "question": "Where can the linked dmp be accessed",
+                                        "format": "uri",
+                                        "$id": "#/properties/dmp/properties/linked_dmp/properties/access_url",
+                                        "title": "Access_url"
+                                    },
+                                    "download_url": {
+                                        "type": "string",
+                                        "description": "URL where the linked dmp can be downloaded",
+                                        "example": "http://some.repo.../download/...",
+                                        "question": "Where can the linked dmp be downloaded",
+                                        "format": "uri",
+                                        "$id": "#/properties/dmp/properties/linked_dmp/properties/download_url",
+                                        "title": "Download_url"
                                     }
                                 },
-                                "description": "to link related dmps , for example official-language-equivalent dmps",
                                 "required": [
-                                    "relationship",
-                                    "linked_dmp_id"
+                                    "linked_dmp_id",
+                                    "relationship"
                                 ]
                             }
                         }
@@ -8403,7 +8403,9 @@
                                                                         "type": "string",
                                                                         "description": "Business identifier type",
                                                                         "enum": [
-                                                                            "GC Data reference standard on the business number - https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-business-number.html; StatCan’s Surveys and statistical programs - Business Register (BR) https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=1105; Other"
+                                                                            "GC Data reference standard on the business number - https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-business-number.html",
+                                                                            "StatCan’s Surveys and statistical programs - Business Register (BR) https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=1105",
+                                                                            "Other"
                                                                         ],
                                                                         "question": "What type of identification system uniquely identifies the business?",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/business/properties/business_id/properties/type",
@@ -8493,19 +8495,12 @@
                                                                         "type": "string",
                                                                         "description": "Educational institute identifier type",
                                                                         "enum": [
-                                                                            "CFI list of eligible institutions - https://www.innovation.ca/apply-manage-awards/resources-apply-manage-award/list-eligible-institutions; Other"
+                                                                            "CFI list of eligible institutions https://www.innovation.ca/apply-manage-awards/resources-apply-manage-award/list-eligible-institutions",
+                                                                            "Other"
                                                                         ],
                                                                         "question": "What is the contributor's educational institution identifier type?",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/type",
                                                                         "title": "Type"
-                                                                    },
-                                                                    "registry_name": {
-                                                                        "type": "string",
-                                                                        "description": "To indicate what reference is used to identify the educational institution when selecting \"other\" as id type.",
-                                                                        "example": "Liste des universités du réseau européen",
-                                                                        "question": "What is the name or title of the reference  used to identify the educational institution?",
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_name",
-                                                                        "title": "Registry_name"
                                                                     },
                                                                     "registry_URI": {
                                                                         "type": "string",
@@ -8514,6 +8509,14 @@
                                                                         "format": "uri",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_URI",
                                                                         "title": "Registry_uri"
+                                                                    },
+                                                                    "registry_name": {
+                                                                        "type": "string",
+                                                                        "description": "To indicate what reference is used to identify the educational institution when selecting \"other\" as id type.",
+                                                                        "example": "Liste des universités du réseau européen",
+                                                                        "question": "What is the name or title of the reference  used to identify the educational institution?",
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/registry_name",
+                                                                        "title": "Registry_name"
                                                                     },
                                                                     "registry_version": {
                                                                         "type": "string",
@@ -8641,8 +8644,8 @@
                                                                 "properties": {
                                                                     "identifier": {
                                                                         "type": "string",
-                                                                        "description": "Non-profit organization identifier",
-                                                                        "question": "What is the non-profit's identifier?",
+                                                                        "description": "To indicate the version number or date of the reference",
+                                                                        "question": "what version of the reference was used at the time where the identifier was entered",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/identifier",
                                                                         "title": "Identifier"
                                                                     },
@@ -8655,25 +8658,18 @@
                                                                     },
                                                                     "reference_URI": {
                                                                         "type": "string",
-                                                                        "description": "Link to the reference used to identify the business",
-                                                                        "question": "Where can the reference be found",
-                                                                        "format": "uri",
+                                                                        "description": "Non-profit organization identifier",
+                                                                        "question": "What is the non-profit's identifier?",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/reference_URI",
                                                                         "title": "Reference_uri"
                                                                     },
-                                                                    "": {
-                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/",
-                                                                        "type": "object",
-                                                                        "title": "",
-                                                                        "properties": {
-                                                                            "reference_version": {
-                                                                                "type": "string",
-                                                                                "description": "To indicate the version number or date of the reference",
-                                                                                "question": "what version of the reference was used at the time where the identifier was entered",
-                                                                                "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties//properties/reference_version",
-                                                                                "title": "Reference_version"
-                                                                            }
-                                                                        }
+                                                                    "reference_version": {
+                                                                        "type": "string",
+                                                                        "description": "Link to the reference used to identify the business",
+                                                                        "question": "Where can the reference be found",
+                                                                        "format": "uri",
+                                                                        "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/non_profit/properties/non_profit_id/properties/reference_version",
+                                                                        "title": "Reference_version"
                                                                     }
                                                                 }
                                                             }
@@ -8923,7 +8919,7 @@
                                         },
                                         "scheme_name": {
                                             "type": "string",
-                                            "description": "To indicate the name of the subject scheme from which the subject heading is drawn.",
+                                            "description": "To indicate the name of the subject scheme or classification system from which the subject heading or classification code is drawn (e.g., Government of Canada Core Subject Thesaurus Government of Canada Core Subject Thesaurus <a href=\"https://open.canada.ca/data/en/dataset/d4a0e406-eea9-41a7-bcae-28c31f3b9c65,\">open.canada.ca</a> Canadian Subject Headings <a href=\"https://library-archives.canada.ca/eng/services/services-libraries/cataloguing/Pages/canadian-subject-headings.aspx,\">library-archives.canada.ca</a> Répertoire de vedettes-matière <a href=\"https://www.bibl.ulaval.ca/la-bibliotheque/repertoire-de-vedettes-matiere-rvm,\">www.bibl.ulaval.ca</a> Library of Congress Subject Headings <a href=\"https://www.loc.gov/aba/publications/FreeLCSH/freelcsh.html#Introduction,\">www.loc.gov</a> etc.)",
                                             "example": "X̱wi7x̱wa Classification Scheme",
                                             "question": "What was the name of the subject scheme used in assigning a subject?",
                                             "$id": "#/properties/dmp/properties/dataset/properties/subject/properties/scheme_name",
@@ -8965,34 +8961,31 @@
                             },
                             "type": {
                                 "type": "string",
-                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a>\n <a href=\"https://vocabularies.coar-repositories.org/resource_types/c_ddb1/\">vocabularies.coar-repositories.org</a>",
+                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a> http://vocabularies.coar-repositories.org/pubby/resource_type.html",
                                 "example": "image",
                                 "question": "What type of dataset is this?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/type",
                                 "title": "Type"
                             },
-                            "data_class": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string",
-                                    "description": "Indicates class of dataset.",
-                                    "enum": [
-                                        "continuous",
-                                        "discrete (point data)",
-                                        "geospatial (GIS raster)",
-                                        "geospatial (GIS vector)",
-                                        "longitudinal (panel)",
-                                        "qualitative - nominal",
-                                        "qualitative - ordinal",
-                                        "quantitative - continuous",
-                                        "quantitative - discrete",
-                                        "time series"
-                                    ],
-                                    "example": "continuous",
-                                    "question": "What class are these data?",
-                                    "$id": "#/properties/dmp/properties/dataset/properties/data_class",
-                                    "title": "Data_class"
-                                }
+                            "general_data_format": {
+                                "type": "string",
+                                "description": "Main format of the dataset according to DDI General_DATA_Format controlled vocabulary  <a href=\"https://rdf-vocabulary.ddialliance.org/ddi-cv/GeneralDataFormat/2.0.3/GeneralDataFormat.html.\">rdf-vocabulary.ddialliance.org</a>",
+                                "enum": [
+                                    "numeric",
+                                    "text",
+                                    "stillImage",
+                                    "geospatial",
+                                    "audio",
+                                    "video",
+                                    "software",
+                                    "interactive resources",
+                                    "threeD",
+                                    "other"
+                                ],
+                                "example": "stillimage",
+                                "question": "What is the main format of the dataset?",
+                                "$id": "#/properties/dmp/properties/dataset/properties/general_data_format",
+                                "title": "General_data_format"
                             },
                             "geodetic_datum": {
                                 "type": "string",
@@ -9022,74 +9015,6 @@
                                 "question": "In the case of a geospatial dataset, what is the geographic area is covered?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/geographic_coverage",
                                 "title": "Geographic_coverage"
-                            },
-                            "industry_NAICS": {
-                                "type": "object",
-                                "description": "NAICS industry associated with the dataset",
-                                "$id": "#/properties/dmp/properties/dataset/properties/industry_NAICS",
-                                "title": "Industry_naics",
-                                "properties": {
-                                    "code": {
-                                        "type": "string",
-                                        "description": "NAICS Industry classification code  <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
-                                        "enum": [
-                                            "11",
-                                            "21",
-                                            "22",
-                                            "23",
-                                            "31-33",
-                                            "41",
-                                            "44-45",
-                                            "48-49",
-                                            "51",
-                                            "52",
-                                            "53",
-                                            "54",
-                                            "55",
-                                            "56",
-                                            "61",
-                                            "62",
-                                            "71",
-                                            "72",
-                                            "81",
-                                            "91"
-                                        ],
-                                        "example": "54",
-                                        "question": "What is the NAICS industry code related to these data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/industry_NAICS/properties/code",
-                                        "title": "Code"
-                                    },
-                                    "name": {
-                                        "type": "string",
-                                        "description": "NAICS Industry classification name   <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
-                                        "enum": [
-                                            "Agriculture. Forestry. Fishing. Hunting",
-                                            "Mining. Quarrying. Oil and gas extraction",
-                                            "Utilities",
-                                            "Construction",
-                                            "Manufacturing",
-                                            "Wholesale trade",
-                                            "Retail trade",
-                                            "Transportation and warehousing",
-                                            "Information and cultural industries",
-                                            "Finance and insurance",
-                                            "Real estate and rental and leasing",
-                                            "Professional. Scientific and technical services",
-                                            "Management of companies and enterprises",
-                                            "Administrative and support. Waste management and remediation services",
-                                            "Educational services",
-                                            "Health care and social assistance",
-                                            "Arts. Entertainment and recreation",
-                                            "Accommodation and food services",
-                                            "Other services (except public administration)",
-                                            "Public administration"
-                                        ],
-                                        "example": "Professional scientific and technical services",
-                                        "question": "What is the NAICS industry classification related to these data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/industry_NAICS/properties/name",
-                                        "title": "Name"
-                                    }
-                                }
                             },
                             "dataset_documentation": {
                                 "type": "array",
@@ -16893,16 +16818,7 @@
                                 "$id": "#/properties/dmp/properties/dataset/properties/collection",
                                 "title": "Collection",
                                 "properties": {
-                                    "data_earliest_date": {
-                                        "type": "string",
-                                        "description": "The earliest date in the case of time series data. Encoded using the ISO 8601 Date  <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                        "example": "1973-01-01",
-                                        "question": "In the case of time-series data, what is the earliest date of the data in the series?",
-                                        "format": "date",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_earliest_date",
-                                        "title": "Data_earliest_date"
-                                    },
-                                    "dataset_update_frequency": {
+                                    "description": {
                                         "type": "string",
                                         "description": "The update frequency of the data in the dataset",
                                         "enum": [
@@ -16926,17 +16842,17 @@
                                         ],
                                         "example": "7 days",
                                         "question": "How frequently are the data updated?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_update_frequency",
-                                        "title": "Dataset_update_frequency"
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/description",
+                                        "title": "Description"
                                     },
-                                    "dataset_last_updated": {
+                                    "data_earliest_date": {
                                         "type": "string",
-                                        "description": "Date when the dataset was last updated. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                        "example": "2023-07-20",
-                                        "question": "When was dataset last updated?",
+                                        "description": "The earliest date in the case of time series data. Encoded using the ISO 8601 Date  <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                        "example": "1973-01-01",
+                                        "question": "In the case of time-series data, what is the earliest date of the data in the series?",
                                         "format": "date",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_last_updated",
-                                        "title": "Dataset_last_updated"
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_earliest_date",
+                                        "title": "Data_earliest_date"
                                     },
                                     "data_latest_date": {
                                         "type": "string",
@@ -16947,15 +16863,7 @@
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_latest_date",
                                         "title": "Data_latest_date"
                                     },
-                                    "dataset_size": {
-                                        "type": "number",
-                                        "description": "Size of the dataset from which distributions are derived.",
-                                        "example": "5",
-                                        "question": "What is the size of the dataset according to the specified units? ",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size",
-                                        "title": "Dataset_size"
-                                    },
-                                    "dataset_size_units": {
+                                    "dataset_update_frequency": {
                                         "type": "string",
                                         "description": "Dataset size units",
                                         "enum": [
@@ -16971,8 +16879,40 @@
                                         ],
                                         "example": "PB - petabytes",
                                         "question": "What units were used to measure the size of the dataset?",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_update_frequency",
+                                        "title": "Dataset_update_frequency"
+                                    },
+                                    "dataset_last_updated": {
+                                        "type": "string",
+                                        "description": "Describe how the data are collected. Note: For information on instruments used to collect data, use dmp/dataset/technical_resource. For information on the dataset, use dmp/dataset/dataset_documentation.",
+                                        "question": "Describe how the data are collecteed. Consider recording pertinent information regarding collection instruments in the field dmp/dataset/technical_resource ; and consider linking to relevant data documentation in the field dmp/dataset/dataset_documentation",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_last_updated",
+                                        "title": "Dataset_last_updated"
+                                    },
+                                    "dataset_size": {
+                                        "type": "string",
+                                        "description": "Date when the dataset was last updated. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                        "example": "2023-07-20",
+                                        "question": "When was dataset last updated?",
+                                        "format": "date",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size",
+                                        "title": "Dataset_size"
+                                    },
+                                    "dataset_size_units": {
+                                        "type": "number",
+                                        "description": "Size of the dataset from which distributions are derived.",
+                                        "example": "5",
+                                        "question": "What is the size of the dataset according to the specified units? ",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size_units",
                                         "title": "Dataset_size_units"
+                                    },
+                                    "growth_end_date": {
+                                        "type": "string",
+                                        "description": "Date on which data collection for this dataset is expected to cease",
+                                        "question": "On what date is data collection anticipated to end?",
+                                        "format": "date",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/growth_end_date",
+                                        "title": "Growth_end_date"
                                     },
                                     "growth_annual_terabytes": {
                                         "type": "number",
@@ -16980,235 +16920,15 @@
                                         "question": "What is the expected annual growth rate of the dataset (terabytes per year)?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/growth_annual_terabytes",
                                         "title": "Growth_annual_terabytes"
-                                    },
-                                    "data_source": {
-                                        "type": "string",
-                                        "description": "Source of the data",
-                                        "example": "field analyzer",
-                                        "question": "How the data was collected?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source",
-                                        "title": "Data_source"
-                                    },
-                                    "data_source_description": {
-                                        "type": "string",
-                                        "description": "To describe the dataset sources of data ",
-                                        "question": "describe the source of the data",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_description",
-                                        "title": "Data_source_description"
-                                    },
-                                    "data_source_external": {
-                                        "type": "string",
-                                        "description": "To indicate if a data source used in the dataset was external",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Is the data source external",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_external",
-                                        "title": "Data_source_external"
-                                    },
-                                    "data_source_external_description": {
-                                        "type": "string",
-                                        "description": "To describe the external source used in the dataset ",
-                                        "question": "describe the external source ",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_external_description",
-                                        "title": "Data_source_external_description"
-                                    },
-                                    "data_aggreagation": {
-                                        "type": "string",
-                                        "description": "To indicate if the dataset is the result of data aggregation",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Are these aggregated data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_aggreagation",
-                                        "title": "Data_aggreagation"
-                                    },
-                                    "data_aggregation_description": {
-                                        "type": "string",
-                                        "description": "Description of how the dataset was aggregated",
-                                        "example": "Daily observations summarized as annual means.",
-                                        "question": "Describe how these data were aggregated.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_aggregation_description",
-                                        "title": "Data_aggregation_description"
-                                    },
-                                    "data_integration": {
-                                        "type": "string",
-                                        "description": "To indicate if the dataset is integrated by combining data together",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Are these integrated data by the combination of datasets from more than one data source?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_integration",
-                                        "title": "Data_integration"
-                                    },
-                                    "data_integration_description": {
-                                        "type": "string",
-                                        "description": "To describe how the dataset integrates data",
-                                        "question": "Describe how the data were integrated.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_integration_description",
-                                        "title": "Data_integration_description"
-                                    },
-                                    "data_integration_sources": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string",
-                                            "description": "To list sources the integrated data uses such as external or internal data sources",
-                                            "question": "What are the sources of the integrated data?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_integration_sources",
-                                            "title": "Data_integration_sources"
-                                        }
-                                    },
-                                    "synthetic_data": {
-                                        "type": "string",
-                                        "description": "Synthetic data is information that's been generated on a computer to augment or replace real data to improve AI models, protect sensitive data, and mitigate bias. ",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Are these synthetic data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/synthetic_data",
-                                        "title": "Synthetic_data"
-                                    },
-                                    "synthetic_data_ai": {
-                                        "type": "string",
-                                        "description": "Dataset generated by artificial intelligence. See, <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html\">www.canada.ca</a>",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Were these data generated by artificial intelligence?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/synthetic_data_ai",
-                                        "title": "Synthetic_data_ai"
-                                    },
-                                    "synthetic_data_description": {
-                                        "type": "string",
-                                        "description": "Description of how the synthetic data were generated.",
-                                        "example": "Synthetically generated tabular data created by drawing numbers from a distribution.",
-                                        "question": "How were these synthetic data generated?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/synthetic_data_description",
-                                        "title": "Synthetic_data_description"
-                                    },
-                                    "algorithmic_impact_assessment_conducted": {
-                                        "type": "string",
-                                        "description": "To indicate if an algorithmic impact assessment has been conducted related to these data. For example using this <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html\">tool</a >",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Has an algorithmic impact assessment been conducted related to these data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/algorithmic_impact_assessment_conducted",
-                                        "title": "Algorithmic_impact_assessment_conducted"
-                                    },
-                                    "algorithmic_impact_assessment_conducted_uri": {
-                                        "type": "string",
-                                        "description": "Link to the algorithmic impact assessment",
-                                        "question": "Provide a link to the algorithmic impact assessment, if applicable.",
-                                        "format": "uri",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/algorithmic_impact_assessment_conducted_uri",
-                                        "title": "Algorithmic_impact_assessment_conducted_uri"
-                                    },
-                                    "data_source_redundant_backups": {
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups",
-                                        "type": "object",
-                                        "title": "Data_source_redundant_backups",
-                                        "properties": {
-                                            "exist": {
-                                                "type": "string",
-                                                "description": "To indicate if any redundant backup of the source data exists",
-                                                "question": "Does any back up of the source data exist?",
-                                                "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups/properties/exist",
-                                                "title": "Exist"
-                                            }
-                                        },
-                                        "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
-                                        "required": [
-                                            "exist"
-                                        ],
-                                        "allOf": [
-                                            {
-                                                "if": {
-                                                    "properties": {
-                                                        "exist": {
-                                                            "enum": [
-                                                                "yes"
-                                                            ]
-                                                        }
-                                                    }
-                                                },
-                                                "then": {
-                                                    "properties": {
-                                                        "information": {
-                                                            "type": "object",
-                                                            "description": "Repeat for each redundant backup",
-                                                            "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups/properties/information",
-                                                            "title": "Information",
-                                                            "properties": {
-                                                                "description": {
-                                                                    "type": "string",
-                                                                    "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
-                                                                    "example": "This backup includes the table XXX  of the 2023 survey",
-                                                                    "question": "Describe scope",
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups/properties/information/properties/description",
-                                                                    "title": "Description"
-                                                                },
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "To identify the backup",
-                                                                    "example": "Table XXX - 2025 survey - backup",
-                                                                    "question": "Give a title to this backup",
-                                                                    "requiredWhen": [
-                                                                        "data_source_redundant_backups_information"
-                                                                    ],
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups/properties/information/properties/name",
-                                                                    "title": "Name"
-                                                                },
-                                                                "download_url\t": {
-                                                                    "type": "string",
-                                                                    "description": "To indicate the url where the backup can be retrieved",
-                                                                    "example": "http://some.repo.../download/...",
-                                                                    "question": "Where can the backup be downloaded from?",
-                                                                    "format": "uri",
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_redundant_backups/properties/information/properties/download_url\t",
-                                                                    "title": "Download_url\t"
-                                                                }
-                                                            },
-                                                            "required": [
-                                                                "name"
-                                                            ]
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "information"
-                                                    ]
-                                                }
-                                            }
-                                        ]
                                     }
-                                },
-                                "required": [
-                                    "data_source_redundant_backups"
-                                ]
+                                }
                             },
                             "technical_resource": {
                                 "type": "array",
                                 "items": {
                                     "type": "object",
-                                    "description": "To list all required technical resources.",
+                                    "description": "To list technical resources involved in the collection and processing of the dataset, and for which documentation is required. For computing environments, please record information in the dmp/dataset/computing_environment field",
+                                    "question": "What technical resources are used to implement the DMP?",
                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource",
                                     "title": "Technical_resource",
                                     "properties": {
@@ -17246,21 +16966,6 @@
                                     "$id": "#/properties/dmp/properties/dataset/properties/data_quality_assurance",
                                     "title": "Data_quality_assurance"
                                 }
-                            },
-                            "linked_data_star_rating": {
-                                "type": "string",
-                                "description": "Use the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidence see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
-                                "enum": [
-                                    "1 star",
-                                    "2 stars",
-                                    "3 stars",
-                                    "4 stars",
-                                    "5 stars"
-                                ],
-                                "example": "1 star",
-                                "question": "How many stars does this dataset meet according to the Berners-Lee 5-star rating system for open data?",
-                                "$id": "#/properties/dmp/properties/dataset/properties/linked_data_star_rating",
-                                "title": "Linked_data_star_rating"
                             },
                             "intellectual_property": {
                                 "type": "object",
@@ -25848,14 +25553,9 @@
                                             "type": "string",
                                             "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
                                             "enum": [
-                                                "OPEN ACCESS: available to anyone based on an open license (e.g.",
-                                                "CC0",
-                                                "CC-BY",
-                                                "Open Government License). SHARED ACCESS: Public access with a license that limits use",
-                                                "that is available to anyone under terms and conditions that are not ‘open' (e.g.",
-                                                "CC-BY-NC)",
-                                                "shared only with named people or organisations",
-                                                "or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf"
+                                                "open",
+                                                "shared",
+                                                "closed"
                                             ],
                                             "example": "open",
                                             "question": "Is access to the data open, shared, or closed?",
@@ -25864,6 +25564,38 @@
                                             ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_access",
                                             "title": "Data_access"
+                                        },
+                                        "linked_data_star_rating": {
+                                            "type": "string",
+                                            "description": "To rate the level of openess of the dataset according to the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidence see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
+                                            "enum": [
+                                                "1 star",
+                                                "2 stars",
+                                                "3 stars",
+                                                "4 stars",
+                                                "5 stars"
+                                            ],
+                                            "example": "1 star",
+                                            "question": "How many stars does this dataset meet according to the Berners-Lee 5-star rating system for open data?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/linked_data_star_rating",
+                                            "title": "Linked_data_star_rating"
+                                        },
+                                        "openess_other_rating": {
+                                            "type": "string",
+                                            "description": "To rate the level of openess of the dataset according to a system other than the Tim Berner-Lees system, described in dmp/dataset/openess_other_rating_system.",
+                                            "question": "What is the dataset openess rate according to the chosen framework?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openess_other_rating",
+                                            "title": "Openess_other_rating"
+                                        },
+                                        "openess_other_rating_system": {
+                                            "type": "string",
+                                            "description": "Describe which system is used to rate the dataset openess when it's not the Tim Berners-Lee 5-star rating system.",
+                                            "question": "What framework are you using to rate the dataset openess?",
+                                            "requiredWhen": [
+                                                "other_openess_rating"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openess_other_rating_system",
+                                            "title": "Openess_other_rating_system"
                                         },
                                         "protection_level": {
                                             "type": "string",
@@ -26473,16 +26205,15 @@
                                             "type": "array",
                                             "items": {
                                                 "type": "string",
-                                                "description": "Identify the distribution file format using IANA codes if appropriate, otherwise use the common name for the format. <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> ",
+                                                "description": "Format according to: <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> if appropriate, otherwise use the common name for this format.<a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> ",
                                                 "example": "csv",
-                                                "question": "What is the file format for this distribution?",
+                                                "question": "What is this distribution’s file format?",
                                                 "requiredWhen": [
                                                     "distribution"
                                                 ],
                                                 "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/format",
                                                 "title": "Format"
-                                            },
-                                            "minItems": 1
+                                            }
                                         },
                                         "distribution_id": {
                                             "type": "object",
@@ -26708,6 +26439,7 @@
                                     },
                                     "required": [
                                         "update_frequency",
+                                        "linked_data_star_rating",
                                         "title",
                                         "issued",
                                         "start_date",
@@ -26716,6 +26448,7 @@
                                         "character_unicode_block_name",
                                         "quality_control_level",
                                         "data_access",
+                                        "openess_other_rating_system",
                                         "protection_level",
                                         "security_classification_level",
                                         "format",
@@ -26840,8 +26573,8 @@
                                                 "properties": {
                                                     "security_classification_level_other_nomenclature": {
                                                         "type": "string",
-                                                        "description": "To indicate which nomenclature is used to qualify classified information",
-                                                        "question": "What other nomenclature is used to describe classified information?",
+                                                        "description": "To indicate the level of the classified information held by the distribution according o the nomenclature found in distribution_security_classification_level_other_nomenclature",
+                                                        "question": "Indicate the level of classified information of the dmp according to the nomenclature",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/security_classification_level_other_nomenclature",
                                                         "title": "Security_classification_level_other_nomenclature"
                                                     }
@@ -26865,8 +26598,8 @@
                                                 "properties": {
                                                     "security_classification_level_other_level": {
                                                         "type": "string",
-                                                        "description": "To indicate the level of the classified information held by the distribution according o the nomenclature found in distribution_security_classification_level_other_nomenclature",
-                                                        "question": "Indicate the level of classified information of the dmp according to the nomenclature",
+                                                        "description": "To indicate which nomenclature is used to qualify classified information",
+                                                        "question": "What other nomenclature is used to describe classified information?",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/security_classification_level_other_level",
                                                         "title": "Security_classification_level_other_level"
                                                     }
@@ -27528,7 +27261,6 @@
                             "data_governance_description",
                             "personal_data",
                             "sensitive_data",
-                            "linked_data_star_rating",
                             "intellectual_property"
                         ]
                     },
@@ -28067,14 +27799,6 @@
                                     }
                                 }
                             },
-                            "succession_plan": {
-                                "type": "string",
-                                "description": "Succession plan, or business continuity plan",
-                                "example": "No plan, project falls apart when P.I. leaves.",
-                                "question": "What is the project succession plan or business continuity plan?",
-                                "$id": "#/properties/dmp/properties/project/properties/succession_plan",
-                                "title": "Succession_plan"
-                            },
                             "safeguarding_science_measures": {
                                 "type": "object",
                                 "description": "Science is defined broadly to include the natural, health, and social sciences, mathematics, engineering, and technology. Safeguarding science includes safeguarding research partnerships, opensource due diligence, and risk mitigation. Some elements of safeguarding science are recorded elsewhere in the maDMP (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, redundant backups, retention/disposition planning, security classification, succession plan, versioning). This section should be used for additional information (e.g., description and link to a risk assessment and mitigation plan). For guidance, see: <a href=\"https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/integrity-and-security-in-the-global-research-ecosystem_2bd8511d/1c416f43-en.pdf\">www.oecd.org</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/guidance-conducting-open-source-due-diligence/conducting-open-source-due-diligence-safeguarding-research-partnerships\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/mitigating-your-research-security-risks\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/national-security-guidelines-research-partnerships/national-security-guidelines-research-partnerships-risk-assessment-form\">science.gc.ca</a>",
@@ -28083,68 +27807,175 @@
                                 "properties": {
                                     "exist": {
                                         "type": "string",
-                                        "description": "To indicate if any measure has been taken to safeguard the project science",
+                                        "description": "To indicate if any measure has have been taken to safeguard the project",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
                                         "example": "yes",
                                         "question": "Has any measure been taken related to science safeguarding?",
                                         "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/exist",
                                         "title": "Exist"
                                     },
-                                    "documentation": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "description": "Create one entry for each reference related to the project science safeguarding .",
-                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation",
-                                            "title": "Documentation",
-                                            "properties": {
-                                                "name": {
-                                                    "type": "string",
-                                                    "description": "Name of the reference related to science safeguarding",
-                                                    "question": "What is the name of the reference related to science safeguarging?",
-                                                    "requiredWhen": [
-                                                        "safeguarding_science_measures_documentation"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/name",
-                                                    "title": "Name"
-                                                },
-                                                "description": {
-                                                    "type": "string",
-                                                    "description": "description of the reference related to science safeguarding",
-                                                    "question": "Describe the reference related to science safeguarding.",
-                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/description",
-                                                    "title": "Description"
-                                                },
-                                                "access_url": {
-                                                    "type": "string",
-                                                    "description": "Acces url of the reference related to science safeguarding",
-                                                    "question": "What is the url to access the reference related to science safeguarding?",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/access_url",
-                                                    "title": "Access_url"
-                                                },
-                                                "download_url": {
-                                                    "type": "string",
-                                                    "description": "download url of the reference related to science safeguarding",
-                                                    "question": "What is the url to download the reference related to science safeguarding?",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/download_url",
-                                                    "title": "Download_url"
-                                                }
-                                            },
-                                            "required": [
-                                                "name"
-                                            ]
-                                        }
+                                    "redundant_backups_exist": {
+                                        "type": "string",
+                                        "description": "To indicate if any redundant backup of the source data exists",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
+                                        "question": "Does any back up of the source data exist?",
+                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
+                                        "title": "Redundant_backups_exist"
                                     }
                                 },
                                 "required": [
-                                    "exist"
+                                    "exist",
+                                    "redundant_backups_exist"
+                                ],
+                                "allOf": [
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "safeguarding_science_measures_exist": {
+                                                    "enum": [
+                                                        "yes"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "then": {
+                                            "properties": {
+                                                "documentation": {
+                                                    "type": "object",
+                                                    "description": "Create one entry for each reference related to the project science safeguarding .",
+                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation",
+                                                    "title": "Documentation",
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string",
+                                                            "description": "Name of the reference related to science safeguarding",
+                                                            "question": "What is the name of the reference related to science safeguarging?",
+                                                            "requiredWhen": [
+                                                                "safeguarding_science_measures_documentation"
+                                                            ],
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/name",
+                                                            "title": "Name"
+                                                        },
+                                                        "description": {
+                                                            "type": "string",
+                                                            "description": "Description of the reference related to science safeguarding",
+                                                            "question": "Describe the reference related to science safeguarding.",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/description",
+                                                            "title": "Description"
+                                                        },
+                                                        "access_url": {
+                                                            "type": "string",
+                                                            "description": "Access url of the reference related to science safeguarding",
+                                                            "question": "What is the url to access the reference related to science safeguarding?",
+                                                            "format": "uri",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/access_url",
+                                                            "title": "Access_url"
+                                                        },
+                                                        "download_url": {
+                                                            "type": "string",
+                                                            "description": "Download url of the reference related to science safeguarding",
+                                                            "question": "What is the url to download the reference related to science safeguarding?",
+                                                            "format": "uri",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/download_url",
+                                                            "title": "Download_url"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "name"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "documentation"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "redundant_backups": {
+                                                    "enum": [
+                                                        "yes"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "then": {
+                                            "properties": {
+                                                "redundant_backups": {
+                                                    "type": "object",
+                                                    "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
+                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups",
+                                                    "title": "Redundant_backups",
+                                                    "properties": {
+                                                        "description": {
+                                                            "type": "string",
+                                                            "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
+                                                            "example": "This backup includes the table XXX  of the 2023 survey",
+                                                            "question": "Describe scope",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/description",
+                                                            "title": "Description"
+                                                        },
+                                                        "download_url": {
+                                                            "type": "string",
+                                                            "description": "To indicate the url where the backup can be retrieved",
+                                                            "example": "http://some.repo.../download/...",
+                                                            "question": "Where can the backup be downloaded from?",
+                                                            "format": "uri",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/download_url",
+                                                            "title": "Download_url"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "redundant_backups"
+                                            ]
+                                        }
+                                    }
                                 ]
+                            },
+                            "succession_plan": {
+                                "type": "string",
+                                "description": "Succession plan, or business continuity plan",
+                                "example": "No plan, project falls apart when P.I. leaves.",
+                                "question": "What is the project succession plan or business continuity plan?",
+                                "$id": "#/properties/dmp/properties/project/properties/succession_plan",
+                                "title": "Succession_plan"
+                            },
+                            "algorithmic_impact_assessment_conducted": {
+                                "type": "string",
+                                "description": "To indicate if an algorithmic impact assessment has been conducted related to these data. For example using this <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html\">tool</a >",
+                                "enum": [
+                                    "yes",
+                                    "no",
+                                    "unknown"
+                                ],
+                                "example": "yes",
+                                "question": "Has an algorithmic impact assessment been conducted related to these data?",
+                                "$id": "#/properties/dmp/properties/project/properties/algorithmic_impact_assessment_conducted",
+                                "title": "Algorithmic_impact_assessment_conducted"
+                            },
+                            "algorithmic_impact_assessment_conducted_uri": {
+                                "type": "string",
+                                "description": "Link to the algorithmic impact assessment",
+                                "question": "Provide a link to the algorithmic impact assessment, if applicable.",
+                                "format": "uri",
+                                "$id": "#/properties/dmp/properties/project/properties/algorithmic_impact_assessment_conducted_uri",
+                                "title": "Algorithmic_impact_assessment_conducted_uri"
                             }
                         },
                         "required": [
-                            "succession_plan",
                             "safeguarding_science_measures",
+                            "succession_plan",
                             "title",
                             "funding"
                         ]
@@ -28466,12 +28297,12 @@
                                 "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval",
                                 "title": "Community_approval",
                                 "properties": {
-                                    "description": {
+                                    "status": {
                                         "type": "string",
                                         "description": "To provide any free-form text information on the project approval from the Indigenous communities.",
                                         "question": "Describe the Indigenous community approval.",
-                                        "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval/properties/description",
-                                        "title": "Description"
+                                        "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval/properties/status",
+                                        "title": "Status"
                                     }
                                 },
                                 "allOf": [
@@ -28487,7 +28318,7 @@
                                         },
                                         "then": {
                                             "properties": {
-                                                "status": {
+                                                "description": {
                                                     "type": "string",
                                                     "description": "To indicate whether the project has approval from an Indigenous community.",
                                                     "enum": [
@@ -28498,12 +28329,12 @@
                                                     ],
                                                     "example": "not applicable",
                                                     "question": "Has an Indigenous community aproved this project?",
-                                                    "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval/properties/status",
-                                                    "title": "Status"
+                                                    "$id": "#/properties/dmp/properties/indigenous_considerations/properties/community_approval/properties/description",
+                                                    "title": "Description"
                                                 }
                                             },
                                             "required": [
-                                                "status"
+                                                "description"
                                             ]
                                         }
                                     }
@@ -30058,7 +29889,6 @@
                                         "other"
                                     ],
                                     "example": "orcid",
-                                    "question": "To indicate if an algorithmic impact assessment has been conducted related to these data.  For example using this <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html\">tool</a >",
                                     "$id": "#/properties/dmp/properties/contact/properties/contact_id/properties/type",
                                     "title": "Type"
                                 },

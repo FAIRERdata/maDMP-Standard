@@ -1,0 +1,1617 @@
+{
+  "type": "object",
+  "properties": {
+    "dmp": {
+      "type": "object",
+      "properties": {
+        "access": {
+          "type": "string"
+        },
+        "approval": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "by_mbox": {
+              "type": "string"
+            },
+            "by_name": {
+              "type": "string"
+            },
+            "by_position": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "contact_id": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "registry_name": {
+                  "type": "string"
+                },
+                "registry_URI": {
+                  "type": "string"
+                },
+                "registry_version": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "country": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "delivery_point": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "hours_of_service": {
+              "type": "string"
+            },
+            "mbox": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string"
+            },
+            "postal_zip_code": {
+              "type": "string"
+            },
+            "province_state": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "role": {
+              "type": "string"
+            },
+            "telephone": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "contributor": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "affiliation": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "business": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "business_id": {
+                      "type": "object",
+                      "properties": {
+                        "": {
+                          "type": "string"
+                        },
+                        "identifier": {
+                          "type": "string"
+                        },
+                        "registry_name": {
+                          "type": "string"
+                        },
+                        "registry_URI": {
+                          "type": "string"
+                        },
+                        "registry_version": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "country": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "country_code": {
+                      "type": "string"
+                    },
+                    "country_name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "educational_institution": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "department": {
+                      "type": "string"
+                    },
+                    "educational_institution_id": {
+                      "type": "object",
+                      "properties": {
+                        "": {
+                          "type": "string"
+                        },
+                        "identifier": {
+                          "type": "string"
+                        },
+                        "registry_name": {
+                          "type": "string"
+                        },
+                        "registry_URI": {
+                          "type": "string"
+                        },
+                        "registry_version": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "government_department_or_agency": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "organizational_group": {
+                      "type": "string"
+                    },
+                    "organizational_subgroup": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "non_profit": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "non_profit_id": {
+                      "type": "object",
+                      "properties": {
+                        "": {
+                          "type": "string"
+                        },
+                        "identifier": {
+                          "type": "string"
+                        },
+                        "reference_URI": {
+                          "type": "string"
+                        },
+                        "reference_version": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "other": {
+                  "type": "string"
+                },
+                "province_state": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "city": {
+              "type": "string"
+            },
+            "contributor_id": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "registry_name": {
+                  "type": "string"
+                },
+                "registry_URI": {
+                  "type": "string"
+                },
+                "registry_version": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "delivery_point": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "hours_of_service": {
+              "type": "string"
+            },
+            "mbox": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string"
+            },
+            "postal_zip_code": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "telephone": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "cost": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "cost_documentation": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "access_url": {
+                  "type": "string"
+                },
+                "download_url": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "currency_code": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        },
+        "created": {
+          "type": "string"
+        },
+        "dataset": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "collection": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "data_earliest_date": {
+                  "type": "string"
+                },
+                "data_latest_date": {
+                  "type": "string"
+                },
+                "dataset_last_updated": {
+                  "type": "string"
+                },
+                "dataset_size": {
+                  "type": "string"
+                },
+                "dataset_size_units": {
+                  "type": "string"
+                },
+                "dataset_update_frequency": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "growth_annual_terabytes": {
+                  "type": "string"
+                },
+                "growth_end_date": {
+                  "type": "string"
+                }
+              }
+            },
+            "computing_environment": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "computer_code_description": {
+                  "type": "string"
+                },
+                "computer_code_download": {
+                  "type": "string"
+                },
+                "computer_code_license": {
+                  "type": "string"
+                },
+                "computer_code_programming_language": {
+                  "type": "string"
+                },
+                "operating_system_description": {
+                  "type": "string"
+                },
+                "operating_system_name": {
+                  "type": "string"
+                },
+                "proprietary_software": {
+                  "type": "string"
+                },
+                "proprietary_software_justification": {
+                  "type": "string"
+                },
+                "proprietary_software_migration_plan": {
+                  "type": "string"
+                },
+                "proprietary_software_migration_plan_description": {
+                  "type": "string"
+                },
+                "software_description": {
+                  "type": "string"
+                },
+                "software_download": {
+                  "type": "string"
+                },
+                "software_management_plan": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "access_url": {
+                      "type": "string"
+                    },
+                    "download_url": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "software_name": {
+                  "type": "string"
+                }
+              }
+            },
+            "data_completeness": {
+              "type": "string"
+            },
+            "data_criticality": {
+              "type": "string"
+            },
+            "data_governance_description": {
+              "type": "string"
+            },
+            "data_quality_assurance": {
+              "type": "string"
+            },
+            "dataset_documentation": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "access_url": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "download_url": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "dataset_id": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "registry_name": {
+                  "type": "string"
+                },
+                "registry_URI": {
+                  "type": "string"
+                },
+                "registry_version": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "disclaimer": {
+              "type": "string"
+            },
+            "disposition_action": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "authorization": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "disposition_completed": {
+              "type": "string"
+            },
+            "disposition_planning": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "archival_value": {
+                  "type": "string"
+                },
+                "archival_value_description": {
+                  "type": "string"
+                },
+                "disposition_impediment": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "disposition_planning_last_reviewed": {
+                  "type": "string"
+                },
+                "disposition_review_next": {
+                  "type": "string"
+                },
+                "retention_schedule_url": {
+                  "type": "string"
+                },
+                "retention_specification": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "required_destruction": {
+                      "type": "string"
+                    },
+                    "required_destruction_description": {
+                      "type": "string"
+                    },
+                    "required_perpetual_use": {
+                      "type": "string"
+                    },
+                    "retention_period_duration": {
+                      "type": "string"
+                    },
+                    "retention_period_end_date": {
+                      "type": "string"
+                    },
+                    "retention_rationale": {
+                      "type": "string"
+                    },
+                    "trigger_description": {
+                      "type": "string"
+                    },
+                    "trigger_occured": {
+                      "type": "string"
+                    },
+                    "trigger_type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "distribution": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "access_url": {
+                  "type": "string"
+                },
+                "available_until": {
+                  "type": "string"
+                },
+                "byte_size": {
+                  "type": "string"
+                },
+                "character_encoding_standard": {
+                  "type": "string"
+                },
+                "character_unicode_block_code": {
+                  "type": "string"
+                },
+                "character_unicode_block_name": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "data_access": {
+                  "type": "string"
+                },
+                "data_security-privacy_measures": {
+                  "type": "string"
+                },
+                "data_size": {
+                  "type": "string"
+                },
+                "data_size_units": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "disposition_completed": {
+                  "type": "string"
+                },
+                "distribution_id": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "registry_name": {
+                      "type": "string"
+                    },
+                    "registry_URI": {
+                      "type": "string"
+                    },
+                    "registry_version": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "download_url": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "file_path": {
+                  "type": "string"
+                },
+                "format": {
+                  "type": "string"
+                },
+                "geographic_bounding_box": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "east": {
+                      "type": "string"
+                    },
+                    "north": {
+                      "type": "string"
+                    },
+                    "south": {
+                      "type": "string"
+                    },
+                    "west": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "host": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "availability": {
+                      "type": "string"
+                    },
+                    "backup_frequency": {
+                      "type": "string"
+                    },
+                    "backup_type": {
+                      "type": "string"
+                    },
+                    "certified_with": {
+                      "type": "string"
+                    },
+                    "data_priority": {
+                      "type": "string"
+                    },
+                    "data_processing_minimum_cpu_cores": {
+                      "type": "string"
+                    },
+                    "data_processing_minimum_cpu_speed_Ghz": {
+                      "type": "string"
+                    },
+                    "data_processing_minimum_machine_type": {
+                      "type": "string"
+                    },
+                    "data_processing_minimum_RAM_Gb": {
+                      "type": "string"
+                    },
+                    "data_transfer_maximum_latency_msec": {
+                      "type": "string"
+                    },
+                    "data_transfer_minimum_throughput_Mbps": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "geo_location": {
+                      "type": "string"
+                    },
+                    "pid_system": {
+                      "type": "string"
+                    },
+                    "storage_type": {
+                      "type": "string"
+                    },
+                    "support_checksum": {
+                      "type": "string"
+                    },
+                    "support_versioning": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "issued": {
+                  "type": "string"
+                },
+                "license": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "license_ref": {
+                      "type": "string"
+                    },
+                    "start_date": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "linked_data_star_rating": {
+                  "type": "string"
+                },
+                "online_service": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "content_type": {
+                      "type": "string"
+                    },
+                    "format": {
+                      "type": "string"
+                    },
+                    "language": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "service_language": {
+                      "type": "string"
+                    },
+                    "service_url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "openess_other_rating": {
+                  "type": "string"
+                },
+                "openess_other_rating_system": {
+                  "type": "string"
+                },
+                "physical_data_asset": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "building_city": {
+                      "type": "string"
+                    },
+                    "building_name": {
+                      "type": "string"
+                    },
+                    "building_room_number": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "preservation_flag": {
+                  "type": "string"
+                },
+                "protection_level": {
+                  "type": "string"
+                },
+                "protection_level_other_level": {
+                  "type": "string"
+                },
+                "protection_level_other_nomenclature": {
+                  "type": "string"
+                },
+                "quality_control_level": {
+                  "type": "string"
+                },
+                "security_classification_level": {
+                  "type": "string"
+                },
+                "security_classification_level_other_level": {
+                  "type": "string"
+                },
+                "security_classification_level_other_nomenclature": {
+                  "type": "string"
+                },
+                "spatial_representation_type": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "status_description": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "update_frequency": {
+                  "type": "string"
+                },
+                "version_history": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "revision_date": {
+                      "type": "string"
+                    },
+                    "revision_description": {
+                      "type": "string"
+                    },
+                    "revision_documentation": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "general_data_format": {
+              "type": "string"
+            },
+            "geodetic_datum": {
+              "type": "string"
+            },
+            "geographic_coverage": {
+              "type": "string"
+            },
+            "intellectual_property": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "copyright_description": {
+                  "type": "string"
+                },
+                "copyright_extent": {
+                  "type": "string"
+                },
+                "copyright_holder": {
+                  "type": "string"
+                },
+                "other": {
+                  "type": "string"
+                }
+              }
+            },
+            "issued": {
+              "type": "string"
+            },
+            "keyword": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                },
+                "metadata_standard_id": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "registry_name": {
+                      "type": "string"
+                    },
+                    "registry_URI": {
+                      "type": "string"
+                    },
+                    "registry_version": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "personal_data": {
+              "type": "string"
+            },
+            "preservation_statement": {
+              "type": "string"
+            },
+            "security_and_privacy": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "privacy_impact_assessment": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "approved": {
+                      "type": "string"
+                    },
+                    "approved_by": {
+                      "type": "string"
+                    },
+                    "download_url": {
+                      "type": "string"
+                    },
+                    "registered": {
+                      "type": "string"
+                    },
+                    "required": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "title": {
+                  "type": "string"
+                }
+              }
+            },
+            "sensitive_data": {
+              "type": "string"
+            },
+            "subject": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "heading_name": {
+                  "type": "string"
+                },
+                "heading_URI": {
+                  "type": "string"
+                },
+                "scheme_name": {
+                  "type": "string"
+                },
+                "scheme_URI": {
+                  "type": "string"
+                },
+                "scheme_version": {
+                  "type": "string"
+                }
+              }
+            },
+            "supported_works_url": {
+              "type": "string"
+            },
+            "technical_resource": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "title": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "dmp_id": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "identifier": {
+              "type": "string"
+            },
+            "registry_name": {
+              "type": "string"
+            },
+            "registry_URI": {
+              "type": "string"
+            },
+            "registry_version": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "ethical_issues_description": {
+          "type": "string"
+        },
+        "ethical_issues_exist": {
+          "type": "string"
+        },
+        "ethical_issues_report": {
+          "type": "string"
+        },
+        "indigenous_considerations": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "characters": {
+              "type": "string"
+            },
+            "community_approval": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "dmp_discussion": {
+              "type": "string"
+            },
+            "exist": {
+              "type": "string"
+            },
+            "government_name": {
+              "type": "string"
+            },
+            "group_identification": {
+              "type": "string"
+            },
+            "indian_band_name": {
+              "type": "string"
+            },
+            "indian_band_number": {
+              "type": "string"
+            },
+            "indigenous_control_over_data": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "research_method": {
+              "type": "string"
+            },
+            "traditional_knowledge": {
+              "type": "string"
+            },
+            "traditional_knowledge_description": {
+              "type": "string"
+            }
+          }
+        },
+        "language": {
+          "type": "string"
+        },
+        "linked_dmp": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "linked_dmp_id": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "registry_name": {
+                  "type": "string"
+                },
+                "registry_URI": {
+                  "type": "string"
+                },
+                "registry_version": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "relationship": {
+              "type": "string"
+            },
+            "access_url": {
+              "type": "string"
+            },
+            "download_url": {
+              "type": "string"
+            }
+          }
+        },
+        "modified": {
+          "type": "string"
+        },
+        "project": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "string"
+            },
+            "algorithmic_impact_assessment_conducted": {
+              "type": "string"
+            },
+            "algorithmic_impact_assessment_conducted_uri": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "end": {
+              "type": "string"
+            },
+            "funding": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "funder_id": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "registry_name": {
+                      "type": "string"
+                    },
+                    "registry_URI": {
+                      "type": "string"
+                    },
+                    "registry_version": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "funding_status": {
+                  "type": "string"
+                },
+                "grant_id": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "registry_name": {
+                      "type": "string"
+                    },
+                    "registry_URI": {
+                      "type": "string"
+                    },
+                    "registry_version": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "partner_organization": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "agreement": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "agreement_download_url": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "partner_organization_id": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "registry_name": {
+                      "type": "string"
+                    },
+                    "registry_URI": {
+                      "type": "string"
+                    },
+                    "registry_version": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "safeguarding_science_measures": {
+              "type": "object",
+              "properties": {
+                "": {
+                  "type": "string"
+                },
+                "documentation": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "access_url": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "download_url": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "exist": {
+                  "type": "string"
+                },
+                "redundant_backups_exist": {
+                  "type": "string"
+                },
+                "redundant_backups": {
+                  "type": "object",
+                  "properties": {
+                    "": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "download_url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "start": {
+              "type": "string"
+            },
+            "succession_plan": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          }
+        },
+        "protection_level": {
+          "type": "string"
+        },
+        "protection_level_other_level": {
+          "type": "string"
+        },
+        "protection_level_other_nomenclature": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "schema_version_uri": {
+          "type": "string"
+        },
+        "security_classification_level": {
+          "type": "string"
+        },
+        "security_classification_level_other_level": {
+          "type": "string"
+        },
+        "security_classification_level_other_nomenclature": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "dmp"
+  ],
+  "dependencies": {
+    "dmp/approval/by_name": "if approval_status = \"submitted\", \"approved\", or \"rejected\"",
+    "dmp/approval/by_position": "if approval_status = \"submitted\", \"approved\", or \"rejected\"",
+    "dmp/approval/date": "if approval_status = \"submitted\", \"approved\", or \"rejected\"",
+    "dmp/contact/contact_id/registry_name": "if \"Other\" was selected for contact_id_type",
+    "dmp/contact/country/code": "when the country nested structure exists",
+    "dmp/contact/country/name": "when the country nested structure exists",
+    "dmp/contact/province_state/code": "when the province_state nested structure exists",
+    "dmp/contact/province_state/name": "when the province_state nested structure exists",
+    "dmp/contributor/affiliation/business/": "if \"business\" was chosen from contributor/affiliation/type",
+    "dmp/contributor/affiliation/business/business_id/registry_name": "if \"Other\" was selected for business_id_type ",
+    "dmp/contributor/affiliation/business/name": "when the business nested structure exists",
+    "dmp/contributor/affiliation/country/country_code": "when the country nested structure exists",
+    "dmp/contributor/affiliation/country/country_name": "when the country nested structure exists",
+    "dmp/contributor/affiliation/educational_institution/": "if \"educational institution\" was chosen from contributor/affiliation/type",
+    "dmp/contributor/affiliation/educational_institution/educational_institution_id/": "when educational_institution nested structure exists",
+    "dmp/contributor/affiliation/educational_institution/educational_institution_id/registry_name": "if \"Other\" was selected for educational_institution_id_type ",
+    "dmp/contributor/affiliation/educational_institution/name": "when educational institution nested structure exists",
+    "dmp/contributor/affiliation/government_department_or_agency/": "If \"government\" was chosen from contributor/affiliation/type",
+    "dmp/contributor/affiliation/government_department_or_agency/name": "when government nested structure exists",
+    "dmp/contributor/affiliation/non_profit/": "if the affiliation type is \"non-profit\"",
+    "dmp/contributor/affiliation/non_profit/name": "when the non-profit nested structure exists",
+    "dmp/contributor/affiliation/other": "if \"other\" was chosen from dmp/contributor/affiliation/type",
+    "dmp/contributor/affiliation/province_state/code": "when the province_state nested structure exists",
+    "dmp/contributor/affiliation/province_state/name": "when the province_state nested structure exists",
+    "dmp/contributor/contributor_id/registry_name": "if \"Other\" was selected for contributor_id_type ",
+    "dmp/cost/cost_documentation/name": "when cost_documentation nested structure exists",
+    "dmp/cost/currency_code": "if cost_value exists",
+    "dmp/cost/title": "when cost nested structure exists",
+    "dmp/dataset/computing_environment/proprietary_software": "when the computing_environment nested structure exists",
+    "dmp/dataset/computing_environment/proprietary_software_justification": "if proprietary_software is answered as yes",
+    "dmp/dataset/computing_environment/proprietary_software_migration_plan": "if proprietary_software is answered as yes",
+    "dmp/dataset/computing_environment/proprietary_software_migration_plan_description": "if proprietary_software is answered as yes",
+    "dmp/dataset/computing_environment/software_description": "if proprietary_software is answered as yes",
+    "dmp/dataset/computing_environment/software_download": "if proprietary_software is answered as yes",
+    "dmp/dataset/computing_environment/software_management_plan/name": "when the software_management_plan nested structure exists",
+    "dmp/dataset/computing_environment/software_name": "if proprietary_software is answered as yes",
+    "dmp/dataset/dataset_id/registry_name": "if \"Other\" was selected for dataset_id_type ",
+    "dmp/dataset/disposition_action/authorization": "when the disposition_action nested structure exists",
+    "dmp/dataset/disposition_action/date": "when the disposition_action nested structure exists",
+    "dmp/dataset/disposition_action/description": "when the disposition_action nested structure exists",
+    "dmp/dataset/disposition_action/type": "when the disposition_action nested structure exists",
+    "dmp/dataset/disposition_planning/archival_value": "when the disposition_planning nested structure exists",
+    "dmp/dataset/disposition_planning/disposition_impediment/type": "when the disposition_impediment nested structure exists",
+    "dmp/dataset/disposition_planning/retention_specification/description": "when the retention_specification nested structure exists",
+    "dmp/dataset/disposition_planning/retention_specification/required_destruction_description": "if \"yes all\", \"yes part\" was chosen in required_destruction",
+    "dmp/dataset/distribution/character_encoding_standard": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/character_unicode_block_code": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/character_unicode_block_name": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/data_access": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/distribution_id/": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/distribution_id/identifier": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/distribution_id/registry_name": "if \"Other\" was selected for distributiion_id_type ",
+    "dmp/dataset/distribution/distribution_id/type": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/format": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/geographic_bounding_box/east": "when dataset_geographic_bounding_box exists",
+    "dmp/dataset/distribution/geographic_bounding_box/north": "when dataset_geographic_bounding_box exists",
+    "dmp/dataset/distribution/geographic_bounding_box/south": "when dataset_geographic_bounding_box exists",
+    "dmp/dataset/distribution/geographic_bounding_box/west": "when dataset_geographic_bounding_box exists",
+    "dmp/dataset/distribution/host/title": "when the host nested structure exists",
+    "dmp/dataset/distribution/host/url": "when the host nested structure exists",
+    "dmp/dataset/distribution/issued": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/license/": "if data_access is open",
+    "dmp/dataset/distribution/license/license_ref": "when distribution nested structure exists",
+    "dmp/dataset/distribution/license/start_date": "when distribution nested structure exists",
+    "dmp/dataset/distribution/online_service/language": "when the online_service nested structure exists",
+    "dmp/dataset/distribution/online_service/name": "when the online_service nested structure exists",
+    "dmp/dataset/distribution/online_service/service_url": "when the online_service nested structure exists",
+    "dmp/dataset/distribution/openess_other_rating_system": "when other_openess_rating has value",
+    "dmp/dataset/distribution/physical_data_asset/description": "when the physical_data_asset nested structure exists and distribution nested structure exists",
+    "dmp/dataset/distribution/physical_data_asset/type": "when the physical_data_asset nested structure exists and distribution nested structure exists",
+    "dmp/dataset/distribution/protection_level": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/protection_level_other_level": "if \"other\" was chosen from distribution_protection_level",
+    "dmp/dataset/distribution/protection_level_other_nomenclature": "if \"other\" was chosen from distribution_protection_level",
+    "dmp/dataset/distribution/quality_control_level": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/security_classification_level": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/security_classification_level_other_level": "if \"other\" was chosen from dmp/dataset/distribution/security_classification_level",
+    "dmp/dataset/distribution/security_classification_level_other_nomenclature": "if \"other\" was chosen from dmp/dataset/distribution/security_classification_level",
+    "dmp/dataset/distribution/start_date": "when the distribution nested structure exists",
+    "dmp/dataset/distribution/title": "when there is a distribution nested structure",
+    "dmp/dataset/distribution/version_history/revision_date": "when the version history nested structure exists",
+    "dmp/dataset/metadata/metadata_standard_id/registry_name": "if \"Other\" was selected for metadata_standard_id_type ",
+    "dmp/dataset/security_and_privacy/privacy_impact_assessment/approved": "if \"yes\" was chosen from privacy_impact_assessment_required",
+    "dmp/dataset/security_and_privacy/privacy_impact_assessment/approved_by": "if \"yes\" was chosen from privacy_impact_assessment_required",
+    "dmp/dataset/security_and_privacy/privacy_impact_assessment/registered": "if \"yes\" was chosen from privacy_impact_assessment_required",
+    "dmp/dataset/subject/heading_name": "when subject nested stucture exists",
+    "dmp/dataset/technical_resource/name": "when the technical resource nested structure exists",
+    "dmp/dmp_id/registry_name": "if \"Other\" was selected for dmp_id_type ",
+    "dmp/indigenous_considerations/community_approval/description": "if indigenous_considerations_exist is \"yes\"",
+    "dmp/indigenous_considerations/description": "if indigenous_considerations_exist is \"yes\"",
+    "dmp/indigenous_considerations/dmp_discussion": "if indigenous_considerations_exist is \"yes\"",
+    "dmp/indigenous_considerations/indigenous_control_over_data": "if indigenous_considerations_exist is \"yes\"",
+    "dmp/indigenous_considerations/traditional_knowledge": "if indigenous_considerations_exist is \"yes\"",
+    "dmp/indigenous_considerations/traditional_knowledge_description": "if indigenous_traditional_knowledge is \"yes\"",
+    "dmp/linked_dmp/linked_dmp_id/": "when the linked dmp nested structure exists",
+    "dmp/linked_dmp/linked_dmp_id/identifier": "when the linked dmp nested structure exists",
+    "dmp/linked_dmp/linked_dmp_id/registry_name": "if \"Other\" was selected for linked_dmp_id_type ",
+    "dmp/linked_dmp/linked_dmp_id/type": "when the linked dmp nested structure exists",
+    "dmp/linked_dmp/relationship": "when the linked dmp nested structure exists",
+    "dmp/project/funding/": "when the project nested structure exists",
+    "dmp/project/funding/funder_id/": "when the project nested structure exists",
+    "dmp/project/funding/funder_id/identifier": "when the project nested structure exists",
+    "dmp/project/funding/funder_id/registry_name": "if \"Other\" was selected for funder_id_type ",
+    "dmp/project/funding/funder_id/type": "when the project nested structure exists",
+    "dmp/project/funding/funding_status": "when the project nested structure exists",
+    "dmp/project/funding/grant_id/identifier": "the grant_id structure exists",
+    "dmp/project/funding/grant_id/registry_name": "if \"Other\" was selected for grant_id_type ",
+    "dmp/project/funding/source/": "when the project nested structure exists",
+    "dmp/project/funding/source/type": "when the project nested structure exists",
+    "dmp/project/partner_organization/agreement/type": "when the partner organization agreement nested structure exists",
+    "dmp/project/partner_organization/partner_organization_id/registry_name": "if \"Other\" was selected for partner_organization_id_type ",
+    "dmp/project/safeguarding_science_measures/documentation/": "if \"yes\" was selected for safeguarding_science_measures",
+    "dmp/project/safeguarding_science_measures/documentation/name": "when the safeguarding_science_measures_documentation structure exist",
+    "dmp/project/safeguarding_science_measures/redundant_backups/": "if \"yes\" was selected for redundant_backups_exist",
+    "dmp/project/title": "when the project nested structure exists"
+  }
+}

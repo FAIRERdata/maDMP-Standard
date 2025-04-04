@@ -429,8 +429,8 @@
                             "license",
                             "data_access",
                             "linked_data_star_rating",
-                            "openess_other_rating",
-                            "openess_other_rating_system",
+                            "openness_other_rating",
+                            "openness_other_rating_system",
                             "protection_level",
                             "protection_level_other_nomenclature",
                             "protection_level_other_level",
@@ -489,13 +489,15 @@
                                 "backup_frequency",
                                 "backup_type",
                                 "certified_with",
-                                "data_processing_minimum_cpu_cores",
-                                "data_processing_minimum_cpu_speed_Ghz",
-                                "data_processing_minimum_machine_type",
-                                "data_processing_minimum_RAM_Gb",
-                                "data_transfer_maximum_latency_msec",
-                                "data_transfer_minimum_throughput_Mbps",
-                                "geo_location"
+                                "data_transfer_maximum_latency",
+                                "data_transfer_minimum_throughput",
+                                "geo_location",
+                                "protocol",
+                                "content_type",
+                                "format",
+                                "language",
+                                "version",
+                                "type"
                             ]
                         },
                         "physical_data_asset": {
@@ -533,6 +535,81 @@
                             }
                         }
                     }
+                },
+                "computing_environment": {
+                    "data_management_system": {
+                        "ui:order": [
+                            "description",
+                            "pid_system",
+                            "support_checksum",
+                            "support_versioning",
+                            "availability",
+                            "backup_frequency",
+                            "backup_type",
+                            "certified_with",
+                            "geo_location",
+                            "visibility",
+                            "version",
+                            "type",
+                            "storage_type",
+                            "protocol",
+                            "data_transfer_maximum_latency",
+                            "compliance_standards",
+                            "authentication",
+                            "access_url",
+                            "title",
+                            "data_transfer_minimum_throughput"
+                        ]
+                    },
+                    "hardware_requirements": {
+                        "ui:order": [
+                            "minimum_cpu_cores",
+                            "minimum_cpu_speed",
+                            "machine_type",
+                            "data_processing_minimum_RAM_Gb",
+                            "network_requirements",
+                            "processing_unit_requirements",
+                            "storage_capacity_unit",
+                            "storage_capacity",
+                            "description",
+                            "title"
+                        ]
+                    },
+                    "software": {
+                        "items": {
+                            "ui:order": [
+                                "description",
+                                "download_url",
+                                "license",
+                                "programming_language",
+                                "name",
+                                "proprietary_software",
+                                "proprietary_software_justification",
+                                "proprietary_software_migration_plan",
+                                "proprietary_software_migration_plan_description",
+                                "operating_system_name",
+                                "operating_system_description",
+                                "software_management_plan",
+                                "code_repository",
+                                "execution_environment",
+                                "dependencies"
+                            ],
+                            "software_management_plan": {
+                                "items": {
+                                    "ui:order": [
+                                        "name",
+                                        "access_url",
+                                        "download_url"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "ui:order": [
+                        "hardware_requirements",
+                        "software",
+                        "data_management_system"
+                    ]
                 },
                 "disposition_planning": {
                     "ui:order": [
@@ -577,35 +654,6 @@
                             "authorization",
                             "date"
                         ]
-                    }
-                },
-                "computing_environment": {
-                    "items": {
-                        "ui:order": [
-                            "computer_code_description",
-                            "computer_code_download",
-                            "computer_code_license",
-                            "computer_code_programming_language",
-                            "software_name",
-                            "software_description",
-                            "proprietary_software",
-                            "proprietary_software_justification",
-                            "proprietary_software_migration_plan",
-                            "proprietary_software_migration_plan_description",
-                            "software_download",
-                            "operating_system_name",
-                            "operating_system_description",
-                            "software_management_plan"
-                        ],
-                        "software_management_plan": {
-                            "items": {
-                                "ui:order": [
-                                    "name",
-                                    "access_url",
-                                    "download_url"
-                                ]
-                            }
-                        }
                     }
                 }
             }

@@ -7700,9 +7700,9 @@
                             "title": "Security_classification_level_other_level"
                         },
                         "schema_version": {
-                            "const": "v2.4",
+                            "const": "v2.5",
                             "title": "Schema_version",
-                            "description": "The version you are using is v2.4, you should not edit this field.",
+                            "description": "The version you are using is v2.5, you should not edit this field.",
                             "$id": "#/properties/dmp/properties/schema_version",
                             "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
@@ -8501,10 +8501,6 @@
                                                                     "type": {
                                                                         "type": "string",
                                                                         "description": "Educational institute identifier type",
-                                                                        "enum": [
-                                                                            "CFI list of eligible institutions https://www.innovation.ca/apply-manage-awards/resources-apply-manage-award/list-eligible-institutions",
-                                                                            "Other"
-                                                                        ],
                                                                         "question": "What is the contributor's educational institution identifier type?",
                                                                         "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/educational_institution/properties/educational_institution_id/properties/type",
                                                                         "title": "Type"
@@ -9321,7 +9317,7 @@
                             },
                             "safeguarding_science_measures": {
                                 "type": "object",
-                                "description": "Science is defined broadly to include the natural, health, and social sciences, mathematics, engineering, and technology. Safeguarding science includes safeguarding research partnerships, opensource due diligence, and risk mitigation. Some elements of safeguarding science are recorded elsewhere in the maDMP (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, redundant backups, retention/disposition planning, security classification, succession plan, versioning). This section should be used for additional information (e.g., description and link to a risk assessment and mitigation plan). For guidance, see: <a href=\"https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/integrity-and-security-in-the-global-research-ecosystem_2bd8511d/1c416f43-en.pdf\">www.oecd.org</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/guidance-conducting-open-source-due-diligence/conducting-open-source-due-diligence-safeguarding-research-partnerships\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/mitigating-your-research-security-risks\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/national-security-guidelines-research-partnerships/national-security-guidelines-research-partnerships-risk-assessment-form\">science.gc.ca</a>",
+                                "description": "Science is defined broadly to include the natural, health, and social sciences, mathematics, engineering, and technology. Safeguarding science includes safeguarding research partnerships, opensource due diligence, and risk mitigation. Some elements of safeguarding science are recorded elsewhere in the maDMP (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, retention/disposition planning, security classification, succession plan, versioning). This section should be used for additional information (e.g., description and link to a risk assessment and mitigation plan). For guidance, see: <a href=\"https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/integrity-and-security-in-the-global-research-ecosystem_2bd8511d/1c416f43-en.pdf\">www.oecd.org</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/guidance-conducting-open-source-due-diligence/conducting-open-source-due-diligence-safeguarding-research-partnerships\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/mitigating-your-research-security-risks\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/national-security-guidelines-research-partnerships/national-security-guidelines-research-partnerships-risk-assessment-form\">science.gc.ca</a>",
                                 "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures",
                                 "title": "Safeguarding_science_measures",
                                 "properties": {
@@ -19405,7 +19401,7 @@
                                 "properties": {
                                     "description": {
                                         "type": "string",
-                                        "description": "The update frequency of the data in the dataset",
+                                        "description": "To describe the data collection processes",
                                         "enum": [
                                             "triennial",
                                             "biennial",
@@ -19450,6 +19446,50 @@
                                     },
                                     "dataset_update_frequency": {
                                         "type": "string",
+                                        "description": "The update frequency of the data in the dataset",
+                                        "enum": [
+                                            "triennial",
+                                            "biennial",
+                                            "annual",
+                                            "semiannual",
+                                            "threeTimesAYear",
+                                            "quarterly",
+                                            "bimonthly",
+                                            "monthly",
+                                            "semimonthly",
+                                            "biweekly",
+                                            "threeTimesAMonth",
+                                            "weekly",
+                                            "semiweekly",
+                                            "threeTimesAWeek",
+                                            "daily",
+                                            "continuous",
+                                            "irregular"
+                                        ],
+                                        "example": "7 days",
+                                        "question": "How frequently are the data updated?",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_update_frequency",
+                                        "title": "Dataset_update_frequency"
+                                    },
+                                    "dataset_last_updated": {
+                                        "type": "string",
+                                        "description": "Date when the dataset was last updated. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                        "example": "2023-07-20",
+                                        "question": "When was dataset last updated?",
+                                        "format": "date",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_last_updated",
+                                        "title": "Dataset_last_updated"
+                                    },
+                                    "dataset_size": {
+                                        "type": "number",
+                                        "description": "Size of the dataset from which distributions are derived.",
+                                        "example": "5",
+                                        "question": "What is the size of the dataset according to the specified units? ",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size",
+                                        "title": "Dataset_size"
+                                    },
+                                    "dataset_size_units": {
+                                        "type": "string",
                                         "description": "Dataset size units",
                                         "enum": [
                                             "bytes",
@@ -19464,30 +19504,6 @@
                                         ],
                                         "example": "PB - petabytes",
                                         "question": "What units were used to measure the size of the dataset?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_update_frequency",
-                                        "title": "Dataset_update_frequency"
-                                    },
-                                    "dataset_last_updated": {
-                                        "type": "string",
-                                        "description": "Describe how the data are collected. Note: For information on instruments used to collect data, use dmp/dataset/technical_resource. For information on the dataset, use dmp/dataset/dataset_documentation.",
-                                        "question": "Describe how the data are collecteed. Consider recording pertinent information regarding collection instruments in the field dmp/dataset/technical_resource ; and consider linking to relevant data documentation in the field dmp/dataset/dataset_documentation",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_last_updated",
-                                        "title": "Dataset_last_updated"
-                                    },
-                                    "dataset_size": {
-                                        "type": "string",
-                                        "description": "Date when the dataset was last updated. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                        "example": "2023-07-20",
-                                        "question": "When was dataset last updated?",
-                                        "format": "date",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size",
-                                        "title": "Dataset_size"
-                                    },
-                                    "dataset_size_units": {
-                                        "type": "number",
-                                        "description": "Size of the dataset from which distributions are derived.",
-                                        "example": "5",
-                                        "question": "What is the size of the dataset according to the specified units? ",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size_units",
                                         "title": "Dataset_size_units"
                                     },
@@ -28152,7 +28168,7 @@
                                         },
                                         "linked_data_star_rating": {
                                             "type": "string",
-                                            "description": "To rate the level of openess of the dataset according to the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidence see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
+                                            "description": "To rate the level of openness of the dataset according to the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidence see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
                                             "enum": [
                                                 "1 star",
                                                 "2 stars",
@@ -28165,22 +28181,22 @@
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/linked_data_star_rating",
                                             "title": "Linked_data_star_rating"
                                         },
-                                        "openess_other_rating": {
+                                        "openness_other_rating": {
                                             "type": "string",
-                                            "description": "To rate the level of openess of the dataset according to a system other than the Tim Berner-Lees system, described in dmp/dataset/openess_other_rating_system.",
-                                            "question": "What is the dataset openess rate according to the chosen framework?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openess_other_rating",
-                                            "title": "Openess_other_rating"
+                                            "description": "To rate the level of openness of the dataset according to a system other than the Tim Berner-Lees system, described in dmp/dataset/openness_other_rating_system.",
+                                            "question": "What is the dataset openness rate according to the chosen framework?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openness_other_rating",
+                                            "title": "Openness_other_rating"
                                         },
-                                        "openess_other_rating_system": {
+                                        "openness_other_rating_system": {
                                             "type": "string",
-                                            "description": "Describe which system is used to rate the dataset openess when it's not the Tim Berners-Lee 5-star rating system.",
-                                            "question": "What framework are you using to rate the dataset openess?",
+                                            "description": "Describe which system is used to rate the dataset openness when it's not the Tim Berners-Lee 5-star rating system.",
+                                            "question": "What framework are you using to rate the dataset openness?",
                                             "requiredWhen": [
-                                                "other_openess_rating"
+                                                "other_openness_rating"
                                             ],
-                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openess_other_rating_system",
-                                            "title": "Openess_other_rating_system"
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openness_other_rating_system",
+                                            "title": "Openness_other_rating_system"
                                         },
                                         "protection_level": {
                                             "type": "string",
@@ -28266,7 +28282,7 @@
                                             "properties": {
                                                 "title": {
                                                     "type": "string",
-                                                    "description": "Title",
+                                                    "description": "The name of the system hosting the dataset for external access",
                                                     "example": "Super Repository",
                                                     "question": "What is the title for the host of the distribution?",
                                                     "requiredWhen": [
@@ -28277,7 +28293,7 @@
                                                 },
                                                 "description": {
                                                     "type": "string",
-                                                    "description": "Description",
+                                                    "description": "To describe the host of the distribution",
                                                     "example": "Repository hosted by...",
                                                     "question": "Describe the host.",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/description",
@@ -28298,7 +28314,15 @@
                                                 "storage_type": {
                                                     "type": "string",
                                                     "description": "The type of storage ",
-                                                    "example": "blob",
+                                                    "enum": [
+                                                        "SSD",
+                                                        "HDD",
+                                                        "cloud",
+                                                        "tape storage",
+                                                        "object storage",
+                                                        "other"
+                                                    ],
+                                                    "example": "cloud",
                                                     "question": "What storage type does the host server use?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/storage_type",
                                                     "title": "Storage_type"
@@ -28307,7 +28331,7 @@
                                                     "type": "array",
                                                     "items": {
                                                         "type": "string",
-                                                        "description": "PID System",
+                                                        "description": "Persistent identifier system used by the host",
                                                         "enum": [
                                                             "ark",
                                                             "arxiv",
@@ -28337,11 +28361,9 @@
                                                 },
                                                 "support_checksum": {
                                                     "type": "string",
-                                                    "description": "If transferred to LAC. To indicate if external checksums can be stored to be compared to the host checksums to ensure integrity of the distribution",
+                                                    "description": "To indicate if checksums can be performed to ensure integrity of the distribution",
                                                     "enum": [
-                                                        "yes",
-                                                        "no",
-                                                        "unknown"
+                                                        "yes (with exportable checksum); yes (without confirmed ability to export); no; unknown"
                                                     ],
                                                     "example": "yes",
                                                     "question": "Is there a support checksum for the host?",
@@ -28371,8 +28393,8 @@
                                                 },
                                                 "availability": {
                                                     "type": "string",
-                                                    "description": "Availability",
-                                                    "example": "99,5",
+                                                    "description": "Defines whether the data host is operational 24/7 or has downtime periods",
+                                                    "example": "scheduled downtimes",
                                                     "question": "What is the availability of the distribution?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/availability",
                                                     "title": "Availability"
@@ -28387,72 +28409,34 @@
                                                 },
                                                 "backup_type": {
                                                     "type": "string",
-                                                    "description": "Backup Type",
+                                                    "description": "Type of backup of the host (e.g., incremental, full, differential, synthetic full)",
                                                     "question": "What type of backup system is used for the host?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/backup_type",
                                                     "title": "Backup_type"
                                                 },
                                                 "certified_with": {
                                                     "type": "string",
-                                                    "description": "Repository certified to a recognised standard",
-                                                    "enum": [
-                                                        "din31644",
-                                                        "dini-zertifikat",
-                                                        "dsa",
-                                                        "iso16363",
-                                                        "iso16919",
-                                                        "trac",
-                                                        "wds",
-                                                        "coretrustseal"
-                                                    ],
+                                                    "description": "Repository certified to a recognised standard (e.g., ISO 27001, CoreTrustSeal, etc.)",
                                                     "example": "coretrustseal",
                                                     "question": "What is the host server certified with?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/certified_with",
                                                     "title": "Certified_with"
                                                 },
-                                                "data_processing_minimum_cpu_cores": {
+                                                "data_transfer_maximum_latency": {
                                                     "type": "number",
-                                                    "description": "Minimum CPU cores needed to process the data",
-                                                    "example": "64",
-                                                    "question": "What is the minimum number of cpu cores required to process the data?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_processing_minimum_cpu_cores",
-                                                    "title": "Data_processing_minimum_cpu_cores"
-                                                },
-                                                "data_processing_minimum_cpu_speed_Ghz": {
-                                                    "type": "number",
-                                                    "description": "Minimum clock speed needed to process the data in GHz",
-                                                    "question": "What is the minimum speed, in GHz, required to process the dataset?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_processing_minimum_cpu_speed_Ghz",
-                                                    "title": "Data_processing_minimum_cpu_speed_ghz"
-                                                },
-                                                "data_processing_minimum_machine_type": {
-                                                    "type": "string",
-                                                    "description": "Minimum computing type needed to process the data (e.g., desktop workstation, laptop, server, HPC, super computer)",
-                                                    "example": "HPC",
-                                                    "question": "What is the minimum machine type required process the dataset? (I'm not a fan of this at all, doesn't make sense)",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_processing_minimum_machine_type",
-                                                    "title": "Data_processing_minimum_machine_type"
-                                                },
-                                                "data_processing_minimum_RAM_Gb": {
-                                                    "type": "number",
-                                                    "description": "Minimum RAM needed to process the data in GB",
-                                                    "question": "What is the minimum RAM, in GB, required to process this dataset?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_processing_minimum_RAM_Gb",
-                                                    "title": "Data_processing_minimum_ram_gb"
-                                                },
-                                                "data_transfer_maximum_latency_msec": {
-                                                    "type": "number",
-                                                    "description": "Maximum data transfer latency of the distribution, i.e. the delay of data transfer ",
+                                                    "description": "Maximum data transfer latency of the distribution en ms, i.e. the delay of data transfer ",
+                                                    "example": "50",
                                                     "question": "What is the data transfer maximum latency of the distribution?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_transfer_maximum_latency_msec",
-                                                    "title": "Data_transfer_maximum_latency_msec"
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_transfer_maximum_latency",
+                                                    "title": "Data_transfer_maximum_latency"
                                                 },
-                                                "data_transfer_minimum_throughput_Mbps": {
+                                                "data_transfer_minimum_throughput": {
                                                     "type": "number",
-                                                    "description": "Maximum throughput of the distribution",
+                                                    "description": "Maximum throughput of the distribution in Mbps",
+                                                    "example": "10",
                                                     "question": "What is the maximum throughput of the distribution?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_transfer_minimum_throughput_Mbps",
-                                                    "title": "Data_transfer_minimum_throughput_mbps"
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/data_transfer_minimum_throughput",
+                                                    "title": "Data_transfer_minimum_throughput"
                                                 },
                                                 "geo_location": {
                                                     "type": "string",
@@ -28712,11 +28696,141 @@
                                                     "question": "Where is the location of the host server?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/geo_location",
                                                     "title": "Geo_location"
+                                                },
+                                                "protocol": {
+                                                    "type": "string",
+                                                    "description": "The protocol used to interact with the host",
+                                                    "enum": [
+                                                        "WMS",
+                                                        "TMS",
+                                                        "XYZ",
+                                                        "WFS",
+                                                        "WCS",
+                                                        "REST/HTTP APIs",
+                                                        "WMTS"
+                                                    ],
+                                                    "question": "What is the protocol to interact with the host?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/protocol",
+                                                    "title": "Protocol"
+                                                },
+                                                "content_type": {
+                                                    "type": "string",
+                                                    "description": "Content type of the online service (e.g., Web Service, Dataset, API, Application, Supporting Document)",
+                                                    "example": "Web Service",
+                                                    "question": "What is the content type of the online service?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/content_type",
+                                                    "title": "Content_type"
+                                                },
+                                                "format": {
+                                                    "type": "string",
+                                                    "description": "Format of the online service",
+                                                    "enum": [
+                                                        "AI. AMF",
+                                                        "Application",
+                                                        "ASCII Grid",
+                                                        "BMP",
+                                                        "CDED ASCII",
+                                                        "CDR",
+                                                        "CSV",
+                                                        "DOC",
+                                                        "dxf",
+                                                        "E00",
+                                                        "ECW",
+                                                        "EDI",
+                                                        "EMF",
+                                                        "EPS",
+                                                        "ESRI REST",
+                                                        "EXE",
+                                                        "FGDB / GDB",
+                                                        "Flat raster binary",
+                                                        "GeoPDF",
+                                                        "GeoRSS",
+                                                        "GeoTIF",
+                                                        "GIF",
+                                                        "GML",
+                                                        "HDF",
+                                                        "HTML",
+                                                        "IATI",
+                                                        "JPEG 2000",
+                                                        "JPG",
+                                                        "JSON",
+                                                        "JSON Lines",
+                                                        "KML / KMZ",
+                                                        "NetCDF",
+                                                        "ODP",
+                                                        "ODS",
+                                                        "ODT",
+                                                        "PDF",
+                                                        "PNG",
+                                                        "PPT",
+                                                        "RDF",
+                                                        "RDFa",
+                                                        "RSS",
+                                                        "SAR / CCT",
+                                                        "SAV",
+                                                        "SEGY",
+                                                        "SHP",
+                                                        "SQL",
+                                                        "SVG",
+                                                        "TIFF",
+                                                        "TXT",
+                                                        "XLS",
+                                                        "XLSM",
+                                                        "XML",
+                                                        "WFS",
+                                                        "WMS",
+                                                        "WMTS",
+                                                        "Zip",
+                                                        "Other"
+                                                    ],
+                                                    "example": "WMS",
+                                                    "question": "What is the format of the online service?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/format",
+                                                    "title": "Format"
+                                                },
+                                                "language": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "Display language of the online service",
+                                                        "example": "eng",
+                                                        "question": "What is the display language of the online service?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/language",
+                                                        "title": "Language"
+                                                    },
+                                                    "minItems": 1
+                                                },
+                                                "version": {
+                                                    "type": "string",
+                                                    "description": "Version number of the host system, if applicable. This field is relevant for software-based hosts such as repositories (e.g., Zenodo 4.0, Dataverse 5.13) or storage systems (e.g., MinIO RELEASE.2024-03-11T17-12-34Z). For hardware-based hosts like generic file servers, this field may be left blank.",
+                                                    "question": "What version of the host is used ?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/version",
+                                                    "title": "Version"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "The type of system hosting the distribution",
+                                                    "enum": [
+                                                        "repository",
+                                                        "data portal",
+                                                        "file server",
+                                                        "cloud storage",
+                                                        "HPC system",
+                                                        "other"
+                                                    ],
+                                                    "example": "data portal",
+                                                    "question": "What type is the host?",
+                                                    "requiredWhen": [
+                                                        "host"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/type",
+                                                    "title": "Type"
                                                 }
                                             },
                                             "required": [
                                                 "title",
-                                                "url"
+                                                "url",
+                                                "type"
                                             ]
                                         },
                                         "physical_data_asset": {
@@ -29033,7 +29147,7 @@
                                         "character_unicode_block_name",
                                         "quality_control_level",
                                         "data_access",
-                                        "openess_other_rating_system",
+                                        "openness_other_rating_system",
                                         "protection_level",
                                         "security_classification_level",
                                         "format",
@@ -29196,6 +29310,923 @@
                                         }
                                     ]
                                 }
+                            },
+                            "computing_environment": {
+                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment",
+                                "type": "object",
+                                "title": "Computing_environment",
+                                "properties": {
+                                    "data_management_system": {
+                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system",
+                                        "type": "object",
+                                        "title": "Data_management_system",
+                                        "properties": {
+                                            "description": {
+                                                "type": "string",
+                                                "description": "Brief explanation of the system’s purpose and functionality in relation to this dataset. If relevant, indicate the data types managed by the system.",
+                                                "example": "During the active phase of the research project, active and transitory data are managed (versioned and tracked) within DBMSX.",
+                                                "question": "What purpose does the system serve in relation to the dataset?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/description",
+                                                "title": "Description"
+                                            },
+                                            "pid_system": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string",
+                                                    "description": "Persistent identifier system used by the system.",
+                                                    "enum": [
+                                                        "ark",
+                                                        "arxiv",
+                                                        "bibcode",
+                                                        "doi",
+                                                        "ean13",
+                                                        "eissn",
+                                                        "handle",
+                                                        "igsn",
+                                                        "isbn",
+                                                        "issn",
+                                                        "istc",
+                                                        "lissn",
+                                                        "lsid",
+                                                        "pmid",
+                                                        "purl",
+                                                        "upc",
+                                                        "url",
+                                                        "urn",
+                                                        "other"
+                                                    ],
+                                                    "example": "ark",
+                                                    "question": "What pid system is used for the host server?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/pid_system",
+                                                    "title": "Pid_system"
+                                                }
+                                            },
+                                            "support_checksum": {
+                                                "type": "string",
+                                                "description": "Indicates whether checksum verification is supported",
+                                                "enum": [
+                                                    "yes (with exportable checksum); yes (without confirmed ability to export); no; unknown"
+                                                ],
+                                                "example": "yes",
+                                                "question": "Does the data management system support checksum?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/support_checksum",
+                                                "title": "Support_checksum"
+                                            },
+                                            "support_versioning": {
+                                                "type": "string",
+                                                "description": "To indicate if the data management system supports versioning, meaning changes to datasets are tracked internally",
+                                                "enum": [
+                                                    "yes",
+                                                    "no",
+                                                    "unknown"
+                                                ],
+                                                "example": "yes",
+                                                "question": "Does the data management system support versioning?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/support_versioning",
+                                                "title": "Support_versioning"
+                                            },
+                                            "availability": {
+                                                "type": "string",
+                                                "description": "Defines whether the system is operational 24/7 or has downtime periods (e.g., 24/7, scheduled downtime)",
+                                                "example": "scheduled down time",
+                                                "question": "What is the availability of the distribution?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/availability",
+                                                "title": "Availability"
+                                            },
+                                            "backup_frequency": {
+                                                "type": "string",
+                                                "description": "Backup frequency of the system",
+                                                "example": "weekly",
+                                                "question": "How often is the distribution backed up to the host?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/backup_frequency",
+                                                "title": "Backup_frequency"
+                                            },
+                                            "backup_type": {
+                                                "type": "string",
+                                                "description": "Type of backup performed on the data (e.g., incremental, full, differential, synthetic full)",
+                                                "enum": [
+                                                    "incremental",
+                                                    "full",
+                                                    "differential",
+                                                    "synthetic full",
+                                                    "other"
+                                                ],
+                                                "question": "What type of backup system is used for the host?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/backup_type",
+                                                "title": "Backup_type"
+                                            },
+                                            "certified_with": {
+                                                "type": "string",
+                                                "description": "Certifications relevant to the system (e.g., CoreTrustSeal, ISO 16363).",
+                                                "example": "coretrustseal",
+                                                "question": "What is the host server certified with?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/certified_with",
+                                                "title": "Certified_with"
+                                            },
+                                            "geo_location": {
+                                                "type": "string",
+                                                "description": "The geographical location of the server hosting the system expressed using ISO 3166-1 country code.",
+                                                "enum": [
+                                                    "AD",
+                                                    "AE",
+                                                    "AF",
+                                                    "AG",
+                                                    "AI",
+                                                    "AL",
+                                                    "AM",
+                                                    "AO",
+                                                    "AQ",
+                                                    "AR",
+                                                    "AS",
+                                                    "AT",
+                                                    "AU",
+                                                    "AW",
+                                                    "AX",
+                                                    "AZ",
+                                                    "BA",
+                                                    "BB",
+                                                    "BD",
+                                                    "BE",
+                                                    "BF",
+                                                    "BG",
+                                                    "BH",
+                                                    "BI",
+                                                    "BJ",
+                                                    "BL",
+                                                    "BM",
+                                                    "BN",
+                                                    "BO",
+                                                    "BQ",
+                                                    "BR",
+                                                    "BS",
+                                                    "BT",
+                                                    "BV",
+                                                    "BW",
+                                                    "BY",
+                                                    "BZ",
+                                                    "CA",
+                                                    "CC",
+                                                    "CD",
+                                                    "CF",
+                                                    "CG",
+                                                    "CH",
+                                                    "CI",
+                                                    "CK",
+                                                    "CL",
+                                                    "CM",
+                                                    "CN",
+                                                    "CO",
+                                                    "CR",
+                                                    "CU",
+                                                    "CV",
+                                                    "CW",
+                                                    "CX",
+                                                    "CY",
+                                                    "CZ",
+                                                    "DE",
+                                                    "DJ",
+                                                    "DK",
+                                                    "DM",
+                                                    "DO",
+                                                    "DZ",
+                                                    "EC",
+                                                    "EE",
+                                                    "EG",
+                                                    "EH",
+                                                    "ER",
+                                                    "ES",
+                                                    "ET",
+                                                    "FI",
+                                                    "FJ",
+                                                    "FK",
+                                                    "FM",
+                                                    "FO",
+                                                    "FR",
+                                                    "GA",
+                                                    "GB",
+                                                    "GD",
+                                                    "GE",
+                                                    "GF",
+                                                    "GG",
+                                                    "GH",
+                                                    "GI",
+                                                    "GL",
+                                                    "GM",
+                                                    "GN",
+                                                    "GP",
+                                                    "GQ",
+                                                    "GR",
+                                                    "GS",
+                                                    "GT",
+                                                    "GU",
+                                                    "GW",
+                                                    "GY",
+                                                    "HK",
+                                                    "HM",
+                                                    "HN",
+                                                    "HR",
+                                                    "HT",
+                                                    "HU",
+                                                    "ID",
+                                                    "IE",
+                                                    "IL",
+                                                    "IM",
+                                                    "IN",
+                                                    "IO",
+                                                    "IQ",
+                                                    "IR",
+                                                    "IS",
+                                                    "IT",
+                                                    "JE",
+                                                    "JM",
+                                                    "JO",
+                                                    "JP",
+                                                    "KE",
+                                                    "KG",
+                                                    "KH",
+                                                    "KI",
+                                                    "KM",
+                                                    "KN",
+                                                    "KP",
+                                                    "KR",
+                                                    "KW",
+                                                    "KY",
+                                                    "KZ",
+                                                    "LA",
+                                                    "LB",
+                                                    "LC",
+                                                    "LI",
+                                                    "LK",
+                                                    "LR",
+                                                    "LS",
+                                                    "LT",
+                                                    "LU",
+                                                    "LV",
+                                                    "LY",
+                                                    "MA",
+                                                    "MC",
+                                                    "MD",
+                                                    "ME",
+                                                    "MF",
+                                                    "MG",
+                                                    "MH",
+                                                    "MK",
+                                                    "ML",
+                                                    "MM",
+                                                    "MN",
+                                                    "MO",
+                                                    "MP",
+                                                    "MQ",
+                                                    "MR",
+                                                    "MS",
+                                                    "MT",
+                                                    "MU",
+                                                    "MV",
+                                                    "MW",
+                                                    "MX",
+                                                    "MY",
+                                                    "MZ",
+                                                    "NA",
+                                                    "NC",
+                                                    "NE",
+                                                    "NF",
+                                                    "NG",
+                                                    "NI",
+                                                    "NL",
+                                                    "NO",
+                                                    "NP",
+                                                    "NR",
+                                                    "NU",
+                                                    "NZ",
+                                                    "OM",
+                                                    "PA",
+                                                    "PE",
+                                                    "PF",
+                                                    "PG",
+                                                    "PH",
+                                                    "PK",
+                                                    "PL",
+                                                    "PM",
+                                                    "PN",
+                                                    "PR",
+                                                    "PS",
+                                                    "PT",
+                                                    "PW",
+                                                    "PY",
+                                                    "QA",
+                                                    "RE",
+                                                    "RO",
+                                                    "RS",
+                                                    "RU",
+                                                    "RW",
+                                                    "SA",
+                                                    "SB",
+                                                    "SC",
+                                                    "SD",
+                                                    "SE",
+                                                    "SG",
+                                                    "SH",
+                                                    "SI",
+                                                    "SJ",
+                                                    "SK",
+                                                    "SL",
+                                                    "SM",
+                                                    "SN",
+                                                    "SO",
+                                                    "SR",
+                                                    "SS",
+                                                    "ST",
+                                                    "SV",
+                                                    "SX",
+                                                    "SY",
+                                                    "SZ",
+                                                    "TC",
+                                                    "TD",
+                                                    "TF",
+                                                    "TG",
+                                                    "TH",
+                                                    "TJ",
+                                                    "TK",
+                                                    "TL",
+                                                    "TM",
+                                                    "TN",
+                                                    "TO",
+                                                    "TR",
+                                                    "TT",
+                                                    "TV",
+                                                    "TW",
+                                                    "TZ",
+                                                    "UA",
+                                                    "UG",
+                                                    "UM",
+                                                    "US",
+                                                    "UY",
+                                                    "UZ",
+                                                    "VA",
+                                                    "VC",
+                                                    "VE",
+                                                    "VG",
+                                                    "VI",
+                                                    "VN",
+                                                    "VU",
+                                                    "WF",
+                                                    "WS",
+                                                    "YE",
+                                                    "YT",
+                                                    "ZA",
+                                                    "ZM",
+                                                    "ZW"
+                                                ],
+                                                "example": "CA",
+                                                "question": "Where is the location of the host server?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/geo_location",
+                                                "title": "Geo_location"
+                                            },
+                                            "visibility": {
+                                                "type": "string",
+                                                "description": "Defines whether the data management system is accessible internally within an organization or externally to broader audiences. Allowed values: Internal (accessible only within a specific organization or project), External (accessible to users outside the organization via public or controlled access)",
+                                                "enum": [
+                                                    "internal",
+                                                    "external"
+                                                ],
+                                                "example": "Internal",
+                                                "question": "Is the data management system accessible only internally or also externally?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/visibility",
+                                                "title": "Visibility"
+                                            },
+                                            "version": {
+                                                "type": "string",
+                                                "description": "Version of the data management system",
+                                                "example": "3.2.1",
+                                                "question": "If applicable, what is the version of the data management system?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/version",
+                                                "title": "Version"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "description": "The type of system used to store and manage active data. Note that a time-series database like TimescaleDB is actually a relational database, but because it's optimized for time-series data, it gets its own distinct category",
+                                                "enum": [
+                                                    "flat file",
+                                                    "RDBMS",
+                                                    "graph database",
+                                                    "NoSQL database",
+                                                    "object-oriented database",
+                                                    "columnar database",
+                                                    "key-value store",
+                                                    "time-series database",
+                                                    "unknown",
+                                                    "other"
+                                                ],
+                                                "example": "Relational Database Management System (RDBMS)",
+                                                "question": "What type is the data management system?",
+                                                "requiredWhen": [
+                                                    "data_management_system"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/type",
+                                                "title": "Type"
+                                            },
+                                            "storage_type": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string",
+                                                    "description": "Type or types of storage used by the data management system",
+                                                    "enum": [
+                                                        "SSD",
+                                                        "HDD",
+                                                        "cloud",
+                                                        "tape storage",
+                                                        "other"
+                                                    ],
+                                                    "example": "tape storage",
+                                                    "question": "What type of storage the data management system relies on?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/storage_type",
+                                                    "title": "Storage_type"
+                                                }
+                                            },
+                                            "protocol": {
+                                                "type": "string",
+                                                "description": "The protocol used to interact with the system ",
+                                                "enum": [
+                                                    "HTTP",
+                                                    "FTP",
+                                                    "SFTP",
+                                                    "OAI-PMH",
+                                                    "API",
+                                                    "other"
+                                                ],
+                                                "example": "OAI-PMH",
+                                                "question": "What type of protocol is used to interact with the data management system?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/protocol",
+                                                "title": "Protocol"
+                                            },
+                                            "data_transfer_maximum_latency": {
+                                                "type": "number",
+                                                "description": "Maximum data transfer latency of the data en ms, i.e. the delay of data transfer ",
+                                                "example": "50",
+                                                "question": "What is the data transfer maximum latency of the distribution?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/data_transfer_maximum_latency",
+                                                "title": "Data_transfer_maximum_latency"
+                                            },
+                                            "compliance_standards": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string",
+                                                    "description": "Standards the system follows for security, data management, and governance (e.g., GDPR, HIPAA, SOC 2 compliance)",
+                                                    "example": "GDPR",
+                                                    "question": "What standard is the data management system compliant to regarding data security, data management or data governance?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/compliance_standards",
+                                                    "title": "Compliance_standards"
+                                                }
+                                            },
+                                            "authentication": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string",
+                                                    "description": "User access and authentication mechanisms. ",
+                                                    "enum": [
+                                                        "OAuth",
+                                                        "LDAP",
+                                                        "API key",
+                                                        "role-based access",
+                                                        "other"
+                                                    ],
+                                                    "example": "OAuth",
+                                                    "question": "What mechanism is used for authentication and access control?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/authentication",
+                                                    "title": "Authentication"
+                                                }
+                                            },
+                                            "access_url": {
+                                                "type": "string",
+                                                "description": "Web or network-accessible URL for accessing the system",
+                                                "example": "https://dmssystem.org",
+                                                "question": "What url provides access to the data management system?",
+                                                "format": "uri",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/access_url",
+                                                "title": "Access_url"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "Name of the active data management system used to store/process data (e.g., PostgreSQL, MySQL, Dataverse, iRODS, etc.)",
+                                                "example": "NAQUA",
+                                                "question": "How is the data management system called?",
+                                                "requiredWhen": [
+                                                    "data_management_system"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/title",
+                                                "title": "Title"
+                                            },
+                                            "data_transfer_minimum_throughput": {
+                                                "type": "number",
+                                                "description": "Maximum throughput of the dataset in Mbps",
+                                                "example": "10",
+                                                "question": "What is the maximum throughput of the distribution?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/data_management_system/properties/data_transfer_minimum_throughput",
+                                                "title": "Data_transfer_minimum_throughput"
+                                            }
+                                        },
+                                        "description": "To describe the database management system or other computerized data system used to store or manage active data. Every other systems used to access the data should be described as distributions.",
+                                        "required": [
+                                            "type",
+                                            "title"
+                                        ]
+                                    },
+                                    "hardware_requirements": {
+                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements",
+                                        "type": "object",
+                                        "title": "Hardware_requirements",
+                                        "properties": {
+                                            "minimum_cpu_cores": {
+                                                "type": "number",
+                                                "description": "Minimum CPU cores needed to process the data",
+                                                "example": "8",
+                                                "question": "What is the minimum number of cpu cores required to process the data?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/minimum_cpu_cores",
+                                                "title": "Minimum_cpu_cores"
+                                            },
+                                            "minimum_cpu_speed": {
+                                                "type": "number",
+                                                "description": "Minimum clock speed needed to process the data in GHz",
+                                                "example": "2.5 GHz",
+                                                "question": "What is the minimum speed, in GHz, required to process the dataset?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/minimum_cpu_speed",
+                                                "title": "Minimum_cpu_speed"
+                                            },
+                                            "machine_type": {
+                                                "type": "string",
+                                                "description": "Minimum computing type needed to process the data (e.g., desktop workstation, laptop, server, HPC, super computer)",
+                                                "example": "HPC",
+                                                "question": "What is the minimum machine type required process the dataset? (I'm not a fan of this at all, doesn't make sense)",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/machine_type",
+                                                "title": "Machine_type"
+                                            },
+                                            "data_processing_minimum_RAM_Gb": {
+                                                "type": "number",
+                                                "description": "Minimum RAM needed to process the data in GB",
+                                                "example": "16",
+                                                "question": "What is the minimum RAM, in GB, required to process this dataset?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/data_processing_minimum_RAM_Gb",
+                                                "title": "Data_processing_minimum_ram_gb"
+                                            },
+                                            "network_requirements": {
+                                                "type": "number",
+                                                "description": "Minimum bandwidth or network speed required in Mbps",
+                                                "example": "100",
+                                                "question": "What is the minimum bandwidth or netowrk speed required (Mbps)?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/network_requirements",
+                                                "title": "Network_requirements"
+                                            },
+                                            "processing_unit_requirements": {
+                                                "type": "string",
+                                                "description": "Need for specialized hardware like GPUs/TPUs for computation",
+                                                "example": "NVIDIA Tesla V100",
+                                                "question": "What processing units are required?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/processing_unit_requirements",
+                                                "title": "Processing_unit_requirements"
+                                            },
+                                            "storage_capacity": {
+                                                "type": "number",
+                                                "description": "Minimum storage space required",
+                                                "example": "1",
+                                                "question": "What is the minimum storage capacity required to process this dataset?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/storage_capacity",
+                                                "title": "Storage_capacity"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "Describe the hardware requirement",
+                                                "question": "Describe the process requiring specific hardware",
+                                                "requiredWhen": [
+                                                    "hardware_requirement"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/description",
+                                                "title": "Description"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "Identify the purpose requiring specific hardware",
+                                                "example": "Mapping historical data",
+                                                "question": "What process requires specific hardware?",
+                                                "requiredWhen": [
+                                                    "hardware_requirement"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/title",
+                                                "title": "Title"
+                                            }
+                                        },
+                                        "description": "Minimum requirements for processing data for a specific purpose\r",
+                                        "required": [
+                                            "description",
+                                            "title"
+                                        ],
+                                        "allOf": [
+                                            {
+                                                "if": {
+                                                    "properties": {
+                                                        "storage_capacity_unit": {
+                                                            "enum": [
+                                                                "non NULL"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                "then": {
+                                                    "properties": {
+                                                        "storage_capacity_unit": {
+                                                            "type": "string",
+                                                            "description": "Unit in which the storage capacity requirement is expressed",
+                                                            "enum": [
+                                                                "MB",
+                                                                "GB",
+                                                                "TB",
+                                                                "PB"
+                                                            ],
+                                                            "example": "TB",
+                                                            "question": "What unit is the minimum storage expressed in?",
+                                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/hardware_requirements/properties/storage_capacity_unit",
+                                                            "title": "Storage_capacity_unit"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "storage_capacity_unit"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "software": {
+                                        "type": "array",
+                                        "items": {
+                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software",
+                                            "type": "object",
+                                            "title": "Software",
+                                            "properties": {
+                                                "description": {
+                                                    "type": "string",
+                                                    "description": "To provide any free-form text information on the computer code used",
+                                                    "example": "Tool for spatial data analysis",
+                                                    "question": "Describe the computer code being used.",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/description",
+                                                    "title": "Description"
+                                                },
+                                                "download_url": {
+                                                    "type": "string",
+                                                    "description": "the URL to download the computer code or the software",
+                                                    "question": "What is the URL to download the computer code?",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/download_url",
+                                                    "title": "Download_url"
+                                                },
+                                                "license": {
+                                                    "type": "string",
+                                                    "description": "The licensing terms under which the software/code is released. Use of a license is highly recommended (e.g., CC BY-SA 4.0, MIT, open government license, etc.)",
+                                                    "example": "CC BY-SA 4.0",
+                                                    "question": "What license applies to this work?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/license",
+                                                    "title": "License"
+                                                },
+                                                "programming_language": {
+                                                    "type": "string",
+                                                    "description": "Computer programming language used (e.g., Python, R, SAS)",
+                                                    "example": "Python",
+                                                    "question": "What language is the computer code in?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/programming_language",
+                                                    "title": "Programming_language"
+                                                },
+                                                "proprietary_software": {
+                                                    "type": "string",
+                                                    "description": "To indicate if proprietary software was used",
+                                                    "enum": [
+                                                        "yes",
+                                                        "no",
+                                                        "unknown"
+                                                    ],
+                                                    "example": "yes",
+                                                    "question": "Is there proprietary software in use?",
+                                                    "requiredWhen": [
+                                                        "computing_environment"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/proprietary_software",
+                                                    "title": "Proprietary_software"
+                                                },
+                                                "operating_system_name": {
+                                                    "type": "string",
+                                                    "description": "If OS dependent, operating system used ",
+                                                    "enum": [
+                                                        "android os",
+                                                        "dos",
+                                                        "iOS",
+                                                        "linux",
+                                                        "mac os",
+                                                        "windows",
+                                                        "unix"
+                                                    ],
+                                                    "example": "linux",
+                                                    "question": "What operating system is in use?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/operating_system_name",
+                                                    "title": "Operating_system_name"
+                                                },
+                                                "operating_system_description": {
+                                                    "type": "string",
+                                                    "description": "If OS dependent, to provide any free-form text information on the operating system used",
+                                                    "question": "Describe the operating system in use?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/operating_system_description",
+                                                    "title": "Operating_system_description"
+                                                },
+                                                "software_management_plan": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "description": "To reference an external software management plan",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/software_management_plan",
+                                                        "title": "Software_management_plan",
+                                                        "properties": {
+                                                            "name": {
+                                                                "type": "string",
+                                                                "question": "What is the name or title of the SMP",
+                                                                "requiredWhen": [
+                                                                    "software_management_plan"
+                                                                ],
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/software_management_plan/properties/name",
+                                                                "title": "Name"
+                                                            },
+                                                            "access_url": {
+                                                                "type": "string",
+                                                                "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
+                                                                "example": "some.intranet/.../project page.aspx",
+                                                                "question": "What is the access url to the SMP",
+                                                                "format": "uri",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/software_management_plan/properties/access_url",
+                                                                "title": "Access_url"
+                                                            },
+                                                            "download_url": {
+                                                                "type": "string",
+                                                                "description": "Title of the external document documenting the  cost",
+                                                                "example": "http://some.repo.../download/...",
+                                                                "question": "What is the dowload url of the SMP",
+                                                                "format": "uri",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/software_management_plan/properties/download_url",
+                                                                "title": "Download_url"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "name"
+                                                        ]
+                                                    }
+                                                },
+                                                "code_repository": {
+                                                    "type": "string",
+                                                    "description": "Link to a version control repository if applicable",
+                                                    "example": "https://github.com/FAIRERdata/maDMP-Standard",
+                                                    "question": "What version control repository  the code is available at (url)?",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/code_repository",
+                                                    "title": "Code_repository"
+                                                },
+                                                "execution_environment": {
+                                                    "type": "string",
+                                                    "description": "Specify where the software runs (e.g., Local Machine, Cloud, Docker, Kubernetes, etc.)",
+                                                    "example": "laptop",
+                                                    "question": "Where does the software or code run?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/execution_environment",
+                                                    "title": "Execution_environment"
+                                                },
+                                                "dependencies": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "Any additional libraries required for execution (e.g., NumPy, TensorFlow, Pandas, etc.)",
+                                                        "example": "pandas",
+                                                        "question": "What libraries or modules is the code dependent on?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/dependencies",
+                                                        "title": "Dependencies"
+                                                    }
+                                                }
+                                            },
+                                            "description": "Repeat as many times as needed to describe all software and code used for data collection, data processing, data analysis, data dissemination. Fill in the computer code or the software section. If applicable, fill also the proprietary software section and the software management plan section. You may also want to provide information about the workflow documentation in the dedicated section.",
+                                            "required": [
+                                                "proprietary_software"
+                                            ],
+                                            "allOf": [
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "proprietary_software": {
+                                                                "enum": [
+                                                                    "yes"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "name": {
+                                                                "type": "string",
+                                                                "description": "Name of the software or code ",
+                                                                "example": "MATLAB",
+                                                                "question": "What is the name of the software or code in use?",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/name",
+                                                                "title": "Name"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "name"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "proprietary_software": {
+                                                                "enum": [
+                                                                    "yes"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "proprietary_software_justification": {
+                                                                "type": "string",
+                                                                "description": "To indicate if proprietary software justification was provided",
+                                                                "enum": [
+                                                                    "yes",
+                                                                    "no",
+                                                                    "unknown"
+                                                                ],
+                                                                "example": "yes",
+                                                                "question": "is the propietry software justified in use?",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/proprietary_software_justification",
+                                                                "title": "Proprietary_software_justification"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "proprietary_software_justification"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "proprietary_software": {
+                                                                "enum": [
+                                                                    "yes"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "proprietary_software_migration_plan": {
+                                                                "type": "string",
+                                                                "description": "To indicate if there is a migration plan for the proprietary software",
+                                                                "enum": [
+                                                                    "yes",
+                                                                    "no",
+                                                                    "unknown"
+                                                                ],
+                                                                "example": "yes",
+                                                                "question": "Is there a migration plan for the proprietary software?",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/proprietary_software_migration_plan",
+                                                                "title": "Proprietary_software_migration_plan"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "proprietary_software_migration_plan"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "proprietary_software": {
+                                                                "enum": [
+                                                                    "yes"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "proprietary_software_migration_plan_description": {
+                                                                "type": "string",
+                                                                "description": "To provide any free-form text information on the migration plan for the proprietary software ",
+                                                                "question": "Describe the migration plan for the propietary software.",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software/properties/proprietary_software_migration_plan_description",
+                                                                "title": "Proprietary_software_migration_plan_description"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "proprietary_software_migration_plan_description"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "description": "To describe the operational environment used for data collection, processing, analysis and dissemination.",
+                                "question": " "
                             },
                             "disposition_planning": {
                                 "type": "object",
@@ -29543,300 +30574,6 @@
                                 "format": "date",
                                 "$id": "#/properties/dmp/properties/dataset/properties/disposition_completed",
                                 "title": "Disposition_completed"
-                            },
-                            "computing_environment": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Repeat as many times as needed to describe all computing environments used for data collection, data processing, data analysis, data dissemination. For each environment, fill in the computer code or the software section. If applicable, fill also the proprietary software section and the software management plan section. You may also want to provide information about the workflow documentation in the dedicated section.",
-                                    "question": " ",
-                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment",
-                                    "title": "Computing_environment",
-                                    "properties": {
-                                        "computer_code_description": {
-                                            "type": "string",
-                                            "description": "If there is computer code, provide any free-form text information on the computer code used",
-                                            "question": "Describe the computer code being used.",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/computer_code_description",
-                                            "title": "Computer_code_description"
-                                        },
-                                        "computer_code_download": {
-                                            "type": "string",
-                                            "description": "If there is computer code, the URL to download the computer code",
-                                            "question": "What is the URL to download the computer code?",
-                                            "format": "uri",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/computer_code_download",
-                                            "title": "Computer_code_download"
-                                        },
-                                        "computer_code_license": {
-                                            "type": "string",
-                                            "description": "If there is computer code. Use of a license is highly recommended (e.g., CC BY-SA 4.0, MIT, open government license, etc.)",
-                                            "example": "CC BY-SA 4.0",
-                                            "question": "What license applies to this work?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/computer_code_license",
-                                            "title": "Computer_code_license"
-                                        },
-                                        "computer_code_programming_language": {
-                                            "type": "string",
-                                            "description": "If there is computer code. Computer programming language used (e.g., Python, R, SAS)",
-                                            "example": "Python",
-                                            "question": "What language is the computer code in?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/computer_code_programming_language",
-                                            "title": "Computer_code_programming_language"
-                                        },
-                                        "proprietary_software": {
-                                            "type": "string",
-                                            "description": "To indicate if proprietary software was used",
-                                            "enum": [
-                                                "yes",
-                                                "no",
-                                                "unknown"
-                                            ],
-                                            "example": "yes",
-                                            "question": "Is there proprietary software in use?",
-                                            "requiredWhen": [
-                                                "computing_environment"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software",
-                                            "title": "Proprietary_software"
-                                        },
-                                        "operating_system_name": {
-                                            "type": "string",
-                                            "description": "If OS dependent, operating system used ",
-                                            "enum": [
-                                                "android os",
-                                                "dos",
-                                                "iOS",
-                                                "linux",
-                                                "mac os",
-                                                "windows",
-                                                "unix"
-                                            ],
-                                            "example": "linux",
-                                            "question": "What operating system is in use?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/operating_system_name",
-                                            "title": "Operating_system_name"
-                                        },
-                                        "operating_system_description": {
-                                            "type": "string",
-                                            "description": "If OS dependent, to provide any free-form text information on the operating system used",
-                                            "question": "Describe the operating system in use?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/operating_system_description",
-                                            "title": "Operating_system_description"
-                                        },
-                                        "software_management_plan": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "description": "To reference an external software management plan",
-                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
-                                                "title": "Software_management_plan",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Title of the external document documenting the  cost",
-                                                        "question": "What is the name or title of the SMP",
-                                                        "requiredWhen": [
-                                                            "software_management_plan"
-                                                        ],
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
-                                                        "title": "Name"
-                                                    },
-                                                    "access_url": {
-                                                        "type": "string",
-                                                        "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
-                                                        "example": "some.intranet/.../project page.aspx",
-                                                        "question": "What is the access url to the SMP",
-                                                        "format": "uri",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
-                                                        "title": "Access_url"
-                                                    },
-                                                    "download_url": {
-                                                        "type": "string",
-                                                        "description": "Download URL to the Software Management Plan (SMP)",
-                                                        "example": "http://some.repo.../download/...",
-                                                        "question": "What is the dowload url of the SMP",
-                                                        "format": "uri",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
-                                                        "title": "Download_url"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name"
-                                                ]
-                                            }
-                                        }
-                                    },
-                                    "required": [
-                                        "proprietary_software"
-                                    ],
-                                    "allOf": [
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "software_name": {
-                                                        "type": "string",
-                                                        "description": "Software name used",
-                                                        "question": "What is the name of the software in use?",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_name",
-                                                        "title": "Software_name"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "software_name"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "software_description": {
-                                                        "type": "string",
-                                                        "description": "To provide any free-form text information on the software used ",
-                                                        "question": "Describe the software in use.",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_description",
-                                                        "title": "Software_description"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "software_description"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "proprietary_software_justification": {
-                                                        "type": "string",
-                                                        "description": "To indicate if proprietary software justification was provided",
-                                                        "enum": [
-                                                            "yes",
-                                                            "no",
-                                                            "unknown"
-                                                        ],
-                                                        "example": "yes",
-                                                        "question": "is the propietry software justified in use?",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software_justification",
-                                                        "title": "Proprietary_software_justification"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "proprietary_software_justification"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "proprietary_software_migration_plan": {
-                                                        "type": "string",
-                                                        "description": "To indicate if there is a migration plan for the proprietary software",
-                                                        "enum": [
-                                                            "yes",
-                                                            "no",
-                                                            "unknown"
-                                                        ],
-                                                        "example": "yes",
-                                                        "question": "Is there a migration plan for the proprietary software?",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software_migration_plan",
-                                                        "title": "Proprietary_software_migration_plan"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "proprietary_software_migration_plan"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "proprietary_software_migration_plan_description": {
-                                                        "type": "string",
-                                                        "description": "To provide any free-form text information on the migration plan for the proprietary software ",
-                                                        "question": "Describe the migration plan for the propietary software.",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software_migration_plan_description",
-                                                        "title": "Proprietary_software_migration_plan_description"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "proprietary_software_migration_plan_description"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "if": {
-                                                "properties": {
-                                                    "proprietary_software": {
-                                                        "enum": [
-                                                            "yes"
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            "then": {
-                                                "properties": {
-                                                    "software_download": {
-                                                        "type": "string",
-                                                        "description": "URL to download the software used",
-                                                        "example": "https://github.com/yourstruly/bestcodeever",
-                                                        "question": "Provide the URL to download the software in use.",
-                                                        "format": "uri",
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_download",
-                                                        "title": "Software_download"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "software_download"
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
                             }
                         },
                         "required": [

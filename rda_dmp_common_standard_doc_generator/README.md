@@ -43,8 +43,9 @@ go get -u github.com/jinzhu/gorm/dialects/sqlite@v1.9.16
 
 #### 2. Compile the sources
 
-From a command line, go into the `src` sub-directory and run: 
+In a powershell terminal, go into the `src` sub-directory and run: 
 ```bash
+$env:CGO_ENABLED="1"
 go build -o ../rda_dmp_common_standard_doc_generator.exe
 ```
 This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). 

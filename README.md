@@ -1,4 +1,4 @@
-<center style="color:RED;">UNDER DEVELOPMENT</center><center><h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.5</h1></center>
+<h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.5</h1></center>
 <Div Align=RIGHT>
   <details>
   <summary style="color:blue;">Link to HIGH LEVEL BRIEF »</summary>
@@ -18,9 +18,9 @@
 <p><b>Purpose</b>: The MAP provides basic interoperability between systems producing or consuming machine-actionable data management plans (maDMP's). The MAP and companion schema are the means for rapidly building reliable, lightweight, and easily customized automated systems with appropriate access controls while maximizing interoperability.</p>
 <p><b>Applicability</b>: The maDMP MAP is intended to cover a wide range of use cases and does not set any business requirements. It represents information collected over the whole data lifecycle from conception through to disposition. The required (mandatory) information is minimized to apply across all use cases at the beginning of the data lifecycle. The remaining information in the MAP is set to optional. Some of this optional information becomes mandatory as the data move through the data lifecycle. Organizations can choose to make the remaining optional information mandatory during implementation if it is relevant to them. </p>
 <p><b>Early Adoption</b>: Phased implementation of maDMPs reduces the administrative burden of scientists, data stewards, and other stakeholders with minimal development overhead. The structured, extensible design of the metadata model adapts to specific organizational and disciplinary needs to achieve smooth metadata exchange between systems, enabling more efficient and collaborative data management. Alignment with other metadata standards and international best practices ensures interoperability with other tools used within organizations and by external partners. </p>
-<p><b>GC maDMP working group</b>: If you see opportunities for improvement to this MAP, we invite you to join the GC maDMP working group. Contact: Claire.Austin@canada.ca or Dominique.Charles@canada.ca.  </p>
+<p><b>GC maDMP working group</b>: If you see opportunities for improvement to this MAP, we invite you to join the GC maDMP working group. Lead co-authors: Claire.Austin@canada.ca, Dominique.Charles@canada.ca or Jennifer.Cuffe@bac-lac.gc.ca.  </p>
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
-<p><b>Entity relationship diagram</b>: The maDMP ERD is a logical model which is more detailed than the conceptual model. It provides a visual starting point for development and debugging of the maDMP specification and potential database design. </p>
+<p><b>Entity relationship diagram</b>: The maDMP ERD is a logical model which is more detailed than the high level conceptual model above. It provides a visual starting point for development and debugging of the maDMP specification and potential database design. </p>
 <img src="docs/diagrams/GCWG-RDA maDMP Entity Relationship Diagram.png"/>
 Download full Entity Relationship Diagram <a href="https://raw.github.com/FAIRERdata/maDMP-Standard/Master/docs/diagrams/GCWG-RDA%20maDMP%20Entity%20Relationship%20Diagram.png" download target="_blank">here</a>.
 

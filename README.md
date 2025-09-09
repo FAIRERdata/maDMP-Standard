@@ -1,4 +1,4 @@
-<h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.5</h1></center>
+<h1 style='font-size: 1.2em;'>GCWG - RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.5</h1>
 <Div Align=RIGHT>
   <details>
   <summary style="color:blue;">Link to HIGH LEVEL BRIEF »</summary>

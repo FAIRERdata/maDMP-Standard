@@ -48,7 +48,7 @@ In a powershell terminal, go into the `src` sub-directory and run:
 $env:CGO_ENABLED="1"
 go build -o ../rda_dmp_common_standard_doc_generator.exe
 ```
-This will build an executable file called `rda_dmp_common_standard_doc_generator` in the main directory (the one containing this `README.md` file). 
+This will build an executable file called `rda_dmp_common_standard_doc_generator` in the rda_dmp_common_standard_doc_generator directory. 
 
 #### 3. Set up your configuration file
 

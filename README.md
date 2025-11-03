@@ -8,9 +8,7 @@
 <p><b>Early Adoption</b>: Phased implementation of maDMPs reduces the administrative burden of scientists, data stewards, and other stakeholders with minimal development overhead. The structured, extensible design of the metadata model adapts to specific organizational and disciplinary needs to achieve smooth metadata exchange between systems, enabling more efficient and collaborative data management. Alignment with other metadata standards and international best practices ensures interoperability with other tools used within organizations and by external partners. </p>
 <p><b>GC maDMP working group</b>: If you see opportunities for improvement to this MAP, we invite you to join the GC maDMP working group. Contact: Claire.Austin@canada.ca or Dominique.Charles@canada.ca.  </p>
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
-<p><b>Entity relationship diagram</b>: The maDMP ERD is a logical model which is more detailed than the conceptual model. It provides a visual starting point for development and debugging of the maDMP specification and potential database design. </p>
-<img src="docs/diagrams/GCWG-RDA maDMP Entity Relationship Diagram.png"/>
-Download full Entity Relationship Diagram <a href="https://drive.google.com/uc?export=download&id=1y-dSnhdLxH6UqQ0TFslf5rH8HuuHIYyj" download>here</a>.
+<p><b>Entity relationship diagram</b>: pending.</p>
 
 <h3>Safeguarding Science</h3>
 <p>Safeguarding Science is the protection of scientific knowledge, technologies, data, and long-term research integrity. An important risk mitigation measure for any project is development of a data management plan. The purpose of the Safeguarding Science section in the maDMP is twofold: (1) Describe or link to project-specific safeguarding science issues or measures that are not already recorded in another section of the maDMP; and/or, (2) Describe or link to more broadly applicable safeguarding science information. There may be a link, for example to a risk assessment and mitigation plan that is specific to the project or that applies to all projects and data within the broader organization. </p>

@@ -31,7 +31,7 @@
                     "ui:order": [
                         "type",
                         "registry_name",
-                        "registry_URI",
+                        "registry_url",
                         "registry_version",
                         "identifier"
                     ]
@@ -39,75 +39,27 @@
                 "affiliation": {
                     "items": {
                         "ui:order": [
-                            "type",
-                            "business",
-                            "educational_institution",
-                            "government_department_or_agency",
-                            "non_profit",
-                            "other",
-                            "country",
-                            "province_state"
+                            "contributor_affiliation_name",
+                            "contributor_affiliation_id",
+                            "contributor_country",
+                            "contributor_province_state"
                         ],
-                        "business": {
+                        "contributor_affiliation_id": {
                             "ui:order": [
-                                "name",
-                                "business_id"
-                            ],
-                            "business_id": {
-                                "ui:order": [
-                                    "identifier",
-                                    "type",
-                                    "registry_name",
-                                    "registry_URI",
-                                    "registry_version"
-                                ]
-                            }
-                        },
-                        "educational_institution": {
-                            "ui:order": [
-                                "name",
-                                "department",
-                                "educational_institution_id"
-                            ],
-                            "educational_institution_id": {
-                                "ui:order": [
-                                    "identifier",
-                                    "type",
-                                    "registry_name",
-                                    "registry_URI",
-                                    "registry_version"
-                                ]
-                            }
-                        },
-                        "government_department_or_agency": {
-                            "ui:order": [
-                                "name",
-                                "code",
-                                "organizational_group",
-                                "organizational_subgroup"
+                                "identifier",
+                                "type",
+                                "registry_name",
+                                "registry_url",
+                                "registry_version"
                             ]
                         },
-                        "non_profit": {
+                        "contributor_country": {
                             "ui:order": [
                                 "name",
-                                "non_profit_id"
-                            ],
-                            "non_profit_id": {
-                                "ui:order": [
-                                    "identifier",
-                                    "type",
-                                    "reference_URI",
-                                    "reference_version"
-                                ]
-                            }
-                        },
-                        "country": {
-                            "ui:order": [
-                                "country_name",
-                                "country_code"
+                                "code"
                             ]
                         },
-                        "province_state": {
+                        "contributor_province_state": {
                             "ui:order": [
                                 "name",
                                 "code"
@@ -139,7 +91,8 @@
                     "safeguarding_science_measures",
                     "succession_plan",
                     "algorithmic_impact_assessment_conducted",
-                    "algorithmic_impact_assessment_conducted_uri"
+                    "algorithmic_impact_assessment_conducted_url",
+                    "classification_plan_code"
                 ],
                 "funding": {
                     "items": {
@@ -161,7 +114,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_uri",
                                 "registry_version",
                                 "identifier"
                             ]
@@ -170,7 +123,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_uri",
                                 "registry_version",
                                 "identifier"
                             ]
@@ -195,7 +148,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_uri",
                                 "registry_version",
                                 "identifier"
                             ]
@@ -309,14 +262,16 @@
                     "disposition_planning",
                     "disposition_action",
                     "disposition_completed",
-                    "computing_environment"
+                    "creator",
+                    "dataset_is_reused",
+                    "mulitple_language"
                 ],
                 "dataset_id": {
                     "ui:order": [
                         "identifier",
                         "type",
                         "registry_name",
-                        "registry_URI",
+                        "registry_url",
                         "registry_version"
                     ]
                 },
@@ -324,9 +279,9 @@
                     "items": {
                         "ui:order": [
                             "heading_name",
-                            "heading_URI",
+                            "heading_uri",
                             "scheme_name",
-                            "scheme_URI",
+                            "scheme_uri",
                             "scheme_version"
                         ]
                     }
@@ -376,8 +331,79 @@
                     "items": {
                         "ui:order": [
                             "name",
-                            "description"
-                        ]
+                            "description",
+                            "data_management_system",
+                            "hardware_requirements",
+                            "software"
+                        ],
+                        "data_management_system": {
+                            "ui:order": [
+                                "description",
+                                "pid_system",
+                                "support_checksum",
+                                "support_versioning",
+                                "availability",
+                                "backup_frequency",
+                                "backup_type",
+                                "certified_with",
+                                "geo_location",
+                                "protocol",
+                                "access_url",
+                                "authentication",
+                                "visibility",
+                                "version",
+                                "type",
+                                "title",
+                                "storage_type",
+                                "compliance_standards",
+                                "data_transfer_maximum_latency",
+                                "data_transfer_minimum_throughput"
+                            ]
+                        },
+                        "hardware_requirements": {
+                            "ui:order": [
+                                "minimum_cpu_cores",
+                                "minimum_cpu_speed",
+                                "machine_type",
+                                "data_processing_minimum_RAM_Gb",
+                                "processing_unit_requirements",
+                                "storage_capacity_unit",
+                                "storage_capacity",
+                                "description",
+                                "network_requirements",
+                                "title"
+                            ]
+                        },
+                        "software": {
+                            "items": {
+                                "ui:order": [
+                                    "description",
+                                    "download_url",
+                                    "license",
+                                    "programming_language",
+                                    "name",
+                                    "proprietary_software",
+                                    "proprietary_software_justification",
+                                    "proprietary_software_migration_plan",
+                                    "proprietary_software_migration_plan_description",
+                                    "operating_system_name",
+                                    "operating_system_description",
+                                    "software_management_plan",
+                                    "code_repository",
+                                    "execution_environment",
+                                    "dependencies"
+                                ],
+                                "software_management_plan": {
+                                    "items": {
+                                        "ui:order": [
+                                            "name",
+                                            "access_url",
+                                            "download_url"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "intellectual_property": {
@@ -399,7 +425,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_url",
                                 "registry_version",
                                 "identifier"
                             ]
@@ -450,7 +476,8 @@
                             "online_service",
                             "byte_size",
                             "data_size",
-                            "data_size_units"
+                            "data_size_units",
+                            "data_integrity"
                         ],
                         "version_history": {
                             "ui:order": [
@@ -483,7 +510,6 @@
                                 "storage_type",
                                 "pid_system",
                                 "support_checksum",
-                                "support_versioning",
                                 "data_priority",
                                 "availability",
                                 "backup_frequency",
@@ -496,8 +522,8 @@
                                 "content_type",
                                 "format",
                                 "language",
-                                "version",
-                                "type"
+                                "type",
+                                "version"
                             ]
                         },
                         "physical_data_asset": {
@@ -516,7 +542,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_url",
                                 "registry_version",
                                 "identifier"
                             ]
@@ -533,83 +559,16 @@
                                     "language"
                                 ]
                             }
+                        },
+                        "data_integrity": {
+                            "ui:order": [
+                                "output",
+                                "function_name",
+                                "perfomed",
+                                "notes"
+                            ]
                         }
                     }
-                },
-                "computing_environment": {
-                    "data_management_system": {
-                        "ui:order": [
-                            "description",
-                            "pid_system",
-                            "support_checksum",
-                            "support_versioning",
-                            "availability",
-                            "backup_frequency",
-                            "backup_type",
-                            "certified_with",
-                            "geo_location",
-                            "visibility",
-                            "version",
-                            "type",
-                            "storage_type",
-                            "protocol",
-                            "data_transfer_maximum_latency",
-                            "compliance_standards",
-                            "authentication",
-                            "access_url",
-                            "title",
-                            "data_transfer_minimum_throughput"
-                        ]
-                    },
-                    "hardware_requirements": {
-                        "ui:order": [
-                            "minimum_cpu_cores",
-                            "minimum_cpu_speed",
-                            "machine_type",
-                            "data_processing_minimum_RAM_Gb",
-                            "network_requirements",
-                            "processing_unit_requirements",
-                            "storage_capacity_unit",
-                            "storage_capacity",
-                            "description",
-                            "title"
-                        ]
-                    },
-                    "software": {
-                        "items": {
-                            "ui:order": [
-                                "description",
-                                "download_url",
-                                "license",
-                                "programming_language",
-                                "name",
-                                "proprietary_software",
-                                "proprietary_software_justification",
-                                "proprietary_software_migration_plan",
-                                "proprietary_software_migration_plan_description",
-                                "operating_system_name",
-                                "operating_system_description",
-                                "software_management_plan",
-                                "code_repository",
-                                "execution_environment",
-                                "dependencies"
-                            ],
-                            "software_management_plan": {
-                                "items": {
-                                    "ui:order": [
-                                        "name",
-                                        "access_url",
-                                        "download_url"
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "ui:order": [
-                        "hardware_requirements",
-                        "software",
-                        "data_management_system"
-                    ]
                 },
                 "disposition_planning": {
                     "ui:order": [
@@ -655,6 +614,56 @@
                             "date"
                         ]
                     }
+                },
+                "creator": {
+                    "items": {
+                        "affiliation": {
+                            "items": {
+                                "creator_affiliation_id": {
+                                    "ui:order": [
+                                        "registry_name",
+                                        "registry_url",
+                                        "registry_version",
+                                        "type",
+                                        "identifier"
+                                    ]
+                                },
+                                "ui:order": [
+                                    "creator_affiliation_name",
+                                    "creator_country",
+                                    "creator_affiliation_id",
+                                    "creator_province_state"
+                                ],
+                                "creator_country": {
+                                    "ui:order": [
+                                        "code",
+                                        "name"
+                                    ]
+                                },
+                                "creator_province_state": {
+                                    "ui:order": [
+                                        "code",
+                                        "name"
+                                    ]
+                                }
+                            }
+                        },
+                        "ui:order": [
+                            "affiliation",
+                            "creator_id",
+                            "mbox",
+                            "name"
+                        ],
+                        "creator_id": {
+                            "ui:order": [
+                                "identifier",
+                                "registry_name",
+                                "registry_url",
+                                "registry_version",
+                                "type"
+                            ]
+                        }
+                    }
                 }
             }
         },
@@ -671,31 +680,49 @@
                 "fax",
                 "delivery_point",
                 "city",
-                "province_state",
                 "postal_zip_code",
-                "country",
-                "hours_of_service"
+                "hours_of_service",
+                "affiliation"
             ],
             "contact_id": {
                 "ui:order": [
                     "identifier",
                     "type",
                     "registry_name",
-                    "registry_URI",
+                    "registry_url",
                     "registry_version"
                 ]
             },
-            "province_state": {
-                "ui:order": [
-                    "code",
-                    "name"
-                ]
-            },
-            "country": {
-                "ui:order": [
-                    "code",
-                    "name"
-                ]
+            "affiliation": {
+                "items": {
+                    "contact_affiliation_id": {
+                        "ui:order": [
+                            "registry_uri",
+                            "registry_version",
+                            "type",
+                            "identifier",
+                            "registry_name"
+                        ]
+                    },
+                    "contact_country": {
+                        "ui:order": [
+                            "code",
+                            "name"
+                        ]
+                    },
+                    "ui:order": [
+                        "contact_country",
+                        "contact_province_state",
+                        "contact_affiliation_id",
+                        "contact_affiliation_name"
+                    ],
+                    "contact_province_state": {
+                        "ui:order": [
+                            "code",
+                            "name"
+                        ]
+                    }
+                }
             }
         },
         "general_info": {
@@ -724,7 +751,7 @@
                 "ui:order": [
                     "type",
                     "registry_name",
-                    "registry_URI",
+                    "registry_uri",
                     "registry_version",
                     "identifier"
                 ]
@@ -742,7 +769,7 @@
                             "ui:order": [
                                 "type",
                                 "registry_name",
-                                "registry_URI",
+                                "registry_uri",
                                 "registry_version",
                                 "identifier"
                             ]

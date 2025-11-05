@@ -1,4 +1,16 @@
-<center><h2 style='color: black;'>DRAFT</h2></center><center><h1 style='font-size: 1.2em;'>GCWG-RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.6</h1></center><table id="table1"><tr><td valign="top"><h3>Preamble</h3>
+<center><h2 style='color: black;'>DRAFT</h2></center><center><h1 style='font-size: 1.2em;'>GCWG-RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.6</h1></center><table id="table1"><tr><td valign="top">
+
+<Div Align=RIGHT>
+  <details>
+  <summary style="color:blue;">Link to HIGH LEVEL BRIEF »</summary>
+   <a href="https://sites.google.com/view/gcwg-madmp-standard/elevator-pitch" target="_blank">Elevator Pitch</a>
+ <br><a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">Value Proposition </a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/user-stories" target="_blank">User Stories</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/faq" target="_blank">FAQ</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/definitions" target="_blank">Definitions</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/compatibility-with-standards" target="_blank">Compatibility with Standards</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/references" target="_blank">References</a>
+</details>
+  <p><a style="color:blue;" href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">Create your maDMP here »</a>
+    </p>
+</Div> 
+ 
+<h3>Preamble</h3>
 <p><b>Short Definition</b>: A machine-actionable Data Management Plans (maDMP), updated during the entire data lifecycle, provides information about a project and its data in a discipline agnostic standardized manner that is readable and reusable by both humans and automated systems. maDMPs facilitate collaboration, reporting, compliance, and integration with automated systems.</p>
 
 <p><b>Long Definition</b>: Machine-actionable Data Management Plans (maDMPs), are an enterprise solution that operationalizes FAIRER (Findable, Accessible, Interoperable, Reusable, Ethical, and Reproducible) data management principles and enables an organization to plan more easily, document costing and funding, track inputs and outputs, provide customized reports, and ensure transparency throughout the data lifecycle. They provide information about contributors, partner agreements, distributions and licensing, storage, technical resources and computing needs, processing workflows, associated code and software, security and privacy, data quality, ethical issues, Indigenous considerations, retention and disposition, approvals, and more. maDMPs are the means for rapidly building reliable, lightweight, scalable, and easily customized automated systems with appropriate access controls while maximizing interoperability. </p>

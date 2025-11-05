@@ -1,4 +1,4 @@
-<center><h2 style='color: black;'>DRAFT</h2></center><center><h1 style='font-size: 1.2em;'>GCWG-RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.6</h1></center>
+<center><h2 style='color: black;'>Status: Pre-release</h2></center><center><h1 style='font-size: 1.2em;'>GCWG-RDA maDMP Metadata Application Profile (MAP)<br> for machine-actionable Data Management Plans<br> v2.6</h1></center>
 
 <Div Align=RIGHT>
   <details>

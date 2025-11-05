@@ -396,9 +396,9 @@
                                 "software_management_plan": {
                                     "items": {
                                         "ui:order": [
-                                            "name",
-                                            "access_url",
-                                            "download_url"
+                                            "smp_name",
+                                            "smp_access_url",
+                                            "smp_download_url"
                                         ]
                                     }
                                 }
@@ -562,8 +562,9 @@
                         },
                         "data_integrity": {
                             "ui:order": [
-                                "output",
-                                "function_name",
+                                "value",
+                                "download",
+                                "algorithm",
                                 "perfomed",
                                 "notes"
                             ]
@@ -621,18 +622,18 @@
                             "items": {
                                 "creator_affiliation_id": {
                                     "ui:order": [
-                                        "registry_name",
-                                        "registry_url",
                                         "registry_version",
+                                        "identifier",
                                         "type",
-                                        "identifier"
+                                        "registry_name",
+                                        "registry_url"
                                     ]
                                 },
                                 "ui:order": [
                                     "creator_affiliation_name",
                                     "creator_country",
-                                    "creator_affiliation_id",
-                                    "creator_province_state"
+                                    "creator_province_state",
+                                    "creator_affiliation_id"
                                 ],
                                 "creator_country": {
                                     "ui:order": [
@@ -650,9 +651,9 @@
                         },
                         "ui:order": [
                             "affiliation",
-                            "creator_id",
                             "mbox",
-                            "name"
+                            "name",
+                            "creator_id"
                         ],
                         "creator_id": {
                             "ui:order": [
@@ -674,7 +675,6 @@
                 "contact_id",
                 "role",
                 "url",
-                "organization",
                 "position",
                 "telephone",
                 "fax",
@@ -697,25 +697,25 @@
                 "items": {
                     "contact_affiliation_id": {
                         "ui:order": [
-                            "registry_uri",
                             "registry_version",
+                            "registry_uri",
                             "type",
                             "identifier",
                             "registry_name"
                         ]
                     },
+                    "ui:order": [
+                        "contact_affiliation_name",
+                        "contact_province_state",
+                        "contact_affiliation_id",
+                        "contact_country"
+                    ],
                     "contact_country": {
                         "ui:order": [
                             "code",
                             "name"
                         ]
                     },
-                    "ui:order": [
-                        "contact_country",
-                        "contact_province_state",
-                        "contact_affiliation_id",
-                        "contact_affiliation_name"
-                    ],
                     "contact_province_state": {
                         "ui:order": [
                             "code",

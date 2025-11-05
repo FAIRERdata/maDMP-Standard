@@ -52,7 +52,7 @@
                                     "title": "Type"
                                 },
                                 "registry_uri": {
-                                    "type": "url",
+                                    "type": "string",
                                     "description": "Link to the registry or system used to identify the linked dmp",
                                     "question": "Where can the registry or system be found?",
                                     "$id": "#/properties/dmp/properties/dmp_id/properties/registry_uri",
@@ -7706,7 +7706,7 @@
                             "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
                         "schema_version_uri": {
-                            "type": "url",
+                            "type": "string",
                             "description": "DMP schema URI ",
                             "question": "What is the URI to the metadata schema version used when creating this maDMP?",
                             "$id": "#/properties/dmp/properties/schema_version_uri",
@@ -7780,7 +7780,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the linked dmp",
                                                     "question": "Where can the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id/properties/registry_uri",
@@ -7851,14 +7851,14 @@
                                         "title": "Relationship"
                                     },
                                     "access_url": {
-                                        "type": "url",
+                                        "type": "string",
                                         "description": "URL where the linked dmp can be accessed",
                                         "question": "Where can the linked dmp be accessed",
                                         "$id": "#/properties/dmp/properties/linked_dmp/properties/access_url",
                                         "title": "Access_url"
                                     },
                                     "download_url": {
-                                        "type": "url",
+                                        "type": "string",
                                         "description": "URL where the linked dmp can be downloaded",
                                         "example": "http://some.repo.../download/...",
                                         "question": "Where can the linked dmp be downloaded",
@@ -7927,6 +7927,9 @@
                             "contributor_id": {
                                 "type": "object",
                                 "description": "Persistent identifier associated with the contributor",
+                                "requiredWhen": [
+                                    "contributor"
+                                ],
                                 "$id": "#/properties/dmp/properties/contributor/properties/contributor_id",
                                 "title": "Contributor_id",
                                 "properties": {
@@ -7945,7 +7948,7 @@
                                         "title": "Type"
                                     },
                                     "registry_url": {
-                                        "type": "url",
+                                        "type": "string",
                                         "description": "Link to the identifier system used to identify the contributor",
                                         "example": "https://gcdirectory-gcannuaire.ssc-spc.gc.ca/en/GCD/?pgid=002",
                                         "question": "Where can the identifier system be found?",
@@ -7965,6 +7968,9 @@
                                         "description": "To indicate the specific value of the contributor’s identifier ",
                                         "example": "1111-1111-1111-1111",
                                         "question": "What is the contributor's unique ID?",
+                                        "requiredWhen": [
+                                            "contributor_id"
+                                        ],
                                         "$id": "#/properties/dmp/properties/contributor/properties/contributor_id/properties/identifier",
                                         "title": "Identifier"
                                     }
@@ -8013,6 +8019,7 @@
                                         "contributor_affiliation_name": {
                                             "type": "string",
                                             "description": "Name of the organization the contributor is affiliated with",
+                                            "example": "Transport Canada",
                                             "question": "What is the name of the organization the contributor is affiliated with?",
                                             "requiredWhen": [
                                                 "contributor_affiliation"
@@ -8032,6 +8039,7 @@
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "To indicate the specific value of the organization identifier ",
+                                                    "example": "0238rs311",
                                                     "question": "What is the identifier of the contributor's organization?",
                                                     "requiredWhen": [
                                                         "contributor_affiliation_id"
@@ -8048,6 +8056,7 @@
                                                         "isni",
                                                         "other"
                                                     ],
+                                                    "example": "ror",
                                                     "question": "What type of identification system uniquely identifies the organization?",
                                                     "requiredWhen": [
                                                         "contributor_affiliation_id"
@@ -8056,16 +8065,18 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the identifier system used to identify the organization",
-                                                    "question": "Where can the reference be found",
+                                                    "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
+                                                    "question": "Where can the registry be found",
                                                     "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/contributor_affiliation_id/properties/registry_url",
                                                     "title": "Registry_url"
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
                                                     "description": "To indicate the version number or date of the reference",
-                                                    "question": "what version of the reference was used at the time where the identifier was entered",
+                                                    "example": "2025-10-31",
+                                                    "question": "what version of the registry was used at the time where the identifier was entered",
                                                     "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/contributor_affiliation_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 }
@@ -8090,7 +8101,7 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what identifier system is used to identify the organization when \"other\" as id type.",
-                                                                "example": "Registre des entreprises de la chambre de commerce",
+                                                                "example": "Registre des entreprises du Quebec",
                                                                 "question": "What registry was used to provide the organization ID?",
                                                                 "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/contributor_affiliation_id/properties/registry_name",
                                                                 "title": "Registry_name"
@@ -8113,7 +8124,7 @@
                                                     "type": "string",
                                                     "description": "The name of the country, as per the ISO standard ISO 3166-1 Codes for the representation of names of countries and their subdivisions – Part 1: Country codes",
                                                     "example": "United States of America",
-                                                    "question": "Where is the contributor located (country name)?",
+                                                    "question": "In which country is located the organization the contributor is affiliated with? Provide the name",
                                                     "requiredWhen": [
                                                         "contributor_country"
                                                     ],
@@ -8375,7 +8386,7 @@
                                                         "ZW"
                                                     ],
                                                     "example": "US",
-                                                    "question": "Where is the contributor located (country code)?",
+                                                    "question": "In which country is located the organization the contributor is affiliated with? Provide the code",
                                                     "requiredWhen": [
                                                         "contributor_country"
                                                     ],
@@ -8398,7 +8409,7 @@
                                                     "type": "string",
                                                     "description": "The name of the province or state, as per the ISO standard ISO 3166-2  Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
                                                     "example": "Quebec",
-                                                    "question": "What province or state does the contributor work in?",
+                                                    "question": "If applicable, in which subdivision of the country is located the organization that contributor is affiliated with? Provide the name",
                                                     "requiredWhen": [
                                                         "contributor_province_state"
                                                     ],
@@ -8409,7 +8420,7 @@
                                                     "type": "string",
                                                     "description": "The 3-letter code of the province or state, as per the ISO standard 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
                                                     "example": "QC",
-                                                    "question": "What province or state is the contributor working in?",
+                                                    "question": "If applicable, in which subdivision of the country is located the organization that contributor is affiliated with? Provide the code",
                                                     "requiredWhen": [
                                                         "contributor_province_state"
                                                     ],
@@ -8432,6 +8443,7 @@
                             "position": {
                                 "type": "string",
                                 "description": "Role or position of the contributor or cited responsible party",
+                                "example": "project manager",
                                 "question": "What is the position of the contributor or cited responsible party?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/position",
                                 "title": "Position"
@@ -8441,6 +8453,7 @@
                                 "items": {
                                     "type": "number",
                                     "description": "Telephone number by which individuals can speak to the contributor or cited reponsible party",
+                                    "example": "1231231234",
                                     "question": "What is the contributor or cited responsible party's telephone number?",
                                     "$id": "#/properties/dmp/properties/contributor/properties/telephone",
                                     "title": "Telephone"
@@ -8451,6 +8464,7 @@
                                 "items": {
                                     "type": "number",
                                     "description": "Telephone number of a facsimile machine for the contributor or cited responsible party",
+                                    "example": "1231231234",
                                     "question": "What is the contributor or cited responsible party's fax number?",
                                     "$id": "#/properties/dmp/properties/contributor/properties/fax",
                                     "title": "Fax"
@@ -8459,6 +8473,7 @@
                             "delivery_point": {
                                 "type": "string",
                                 "description": "Enter the street address for the contributor or the cited responsible party",
+                                "example": "150 rue McGill, Montreal",
                                 "question": "What is the contributor or cited responsible party's civic address?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/delivery_point",
                                 "title": "Delivery_point"
@@ -8466,6 +8481,7 @@
                             "city": {
                                 "type": "string",
                                 "description": "City where the contributor is located",
+                                "example": "Montreal",
                                 "question": "In which city is the contributor or cited responsible party located?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/city",
                                 "title": "City"
@@ -8473,13 +8489,15 @@
                             "postal_zip_code": {
                                 "type": "string",
                                 "description": "ZIP or other postal code of the location",
+                                "example": "H8T3F5",
                                 "question": "What is the contributor or cited responsible party's postal code or zip code?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/postal_zip_code",
                                 "title": "Postal_zip_code"
                             },
                             "url": {
-                                "type": "url",
+                                "type": "string",
                                 "description": "On-line information that can be used to contact the contributor or the cited responsible party. This element should be expressed as a URL that will guide the user to further information online. \n",
+                                "example": "https://profils-profiles.science.gc.ca/fr/profil/john-doe",
                                 "question": "What is the URL that links to the contact details of the contributor or cited responsible party?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/url",
                                 "title": "Url"
@@ -8487,6 +8505,7 @@
                             "hours_of_service": {
                                 "type": "string",
                                 "description": "The time period (including time zone) when the contributor or the cited responsible party can be contacted\n",
+                                "example": "08:30 - 17:30 UTC+5",
                                 "question": "What are the hours and time zone during which the contributor or cited responsible party can be contacted?",
                                 "$id": "#/properties/dmp/properties/contributor/properties/hours_of_service",
                                 "title": "Hours_of_service"
@@ -8495,11 +8514,9 @@
                         "required": [
                             "name",
                             "role",
-                            "contributor_id",
-                            "affiliation"
+                            "contributor_id"
                         ]
-                    },
-                    "minItems": 1
+                    }
                 },
                 "approval": {
                     "type": "object",
@@ -8751,7 +8768,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the registry or system used to identify the funder",
                                                     "question": "Where can the registry or the system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/registry_uri",
@@ -8844,7 +8861,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the grant",
                                                     "question": "Where can the the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/registry_uri",
@@ -8951,7 +8968,7 @@
                                                     "title": "Type"
                                                 },
                                                 "agreement_download_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Download link to the partner organization agreement document ",
                                                     "example": "http://some.repo.../download/...",
                                                     "question": "Provide a link to the partner organization agreement.",
@@ -8977,7 +8994,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the partner organization",
                                                     "question": "Where can the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_uri",
@@ -9102,14 +9119,14 @@
                                                             "title": "Description"
                                                         },
                                                         "access_url": {
-                                                            "type": "url",
+                                                            "type": "string",
                                                             "description": "Access url of the reference related to science safeguarding",
                                                             "question": "What is the url to access the reference related to science safeguarding?",
                                                             "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/access_url",
                                                             "title": "Access_url"
                                                         },
                                                         "download_url": {
-                                                            "type": "url",
+                                                            "type": "string",
                                                             "description": "Download url of the reference related to science safeguarding",
                                                             "question": "What is the url to download the reference related to science safeguarding?",
                                                             "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/download_url",
@@ -9153,7 +9170,7 @@
                                                             "title": "Description"
                                                         },
                                                         "download_url": {
-                                                            "type": "url",
+                                                            "type": "string",
                                                             "description": "To indicate the url where the backup can be retrieved",
                                                             "example": "http://some.repo.../download/...",
                                                             "question": "Where can the backup be downloaded from?",
@@ -9192,7 +9209,7 @@
                                 "title": "Algorithmic_impact_assessment_conducted"
                             },
                             "algorithmic_impact_assessment_conducted_url": {
-                                "type": "url",
+                                "type": "string",
                                 "description": "Link to the algorithmic impact assessment",
                                 "question": "Provide a link to the algorithmic impact assessment, if applicable.",
                                 "$id": "#/properties/dmp/properties/project/properties/algorithmic_impact_assessment_conducted_url",
@@ -9270,7 +9287,7 @@
                                             "title": "Name"
                                         },
                                         "access_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "A URL of that gives access to the costdocumentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to cost documentation, typically through a Web form, query or API call.",
                                             "example": "https://007gc.sharepoint.com/stb/wqmsd/Project.aspx",
                                             "question": "Provide a link to the cost documentation.",
@@ -9278,7 +9295,7 @@
                                             "title": "Access_url"
                                         },
                                         "download_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "Download URL to the cost documentation",
                                             "example": "https://gc.sharepoint.com/dpmo/projects/project 345 business charter.docx",
                                             "question": "Provide the download URL for the cost documentation.",
@@ -11128,7 +11145,7 @@
                                         "title": "Type"
                                     },
                                     "registry_url": {
-                                        "type": "url",
+                                        "type": "string",
                                         "description": "Link to the registry or system used to identify the dataset",
                                         "example": "https://ecollab.ncr.int.ec.gc.ca/theme/1275886/DataInventoryProject/Data-Asset-Inventory_Master-Spreadsheet_FINAL.xlsx",
                                         "question": "Where can the registry or system be found?",
@@ -11205,7 +11222,7 @@
                                             "title": "Heading_name"
                                         },
                                         "heading_uri": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "The URI of the subject heading value.",
                                             "example": "https://id.loc.gov/authorities/subjects/sh85008973.html",
                                             "question": "Does the subject heading have a URI? If so, paste it here.",
@@ -11221,7 +11238,7 @@
                                             "title": "Scheme_name"
                                         },
                                         "scheme_uri": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "The URI of the subject scheme. Consider URIs available at <a href=\"https://id.loc.gov/vocabulary/subjectSchemes.html\">id.loc.gov</a>",
                                             "example": "https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf",
                                             "question": "Is there a URI for the subject scheme used to ? If so, paste it here.\n",
@@ -11306,6 +11323,7 @@
                             "geographic_coverage": {
                                 "type": "string",
                                 "description": "The geographical area covered by a geospatial dataset",
+                                "example": "Canada",
                                 "question": "In the case of a geospatial dataset, what is the geographic area is covered?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/geographic_coverage",
                                 "title": "Geographic_coverage"
@@ -11334,7 +11352,7 @@
                                             "title": "Description"
                                         },
                                         "access_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "A URL of that gives access to the dataset documentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to dataset documentation, typically through a Web form, query or API call.",
                                             "example": "some.intranet/.../project page.aspx",
                                             "question": "Provide a link to the dataset documentation.",
@@ -11342,7 +11360,7 @@
                                             "title": "Access_url"
                                         },
                                         "download_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "Download URL to the dataset documentation",
                                             "example": "http://some.repo.../download/...",
                                             "question": "Provide the download URL for the dataset documentation.",
@@ -18962,7 +18980,7 @@
                                             "title": "Privacy_impact_assessment",
                                             "properties": {
                                                 "download_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "A URL that gives access to the privacy impact assessment. The access URL should be used for the URL of a service or location that can provide access to privacy impact assessment, typically through a Web form, query or API call.",
                                                     "example": "http://some.repo.../download/...",
                                                     "question": "Provide the URL to download the privacy impact assessment.",
@@ -19095,7 +19113,7 @@
                             "supported_works_url": {
                                 "type": "array",
                                 "items": {
-                                    "type": "url",
+                                    "type": "string",
                                     "description": "An URL or DOI that gives access to the supported work.",
                                     "question": "Provide a URL to this supported work.",
                                     "$id": "#/properties/dmp/properties/dataset/properties/supported_works_url",
@@ -19217,7 +19235,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "object",
-                                    "question": "What technical resources are used to implement the DMP?",
+                                    "description": "List all technical resources (e.g. tools or software) and computing environments required for any stage of a dataset lifecycle (e.g. microscopes, sensors, Jupyter Notebook, Galaxy workflows, measuring devices), and for which documentation is required.",
                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource",
                                     "title": "Technical_resource",
                                     "properties": {
@@ -19622,7 +19640,7 @@
                                                     "title": "Protocol"
                                                 },
                                                 "access_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Web or network-accessible URL for accessing the system",
                                                     "example": "https://dmssystem.org",
                                                     "question": "What url provides access to the data management system?",
@@ -19892,7 +19910,7 @@
                                                         "title": "Description"
                                                     },
                                                     "download_url": {
-                                                        "type": "url",
+                                                        "type": "string",
                                                         "description": "the URL to download the computer code or the software",
                                                         "question": "What is the URL to download the computer code?",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/download_url",
@@ -19962,39 +19980,40 @@
                                                             "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan",
                                                             "title": "Software_management_plan",
                                                             "properties": {
-                                                                "name": {
+                                                                "smp_name": {
                                                                     "type": "string",
+                                                                    "description": "The name or title of the software management plan",
                                                                     "question": "What is the name or title of the SMP",
                                                                     "requiredWhen": [
                                                                         "software_management_plan"
                                                                     ],
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/name",
-                                                                    "title": "Name"
+                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/smp_name",
+                                                                    "title": "Smp_name"
                                                                 },
-                                                                "access_url": {
-                                                                    "type": "url",
+                                                                "smp_access_url": {
+                                                                    "type": "string",
                                                                     "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
                                                                     "example": "some.intranet/.../project page.aspx",
                                                                     "question": "What is the access url to the SMP",
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/access_url",
-                                                                    "title": "Access_url"
+                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/smp_access_url",
+                                                                    "title": "Smp_access_url"
                                                                 },
-                                                                "download_url": {
-                                                                    "type": "url",
+                                                                "smp_download_url": {
+                                                                    "type": "string",
                                                                     "description": "Title of the external document documenting the  cost",
                                                                     "example": "http://some.repo.../download/...",
                                                                     "question": "What is the dowload url of the SMP",
-                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/download_url",
-                                                                    "title": "Download_url"
+                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/software_management_plan/properties/smp_download_url",
+                                                                    "title": "Smp_download_url"
                                                                 }
                                                             },
                                                             "required": [
-                                                                "name"
+                                                                "smp_name"
                                                             ]
                                                         }
                                                     },
                                                     "code_repository": {
-                                                        "type": "url",
+                                                        "type": "string",
                                                         "description": "Link to a version control repository if applicable",
                                                         "example": "https://github.com/FAIRERdata/maDMP-Standard",
                                                         "question": "What version control repository  the code is available at (url)?",
@@ -27760,7 +27779,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the metadata standard ",
                                                     "example": "https://rdamsc.bath.ac.uk/",
                                                     "question": "Where can the registry or the system be found?",
@@ -27925,6 +27944,7 @@
                                                 "revision_date": {
                                                     "type": "string",
                                                     "description": "To indicate the date a revision of the data in the distribution was made. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                                    "example": "2025-09-09",
                                                     "question": "When was the last revision made?",
                                                     "format": "date",
                                                     "requiredWhen": [
@@ -27936,14 +27956,15 @@
                                                 "revision_description": {
                                                     "type": "string",
                                                     "description": "Description about what changes this revision made",
+                                                    "example": "QC information was added",
                                                     "question": "Describe what the revision is and  its purpose.",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/version_history/properties/revision_description",
                                                     "title": "Revision_description"
                                                 },
                                                 "revision_documentation": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the revision documentation",
-                                                    "question": "Provide the url link to the revision",
+                                                    "question": "Provide the url link to the material documenting the revision",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/version_history/properties/revision_documentation",
                                                     "title": "Revision_documentation"
                                                 }
@@ -28889,7 +28910,7 @@
                                                     "title": "Description"
                                                 },
                                                 "url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "The URL of the system hosting a distribution of a dataset",
                                                     "example": "https://zenodo.org",
                                                     "question": "What is the url to the host of the distribution?",
@@ -29510,7 +29531,7 @@
                                                     "title": "Type"
                                                 },
                                                 "registry_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the distribution",
                                                     "example": "https://data-donnees.az.ec.gc.ca/data",
                                                     "question": "Where can the registry or system be found?",
@@ -29570,14 +29591,14 @@
                                             ]
                                         },
                                         "file_path": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "File path is for files that are available internally on shared drives but are not published on the internet. File paths using backslashes instead of forward slashes used for urls.",
                                             "question": "What is the file path for this distribution?",
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/file_path",
                                             "title": "File_path"
                                         },
                                         "access_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "A URL that gives access to the distribution. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the distribution, typically through a Web form, query or API call.",
                                             "example": "some.data.catalogue/.../project_uuid",
                                             "question": "What is the access URL to the dataset?",
@@ -29585,7 +29606,7 @@
                                             "title": "Access_url"
                                         },
                                         "download_url": {
-                                            "type": "url",
+                                            "type": "string",
                                             "description": "The URL of the downloadable file in a given format. E.g. CSV file or RDF file.",
                                             "example": "http://some.repo.../download/...",
                                             "question": "What is the download URL of the dataset.",
@@ -29625,7 +29646,7 @@
                                                         "title": "Service_language"
                                                     },
                                                     "service_url": {
-                                                        "type": "url",
+                                                        "type": "string",
                                                         "description": "A url that leads to the online service page",
                                                         "question": "What is the url that links to online service page?",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/online_service/properties/service_url",
@@ -29707,34 +29728,46 @@
                                         },
                                         "data_integrity": {
                                             "type": "object",
+                                            "description": "To provide the checksum or the hash (or a link to it) output and information about the method used to generate them ",
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity",
                                             "title": "Data_integrity",
                                             "properties": {
-                                                "output": {
+                                                "value": {
                                                     "type": "string",
-                                                    "description": "To indicate the output of the checksum or the hash function",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/output",
-                                                    "title": "Output"
+                                                    "description": "To indicate the output (value) of the checksum or the hash function",
+                                                    "question": "What is the  value of the checksum or hash function?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/value",
+                                                    "title": "Value"
                                                 },
-                                                "function_name": {
+                                                "download": {
                                                     "type": "string",
-                                                    "description": "To indicate the name of the function or method used to check data integrity",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/function_name",
-                                                    "title": "Function_name"
+                                                    "description": "To provide a link to download the checksum",
+                                                    "question": "Where can the checksum be downloaded?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/download",
+                                                    "title": "Download"
+                                                },
+                                                "algorithm": {
+                                                    "type": "string",
+                                                    "description": "To indicate the name of the algorithm used to generate a checksum or a hash",
+                                                    "question": "What algorithm was used to generate the checksum or the hash?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/algorithm",
+                                                    "title": "Algorithm"
                                                 },
                                                 "perfomed": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "string",
-                                                        "description": "Date the checksome or hash was performed",
+                                                        "description": "Date the checksum or hash was generated",
+                                                        "question": "What date was the checksum generated?",
+                                                        "format": "date",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/perfomed",
                                                         "title": "Perfomed"
                                                     }
                                                 },
                                                 "notes": {
                                                     "type": "string",
-                                                    "description": "to indicate any information about automation or planning",
-                                                    "format": "date",
+                                                    "description": "To indicate any information about automation or planning",
+                                                    "question": "What additinal information can you provide about the automation or the planning of the checksum?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_integrity/properties/notes",
                                                     "title": "Notes"
                                                 }
@@ -29778,7 +29811,7 @@
                                                         "title": "License",
                                                         "properties": {
                                                             "license_ref": {
-                                                                "type": "url",
+                                                                "type": "string",
                                                                 "description": "Link to license document. Examples: <a href=\"https://open.canada.ca/en/open-government-license-canada\">open.canada.ca</a> ; <a href=\"https://choosealicense.com/licenses/mit/\">choosealicense.com</a> ; <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\">creativecommons.org</a> ; <a href=\"https://opensource.org/licenses\">opensource.org</a> ",
                                                                 "example": "https://open.canada.ca/en/open-government-license-canada",
                                                                 "question": "Provide a link to the license.",
@@ -29925,6 +29958,7 @@
                                         "type": "array",
                                         "items": {
                                             "type": "object",
+                                            "description": "To provide the details about the retention specifications",
                                             "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification",
                                             "title": "Retention_specification",
                                             "properties": {
@@ -30084,7 +30118,7 @@
                                         }
                                     },
                                     "retention_schedule_url": {
-                                        "type": "url",
+                                        "type": "string",
                                         "description": "A URL that leads to the applicable retention schedule",
                                         "example": "//intranet.server/.../retention_schedule",
                                         "question": "Where can you click to see the retention schedule?",
@@ -30280,45 +30314,58 @@
                                                         "type": "object",
                                                         "title": "Creator_affiliation_id",
                                                         "properties": {
-                                                            "registry_url": {
-                                                                "type": "url",
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_url",
-                                                                "title": "Registry_url"
-                                                            },
                                                             "registry_version": {
                                                                 "type": "string",
+                                                                "description": "To indicate the version number or date of the reference",
+                                                                "example": "2025-10-31",
+                                                                "question": "What version of the registry was used at the time where the identifier was entered",
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_version",
                                                                 "title": "Registry_version"
                                                             },
+                                                            "identifier": {
+                                                                "type": "string",
+                                                                "description": "To indicate the specific value of the organization identifier ",
+                                                                "example": "0238rs311",
+                                                                "question": "What is the identifier of the creatore's organization?",
+                                                                "requiredWhen": [
+                                                                    "creator_affiliation_id"
+                                                                ],
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/identifier",
+                                                                "title": "Identifier"
+                                                            },
                                                             "type": {
                                                                 "type": "string",
+                                                                "description": "To specify what type the organization identifier is.",
                                                                 "enum": [
                                                                     "ror",
                                                                     "grid",
                                                                     "isni",
                                                                     "other"
                                                                 ],
+                                                                "example": "ror",
+                                                                "question": "What type of identification system uniquely identifies the organization?",
                                                                 "requiredWhen": [
                                                                     "creator_affiliation_id"
                                                                 ],
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/type",
                                                                 "title": "Type"
                                                             },
-                                                            "identifier": {
+                                                            "registry_url": {
                                                                 "type": "string",
-                                                                "requiredWhen": [
-                                                                    "creator_affiliation_id"
-                                                                ],
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/identifier",
-                                                                "title": "Identifier"
+                                                                "description": "Link to the identifier system used to identify the organization",
+                                                                "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
+                                                                "question": "Where can the registry be found",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_url",
+                                                                "title": "Registry_url"
                                                             }
                                                         },
+                                                        "description": "Details about the organization's ID",
                                                         "requiredWhen": [
                                                             "creator_affiliation"
                                                         ],
                                                         "required": [
-                                                            "type",
-                                                            "identifier"
+                                                            "identifier",
+                                                            "type"
                                                         ],
                                                         "allOf": [
                                                             {
@@ -30335,6 +30382,9 @@
                                                                     "properties": {
                                                                         "registry_name": {
                                                                             "type": "string",
+                                                                            "description": "To indicate what identifier system is used to identify the organization when \"other\" as id type.",
+                                                                            "example": "Registre des entreprises du Quebec",
+                                                                            "question": "What registry was used to provide the organization ID?",
                                                                             "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_name",
                                                                             "title": "Registry_name"
                                                                         }
@@ -30348,6 +30398,9 @@
                                                     },
                                                     "creator_affiliation_name": {
                                                         "type": "string",
+                                                        "description": "Name of the organization the creator is affiliated with",
+                                                        "example": "Transport Canada",
+                                                        "question": "What is the name of the organization the creator is affiliated with?",
                                                         "requiredWhen": [
                                                             "creator_affiliation"
                                                         ],
@@ -30356,7 +30409,7 @@
                                                     },
                                                     "creator_country": {
                                                         "type": "object",
-                                                        "description": "Country where the organization the contributor is affiliated to, is located",
+                                                        "description": "Country where the organization is located",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_country",
                                                         "title": "Creator_country",
                                                         "properties": {
@@ -30615,7 +30668,7 @@
                                                                     "ZW"
                                                                 ],
                                                                 "example": "US",
-                                                                "question": "Where is the contributor located (country code)?",
+                                                                "question": "In which country is located the organization the creator is affiliated with? Provide the code",
                                                                 "requiredWhen": [
                                                                     "creator_country"
                                                                 ],
@@ -30626,7 +30679,7 @@
                                                                 "type": "string",
                                                                 "description": "The name of the country, as per the ISO standard ISO 3166-1 Codes for the representation of names of countries and their subdivisions – Part 1: Country codes",
                                                                 "example": "United States of America",
-                                                                "question": "Where is the contributor located (country name)?",
+                                                                "question": "In which country is located the organization the creator is affiliated with? Provide the name",
                                                                 "requiredWhen": [
                                                                     "creator_country"
                                                                 ],
@@ -30641,7 +30694,7 @@
                                                     },
                                                     "creator_province_state": {
                                                         "type": "object",
-                                                        "description": "Province or state of the organization the contributor is affiliated to.",
+                                                        "description": "Province or state of the organization the contributor is affiliated with",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_province_state",
                                                         "title": "Creator_province_state",
                                                         "properties": {
@@ -30649,7 +30702,7 @@
                                                                 "type": "string",
                                                                 "description": "The 3-letter code of the province or state, as per the ISO standard 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
                                                                 "example": "QC",
-                                                                "question": "What province or state is the contributor working in?",
+                                                                "question": "If applicable, in which subdivision of the country is located the organization that creator is affiliated with? Provide the code",
                                                                 "requiredWhen": [
                                                                     "creator_province_state"
                                                                 ],
@@ -30658,9 +30711,9 @@
                                                             },
                                                             "name": {
                                                                 "type": "string",
-                                                                "description": "The name of the province or state, as per the ISO standard ISO 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
+                                                                "description": "The name of the province or state, as per the ISO standard ISO 3166-2  Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
                                                                 "example": "Quebec",
-                                                                "question": "What province or state does the contributor work in?",
+                                                                "question": "If applicable, in which subdivision of the country is located the organization that creator is affiliated with? Provide the name",
                                                                 "requiredWhen": [
                                                                     "creator_province_state"
                                                                 ],
@@ -30674,7 +30727,7 @@
                                                         ]
                                                     }
                                                 },
-                                                "description": "To provide information about the organization(s) the creator is affiliated to",
+                                                "description": "Provide information about the organization the creator is affiliated with ",
                                                 "required": [
                                                     "creator_affiliation_name",
                                                     "creator_affiliation_id"
@@ -30682,17 +30735,15 @@
                                             }
                                         },
                                         "creator_id": {
-                                            "type": "object",
-                                            "description": "Identifier associated with the creator",
-                                            "requiredWhen": [
-                                                "creator"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id",
+                                            "type": "object",
                                             "title": "Creator_id",
                                             "properties": {
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "To indicate the specific value of the creator's identifier",
+                                                    "example": "1111-1111-1111-1111",
+                                                    "question": "What is the creatpr's unique ID?",
                                                     "requiredWhen": [
                                                         "creator_id"
                                                     ],
@@ -30700,14 +30751,18 @@
                                                     "title": "Identifier"
                                                 },
                                                 "registry_url": {
-                                                    "type": "url",
+                                                    "type": "string",
                                                     "description": "Link to the reference used to identify the creator",
+                                                    "example": "https://gcdirectory-gcannuaire.ssc-spc.gc.ca/en/GCD/?pgid=002",
+                                                    "question": "Where can the identifier system be found?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id/properties/registry_url",
                                                     "title": "Registry_url"
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
                                                     "description": "To indicate the version number or date of the reference",
+                                                    "example": "2024/12/30",
+                                                    "question": "What version of the system was used or what date was the system consulted?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 },
@@ -30720,10 +30775,16 @@
                                                         "openid",
                                                         "other"
                                                     ],
+                                                    "example": "other",
+                                                    "question": "Which identifier type is used for the creator's unique ID (orcid, isni, openid, other)?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id/properties/type",
                                                     "title": "Type"
                                                 }
                                             },
+                                            "description": "Identifier associated with the creator",
+                                            "requiredWhen": [
+                                                "creator"
+                                            ],
                                             "required": [
                                                 "identifier"
                                             ],
@@ -30743,6 +30804,8 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what reference is used to identify the creator when selecting \"other\" as id type.",
+                                                                "example": "GC Directory",
+                                                                "question": "What identifier system is  used to identify the creator?",
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id/properties/registry_name",
                                                                 "title": "Registry_name"
                                                             }
@@ -30757,6 +30820,7 @@
                                         "mbox": {
                                             "type": "string",
                                             "description": "To provide an E-mail address of the creator",
+                                            "question": "What is the creator's email address?",
                                             "format": "email",
                                             "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/mbox",
                                             "title": "Mbox"
@@ -30764,6 +30828,7 @@
                                         "name": {
                                             "type": "string",
                                             "description": "Name of the creator",
+                                            "question": "What is the name of the creator?",
                                             "requiredWhen": [
                                                 "creator_id"
                                             ],
@@ -30773,14 +30838,16 @@
                                     },
                                     "description": "To specify the creators of the dataset",
                                     "required": [
-                                        "creator_id",
-                                        "name"
+                                        "name",
+                                        "creator_id"
                                     ]
                                 }
                             },
                             "dataset_is_reused": {
                                 "type": "boolean",
                                 "description": "Indication if the dataset is reused, i.e., not produced in project(s) covered by this DMP.",
+                                "example": "No",
+                                "question": "Was the dataset existing before and is being reused as aprt of the project related to this dmp?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/dataset_is_reused",
                                 "title": "Dataset_is_reused"
                             },
@@ -38346,11 +38413,12 @@
                                         "other"
                                     ],
                                     "example": "orcid",
+                                    "question": "What type of identification system uniquely identifies the organization?",
                                     "$id": "#/properties/dmp/properties/contact/properties/contact_id/properties/type",
                                     "title": "Type"
                                 },
                                 "registry_url": {
-                                    "type": "url",
+                                    "type": "string",
                                     "description": "Link to the identifier system used to identify the contact",
                                     "example": "https://gcdirectory-gcannuaire.ssc-spc.gc.ca/en/GCD/?pgid=002",
                                     "question": "Where can the identifier system be accessed?",
@@ -38425,20 +38493,12 @@
                             "title": "Role"
                         },
                         "url": {
-                            "type": "url",
+                            "type": "string",
                             "description": "On-line information that can be used to contact the responsible individual or organization. This element should be expressed as a URL that will guide the user to further information online. \n",
                             "example": "www.geogratis.gc.ca",
                             "question": "What is the URL that links to the contact details of the responsible person or organization?",
                             "$id": "#/properties/dmp/properties/contact/properties/url",
                             "title": "Url"
-                        },
-                        "organization": {
-                            "type": "string",
-                            "description": "Organization the contact person is affiliated to. For Canadian Departments and agencies, conform with http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp. Sub and sub-sub organization (sectors, branches, etc.) may optionally be added, separated by semicolons.",
-                            "example": "Government of Canada; Natural Resources Canada; Earth Sciences Sector; Canada Centre for Mapping and Earth Observation ",
-                            "question": "Which organization does the contact person belong to?",
-                            "$id": "#/properties/dmp/properties/contact/properties/organization",
-                            "title": "Organization"
                         },
                         "position": {
                             "type": "string",
@@ -38482,7 +38542,7 @@
                             "type": "string",
                             "description": "City where the contact is located",
                             "example": "Sherbrooke",
-                            "question": "In which city is the contributor or cited responsible party located?",
+                            "question": "In which city is the contact located?",
                             "$id": "#/properties/dmp/properties/contact/properties/city",
                             "title": "City"
                         },
@@ -38514,19 +38574,21 @@
                                         "type": "object",
                                         "title": "Contact_affiliation_id",
                                         "properties": {
-                                            "registry_uri": {
-                                                "type": "url",
-                                                "description": "Link to the identifier system used to identify the organization",
-                                                "question": "Where can the reference be found",
-                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_id/properties/registry_uri",
-                                                "title": "Registry_uri"
-                                            },
                                             "registry_version": {
                                                 "type": "string",
                                                 "description": "To indicate the version number or date of the reference",
-                                                "question": "what version of the reference was used at the time where the identifier was entered",
+                                                "example": "2025-10-31",
+                                                "question": "What version of the registry was used at the time where the identifier was entered",
                                                 "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_id/properties/registry_version",
                                                 "title": "Registry_version"
+                                            },
+                                            "registry_uri": {
+                                                "type": "string",
+                                                "description": "Link to the identifier system used to identify the organization",
+                                                "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
+                                                "question": "Where can the registry be found",
+                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_id/properties/registry_uri",
+                                                "title": "Registry_uri"
                                             },
                                             "type": {
                                                 "type": "string",
@@ -38537,6 +38599,7 @@
                                                     "isni",
                                                     "other"
                                                 ],
+                                                "example": "ror",
                                                 "question": "What type of identification system uniquely identifies the organization?",
                                                 "requiredWhen": [
                                                     "contact_affiliation_id"
@@ -38547,6 +38610,7 @@
                                             "identifier": {
                                                 "type": "string",
                                                 "description": "To indicate the specific value of the organization identifier ",
+                                                "example": "0238rs311",
                                                 "question": "What is the identifier of the contact's organization?",
                                                 "requiredWhen": [
                                                     "contact_affiliation_id"
@@ -38579,7 +38643,7 @@
                                                         "registry_name": {
                                                             "type": "string",
                                                             "description": "To indicate what identifier system is used to identify the organization when selecting \"other\" as id type.",
-                                                            "example": "Registre des entreprises de la chambre de commerce",
+                                                            "example": "Registre des entreprises du Quebec",
                                                             "question": "What registry was used to provide the organization ID?",
                                                             "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_id/properties/registry_name",
                                                             "title": "Registry_name"
@@ -38590,6 +38654,51 @@
                                                     ]
                                                 }
                                             }
+                                        ]
+                                    },
+                                    "contact_affiliation_name": {
+                                        "type": "string",
+                                        "description": "Name of the organization the contact is affiliated with",
+                                        "example": "Transport Canada",
+                                        "question": "What is the name of the organization the contributor is affiliated with?",
+                                        "requiredWhen": [
+                                            "contact_affiliation"
+                                        ],
+                                        "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_name",
+                                        "title": "Contact_affiliation_name"
+                                    },
+                                    "contact_province_state": {
+                                        "type": "object",
+                                        "description": "Province or state of the organization the contact is affiliated to.",
+                                        "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state",
+                                        "title": "Contact_province_state",
+                                        "properties": {
+                                            "code": {
+                                                "type": "string",
+                                                "description": "The 3-letter code of the province or state, as per the ISO standard 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
+                                                "example": "QC",
+                                                "question": "If applicable, in which subdivision of the country is located the organization that contact is affiliated with? Provide the code",
+                                                "requiredWhen": [
+                                                    "contact_province_state"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state/properties/code",
+                                                "title": "Code"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "The name of the province or state, as per the ISO standard ISO 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
+                                                "example": "Quebec",
+                                                "question": "If applicable, in which subdivision of the country is located the organization that contact is affiliated with? Provide the name",
+                                                "requiredWhen": [
+                                                    "contact_province_state"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state/properties/name",
+                                                "title": "Name"
+                                            }
+                                        },
+                                        "required": [
+                                            "code",
+                                            "name"
                                         ]
                                     },
                                     "contact_country": {
@@ -38852,7 +38961,7 @@
                                                     "ZW"
                                                 ],
                                                 "example": "US",
-                                                "question": "Where is the contributor located (country name)?",
+                                                "question": "In which country is located the organization the contact is affiliated with? Provide the code",
                                                 "requiredWhen": [
                                                     "contact_country"
                                                 ],
@@ -38863,7 +38972,7 @@
                                                 "type": "string",
                                                 "description": "The name of the country, as per the ISO standard ISO 3166-1 Codes for the representation of names of countries and their subdivisions – Part 1: Country codes",
                                                 "example": "United States of America",
-                                                "question": "Where is the contributor located (country code)?",
+                                                "question": "In which country is located the organization the contact is affiliated with? Provide the name",
                                                 "requiredWhen": [
                                                     "contact_country"
                                                 ],
@@ -38876,56 +38985,12 @@
                                             "code",
                                             "name"
                                         ]
-                                    },
-                                    "contact_province_state": {
-                                        "type": "object",
-                                        "description": "Province or state of the organization the contact is affiliated to.",
-                                        "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state",
-                                        "title": "Contact_province_state",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string",
-                                                "description": "The 3-letter code of the province or state, as per the ISO standard 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
-                                                "example": "QC",
-                                                "question": "What province or state is the contributor working in?",
-                                                "requiredWhen": [
-                                                    "contact_province_state"
-                                                ],
-                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state/properties/code",
-                                                "title": "Code"
-                                            },
-                                            "name": {
-                                                "type": "string",
-                                                "description": "The name of the province or state, as per the ISO standard ISO 3166-2 Codes for the representation of names of countries and their subdivisions – Part 2: Country subdivision code",
-                                                "example": "Quebec",
-                                                "question": "What province or state does the contributor work in?",
-                                                "requiredWhen": [
-                                                    "contact_province_state"
-                                                ],
-                                                "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_province_state/properties/name",
-                                                "title": "Name"
-                                            }
-                                        },
-                                        "required": [
-                                            "code",
-                                            "name"
-                                        ]
-                                    },
-                                    "contact_affiliation_name": {
-                                        "type": "string",
-                                        "description": "Name of the organization the contact is affiliated with",
-                                        "question": "What is the name of the organization the contributor is affiliated with?",
-                                        "requiredWhen": [
-                                            "contact_affiliation"
-                                        ],
-                                        "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_name",
-                                        "title": "Contact_affiliation_name"
                                     }
                                 },
                                 "description": "To provide information about the organization the contact is affiliated with",
                                 "required": [
-                                    "contact_affiliation_id",
-                                    "contact_affiliation_name"
+                                    "contact_affiliation_name",
+                                    "contact_affiliation_id"
                                 ]
                             }
                         }
@@ -38938,7 +39003,6 @@
                 }
             },
             "required": [
-                "contributor",
                 "approval",
                 "indigenous_considerations",
                 "dataset",

@@ -245,16 +245,17 @@
                     "data_completeness",
                     "issued",
                     "language",
-                    "data_criticality",
+                    "mulitple_language",
                     "data_governance_description",
                     "personal_data",
                     "sensitive_data",
                     "security_and_privacy",
                     "preservation_statement",
-                    "supported_works_url",
+                    "dataset_is_reused",
                     "collection",
                     "technical_resource",
                     "data_quality_assurance",
+                    "data_criticality",
                     "intellectual_property",
                     "disclaimer",
                     "metadata",
@@ -263,8 +264,7 @@
                     "disposition_action",
                     "disposition_completed",
                     "creator",
-                    "dataset_is_reused",
-                    "mulitple_language"
+                    "supported_works_url"
                 ],
                 "dataset_id": {
                     "ui:order": [
@@ -333,65 +333,51 @@
                             "name",
                             "description",
                             "data_management_system",
-                            "hardware_requirements",
-                            "software"
+                            "software",
+                            "hardware_requirements"
                         ],
                         "data_management_system": {
                             "ui:order": [
-                                "description",
-                                "pid_system",
+                                "title",
                                 "support_checksum",
-                                "support_versioning",
+                                "type",
+                                "access_url",
+                                "version",
+                                "description",
+                                "compliance_standards",
+                                "protocol",
+                                "authentication",
+                                "visibility",
+                                "storage_type",
+                                "geo_location",
                                 "availability",
                                 "backup_frequency",
                                 "backup_type",
-                                "certified_with",
-                                "geo_location",
-                                "protocol",
-                                "access_url",
-                                "authentication",
-                                "visibility",
-                                "version",
-                                "type",
-                                "title",
-                                "storage_type",
-                                "compliance_standards",
+                                "support_versioning",
+                                "pid_system",
                                 "data_transfer_maximum_latency",
-                                "data_transfer_minimum_throughput"
-                            ]
-                        },
-                        "hardware_requirements": {
-                            "ui:order": [
-                                "minimum_cpu_cores",
-                                "minimum_cpu_speed",
-                                "machine_type",
-                                "data_processing_minimum_RAM_Gb",
-                                "processing_unit_requirements",
-                                "storage_capacity_unit",
-                                "storage_capacity",
-                                "description",
-                                "network_requirements",
-                                "title"
+                                "data_transfer_minimum_throughput",
+                                "certified_with"
                             ]
                         },
                         "software": {
                             "items": {
                                 "ui:order": [
+                                    "name",
                                     "description",
                                     "download_url",
+                                    "code_repository",
                                     "license",
                                     "programming_language",
-                                    "name",
+                                    "dependencies",
+                                    "operating_system_description",
+                                    "operating_system_name",
+                                    "execution_environment",
                                     "proprietary_software",
                                     "proprietary_software_justification",
                                     "proprietary_software_migration_plan",
                                     "proprietary_software_migration_plan_description",
-                                    "operating_system_name",
-                                    "operating_system_description",
-                                    "software_management_plan",
-                                    "code_repository",
-                                    "execution_environment",
-                                    "dependencies"
+                                    "software_management_plan"
                                 ],
                                 "software_management_plan": {
                                     "items": {
@@ -403,6 +389,20 @@
                                     }
                                 }
                             }
+                        },
+                        "hardware_requirements": {
+                            "ui:order": [
+                                "title",
+                                "description",
+                                "minimum_cpu_cores",
+                                "minimum_cpu_speed",
+                                "machine_type",
+                                "data_processing_minimum_RAM_Gb",
+                                "storage_capacity",
+                                "storage_capacity_unit",
+                                "processing_unit_requirements",
+                                "network_requirements"
+                            ]
                         }
                     }
                 },
@@ -507,23 +507,23 @@
                                 "title",
                                 "description",
                                 "url",
+                                "type",
+                                "content_type",
                                 "storage_type",
+                                "format",
+                                "protocol",
+                                "version",
+                                "certified_with",
+                                "geo_location",
+                                "language",
+                                "availability",
                                 "pid_system",
                                 "support_checksum",
-                                "data_priority",
-                                "availability",
                                 "backup_frequency",
                                 "backup_type",
-                                "certified_with",
+                                "data_priority",
                                 "data_transfer_maximum_latency",
-                                "data_transfer_minimum_throughput",
-                                "geo_location",
-                                "protocol",
-                                "content_type",
-                                "format",
-                                "language",
-                                "type",
-                                "version"
+                                "data_transfer_minimum_throughput"
                             ]
                         },
                         "physical_data_asset": {
@@ -562,9 +562,9 @@
                         },
                         "data_integrity": {
                             "ui:order": [
+                                "algorithm",
                                 "value",
                                 "download",
-                                "algorithm",
                                 "perfomed",
                                 "notes"
                             ]
@@ -618,51 +618,51 @@
                 },
                 "creator": {
                     "items": {
+                        "ui:order": [
+                            "name",
+                            "mbox",
+                            "creator_id",
+                            "affiliation"
+                        ],
+                        "creator_id": {
+                            "ui:order": [
+                                "type",
+                                "identifier",
+                                "registry_name",
+                                "registry_url",
+                                "registry_version"
+                            ]
+                        },
                         "affiliation": {
                             "items": {
-                                "creator_affiliation_id": {
+                                "creator_country": {
                                     "ui:order": [
-                                        "registry_version",
-                                        "identifier",
-                                        "type",
-                                        "registry_name",
-                                        "registry_url"
+                                        "name",
+                                        "code"
                                     ]
                                 },
                                 "ui:order": [
                                     "creator_affiliation_name",
+                                    "creator_affiliation_id",
                                     "creator_country",
-                                    "creator_province_state",
-                                    "creator_affiliation_id"
+                                    "creator_province_state"
                                 ],
-                                "creator_country": {
+                                "creator_affiliation_id": {
                                     "ui:order": [
-                                        "code",
-                                        "name"
+                                        "type",
+                                        "identifier",
+                                        "registry_name",
+                                        "registry_url",
+                                        "registry_version"
                                     ]
                                 },
                                 "creator_province_state": {
                                     "ui:order": [
-                                        "code",
-                                        "name"
+                                        "name",
+                                        "code"
                                     ]
                                 }
                             }
-                        },
-                        "ui:order": [
-                            "affiliation",
-                            "mbox",
-                            "name",
-                            "creator_id"
-                        ],
-                        "creator_id": {
-                            "ui:order": [
-                                "identifier",
-                                "registry_name",
-                                "registry_url",
-                                "registry_version",
-                                "type"
-                            ]
                         }
                     }
                 }
@@ -674,15 +674,15 @@
                 "mbox",
                 "contact_id",
                 "role",
-                "url",
-                "position",
                 "telephone",
                 "fax",
+                "position",
+                "affiliation",
+                "url",
                 "delivery_point",
                 "city",
                 "postal_zip_code",
-                "hours_of_service",
-                "affiliation"
+                "hours_of_service"
             ],
             "contact_id": {
                 "ui:order": [
@@ -695,31 +695,31 @@
             },
             "affiliation": {
                 "items": {
-                    "contact_affiliation_id": {
-                        "ui:order": [
-                            "registry_version",
-                            "registry_uri",
-                            "type",
-                            "identifier",
-                            "registry_name"
-                        ]
-                    },
                     "ui:order": [
                         "contact_affiliation_name",
-                        "contact_province_state",
                         "contact_affiliation_id",
-                        "contact_country"
+                        "contact_country",
+                        "contact_province_state"
                     ],
+                    "contact_affiliation_id": {
+                        "ui:order": [
+                            "type",
+                            "identifier",
+                            "registry_name",
+                            "registry_uri",
+                            "registry_version"
+                        ]
+                    },
                     "contact_country": {
                         "ui:order": [
-                            "code",
-                            "name"
+                            "name",
+                            "code"
                         ]
                     },
                     "contact_province_state": {
                         "ui:order": [
-                            "code",
-                            "name"
+                            "name",
+                            "code"
                         ]
                     }
                 }

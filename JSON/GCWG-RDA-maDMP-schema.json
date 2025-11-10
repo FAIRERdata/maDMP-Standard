@@ -18914,7 +18914,7 @@
                                 "$id": "#/properties/dmp/properties/dataset/properties/language",
                                 "title": "Language"
                             },
-                            "mulitple_language": {
+                            "multiple_language": {
                                 "type": "array",
                                 "items": {
                                     "type": "string",
@@ -26413,8 +26413,8 @@
                                     ],
                                     "example": "fra",
                                     "question": "What is one of the languages used in the dataset?",
-                                    "$id": "#/properties/dmp/properties/dataset/properties/mulitple_language",
-                                    "title": "Mulitple_language"
+                                    "$id": "#/properties/dmp/properties/dataset/properties/multiple_language",
+                                    "title": "Multiple_language"
                                 }
                             },
                             "data_governance_description": {
@@ -37793,7 +37793,7 @@
                             },
                             "disposition_completed": {
                                 "type": "string",
-                                "description": "Date on which disposition effected. Encoded using the ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                "description": "Date when the last data associated with this dataset have been disposed (i.e., no data remains with the institution, and none is expected to accrue in the future). Encoded using the ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
                                 "example": "2019-06-0\r\n",
                                 "question": "Has ALL data associated with this dataset been disposed? (i.e., no data remains with the institution, and none is expected to accrue in the future)",
                                 "format": "date",

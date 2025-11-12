@@ -11,8 +11,8 @@ import (
 )
 
 func generateDoc() {
+	content := "<center><h2 style='color: black;'>DRAFT</h2></center>"
 	content += fmt.Sprintf("<center><h1 style='font-size: 1.2em;'>%s</h1></center>", config.DocTitle)
-	content := "<center><p style="color: grey;">Status: Under review</p></center>"
 	content += "<table id=\"table1\"><tr><td valign=\"top\">"
 	var entityDescriptions []EntityDescription
 	db.Find(&entityDescriptions)
@@ -21,10 +21,10 @@ func generateDoc() {
 		content += fmt.Sprintf("%s\n\n", ed.Description)
 	}
 	content += "</td>"
-	content += "<td valign=\"top\"><h3>STRUCTURE</h3>"
+	content += "<td valign=\"top\"><h3>Structure</h3>"
 	content += generateHtmlTree()
 	content += "</td></tr></table>\n"
-	content += "\n<hr/>\n<h3>METADATA SPECIFICATION</h3>\n"
+	content += "\n<hr/>\n\n"
 	for _, property := range properties {
 		if property.HasChildren() {
 			content += fmt.Sprintf("<h2 id=\"%s_table\">Properties in '%s'</h2>\n\n", property.ID, property.LabelMachine)

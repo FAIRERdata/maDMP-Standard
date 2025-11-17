@@ -40,8 +40,6 @@
 
 <p><b>Outcome: </b>Implementation of maDMPs transforms data from disparate sources into a future-proofed strategic national asset ready for cutting-edge technologies like Big Data and artificial intelligence (AI). See the <a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">value proposition</a> for key benefits and return on investment. </p>
 
-<p><b>Questions: </b> If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire.Austin@canada.ca or Dominique.Charles@canada.ca. We would also welcome you as a member of the GCWG-RDA maDMP working group. For the technically inclined, you may also open issues in  <a href=" https://github.com/FAIRERdata/maDMP-Standard/issues" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>. </p>
-
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
 
 <p><b>Entity relationship diagram</b>: The ERD is a platform-independent logical model of the GCWG-RDA maDMP standard, more detailed than the conceptual model, showing all entities, their attributes, and the relationships between them. The ERD also identifies which fields are in common with the RDA maDMP standard. </p>

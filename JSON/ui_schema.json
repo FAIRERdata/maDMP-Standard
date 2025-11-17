@@ -344,6 +344,7 @@
                                 "access_url",
                                 "version",
                                 "description",
+                                "certified_with",
                                 "compliance_standards",
                                 "protocol",
                                 "authentication",
@@ -356,8 +357,7 @@
                                 "support_versioning",
                                 "pid_system",
                                 "data_transfer_maximum_latency",
-                                "data_transfer_minimum_throughput",
-                                "certified_with"
+                                "data_transfer_minimum_throughput"
                             ]
                         },
                         "software": {
@@ -635,12 +635,6 @@
                         },
                         "affiliation": {
                             "items": {
-                                "creator_country": {
-                                    "ui:order": [
-                                        "name",
-                                        "code"
-                                    ]
-                                },
                                 "ui:order": [
                                     "creator_affiliation_name",
                                     "creator_affiliation_id",
@@ -654,6 +648,12 @@
                                         "registry_name",
                                         "registry_url",
                                         "registry_version"
+                                    ]
+                                },
+                                "creator_country": {
+                                    "ui:order": [
+                                        "name",
+                                        "code"
                                     ]
                                 },
                                 "creator_province_state": {

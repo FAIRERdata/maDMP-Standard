@@ -7879,11 +7879,6 @@
                         "created",
                         "modified",
                         "language",
-                        "access",
-                        "protection_level",
-                        "security_classification_level",
-                        "schema_version",
-                        "schema_version_uri",
                         "ethical_issues_exist"
                     ]
                 },
@@ -7976,7 +7971,6 @@
                                     }
                                 },
                                 "required": [
-                                    "type",
                                     "identifier"
                                 ],
                                 "allOf": [
@@ -8713,9 +8707,6 @@
                                             "items": {
                                                 "type": "object",
                                                 "description": "Project funding source",
-                                                "requiredWhen": [
-                                                    "project"
-                                                ],
                                                 "$id": "#/properties/dmp/properties/project/properties/funding/properties/source",
                                                 "title": "Source",
                                                 "properties": {
@@ -8745,8 +8736,7 @@
                                                 "required": [
                                                     "type"
                                                 ]
-                                            },
-                                            "minItems": 1
+                                            }
                                         },
                                         "funder_id": {
                                             "type": "object",
@@ -8926,7 +8916,6 @@
                                         }
                                     },
                                     "required": [
-                                        "source",
                                         "funder_id",
                                         "funding_status"
                                     ]
@@ -9068,6 +9057,9 @@
                                         ],
                                         "example": "yes",
                                         "question": "Have any measures been taken related to science safeguarding?",
+                                        "requiredWhen": [
+                                            "safeguarding_science_measures_documentation"
+                                        ],
                                         "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/exist",
                                         "title": "Exist"
                                     },
@@ -9080,6 +9072,9 @@
                                             "unknown"
                                         ],
                                         "question": "Does any back up of the source data exist?",
+                                        "requiredWhen": [
+                                            "safeguarding_science_measures_documentation"
+                                        ],
                                         "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
                                         "title": "Redundant_backups_exist"
                                     }
@@ -9231,8 +9226,6 @@
                             }
                         },
                         "required": [
-                            "safeguarding_science_measures",
-                            "succession_plan",
                             "title",
                             "funding"
                         ]
@@ -9541,6 +9534,9 @@
                             ],
                             "example": "yes",
                             "question": "Are there Indigenous considerations related to this project?",
+                            "requiredWhen": [
+                                "indigenous_considerations"
+                            ],
                             "$id": "#/properties/dmp/properties/indigenous_considerations/properties/exist",
                             "title": "Exist"
                         },
@@ -26463,6 +26459,9 @@
                                             "description": "Provide a title for each requirement or issue listed in the security and privacy section. Titles need to be specific enough to differentiate issues or requirements between them.",
                                             "example": "Anonymization of Personally Identifiable Data",
                                             "question": "Provide a title for this specific security or privacy control or measure",
+                                            "requiredWhen": [
+                                                "security_and_privacy"
+                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/title",
                                             "title": "Title"
                                         },
@@ -26499,6 +26498,9 @@
                                                     ],
                                                     "example": "yes",
                                                     "question": "Is a privacy impact assessment required?",
+                                                    "requiredWhen": [
+                                                        "privacy_impact_assessment"
+                                                    ],
                                                     "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/privacy_impact_assessment/properties/required",
                                                     "title": "Required"
                                                 }
@@ -26599,8 +26601,7 @@
                                         }
                                     },
                                     "required": [
-                                        "title",
-                                        "privacy_impact_assessment"
+                                        "title"
                                     ]
                                 }
                             },
@@ -26830,6 +26831,14 @@
                                                     "question": "What purpose does the system serve in relation to the dataset?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/description",
                                                     "title": "Description"
+                                                },
+                                                "certified_with": {
+                                                    "type": "string",
+                                                    "description": "Certifications relevant to the system (e.g., CoreTrustSeal, ISO 16363).",
+                                                    "example": "coretrustseal",
+                                                    "question": "What is the host server certified with?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/certified_with",
+                                                    "title": "Certified_with"
                                                 },
                                                 "compliance_standards": {
                                                     "type": "array",
@@ -27255,14 +27264,6 @@
                                                     "question": "What is the maximum throughput of the distribution?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/data_transfer_minimum_throughput",
                                                     "title": "Data_transfer_minimum_throughput"
-                                                },
-                                                "certified_with": {
-                                                    "type": "string",
-                                                    "description": "Certifications relevant to the system (e.g., CoreTrustSeal, ISO 16363).",
-                                                    "example": "coretrustseal",
-                                                    "question": "What is the host server certified with?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/certified_with",
-                                                    "title": "Certified_with"
                                                 }
                                             },
                                             "required": [
@@ -27371,7 +27372,7 @@
                                                         "example": "yes",
                                                         "question": "Is there proprietary software in use?",
                                                         "requiredWhen": [
-                                                            "computing_environment"
+                                                            "software"
                                                         ],
                                                         "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/software/properties/proprietary_software",
                                                         "title": "Proprietary_software"
@@ -27539,7 +27540,7 @@
                                         },
                                         "hardware_requirements": {
                                             "type": "object",
-                                            "description": "Minimum requirements for processing data for a specific purpose\r",
+                                            "description": "Minimum requirements for processing data for a specific purpose",
                                             "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements",
                                             "title": "Hardware_requirements",
                                             "properties": {
@@ -27704,6 +27705,9 @@
                                         "description": "Main copyright holder ",
                                         "example": "Part of the dataset",
                                         "question": "Does the copyright apply to the entire dataset?",
+                                        "requiredWhen": [
+                                            "intellectual_property"
+                                        ],
                                         "$id": "#/properties/dmp/properties/dataset/properties/intellectual_property/properties/copyright_extent",
                                         "title": "Copyright_extent"
                                     },
@@ -27724,6 +27728,9 @@
                                             ],
                                             "example": "crown copyright - Canada",
                                             "question": "Who owns the copyright associated with the dataset?",
+                                            "requiredWhen": [
+                                                "intellectual_property"
+                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/intellectual_property/properties/copyright_holder",
                                             "title": "Copyright_holder"
                                         },
@@ -35263,12 +35270,18 @@
                                             ],
                                             "example": "eng",
                                             "question": "What language is used for the dataset metadata?",
+                                            "requiredWhen": [
+                                                "metadata"
+                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/metadata/properties/language",
                                             "title": "Language"
                                         },
                                         "metadata_standard_id": {
                                             "type": "object",
                                             "description": "Identifier associated with the metadata standard. Example: http://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+                                            "requiredWhen": [
+                                                "metadata"
+                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/metadata/properties/metadata_standard_id",
                                             "title": "Metadata_standard_id",
                                             "properties": {
@@ -35281,6 +35294,9 @@
                                                     ],
                                                     "example": "url",
                                                     "question": "What is the metadata standard identifier type?",
+                                                    "requiredWhen": [
+                                                        "metadata_standard_id"
+                                                    ],
                                                     "$id": "#/properties/dmp/properties/dataset/properties/metadata/properties/metadata_standard_id/properties/type",
                                                     "title": "Type"
                                                 },
@@ -35305,6 +35321,9 @@
                                                     "description": "To indicate the specific value of the metadata standard ID ",
                                                     "example": "http://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
                                                     "question": "What metadata standard is used?",
+                                                    "requiredWhen": [
+                                                        "metadata_standard_id"
+                                                    ],
                                                     "$id": "#/properties/dmp/properties/dataset/properties/metadata/properties/metadata_standard_id/properties/identifier",
                                                     "title": "Identifier"
                                                 }
@@ -35390,9 +35409,6 @@
                                             "description": "Date of the publication of the distribution. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
                                             "question": "When was the distribution issued?",
                                             "format": "date",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/issued",
                                             "title": "Issued"
                                         },
@@ -35493,9 +35509,6 @@
                                             "description": "Date of the oldest data in the distribution. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
                                             "question": "When is the distribution first started?",
                                             "format": "date",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/start_date",
                                             "title": "Start_date"
                                         },
@@ -35598,9 +35611,6 @@
                                             ],
                                             "example": "UTF-16",
                                             "question": "What character encoding standard is used for the data?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/character_encoding_standard",
                                             "title": "Character_encoding_standard"
                                         },
@@ -35919,9 +35929,6 @@
                                             ],
                                             "example": "U+18B0..U+18FF",
                                             "question": "What is the Unicode block code?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/character_unicode_block_code",
                                             "title": "Character_unicode_block_code"
                                         },
@@ -36240,9 +36247,6 @@
                                             ],
                                             "example": "Unified Canadian Aboriginal Syllabics Extended",
                                             "question": "What is the Unicode block name?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/character_unicode_block_name",
                                             "title": "Character_unicode_block_name"
                                         },
@@ -36260,9 +36264,6 @@
                                             ],
                                             "example": "level 0 - raw",
                                             "question": "What is the quality control level of this distribution?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/quality_control_level",
                                             "title": "Quality_control_level"
                                         },
@@ -36304,16 +36305,6 @@
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openness_other_rating",
                                             "title": "Openness_other_rating"
                                         },
-                                        "openness_other_rating_system": {
-                                            "type": "string",
-                                            "description": "Describe which system is used to rate the dataset openness when it's not the Tim Berners-Lee 5-star rating system.",
-                                            "question": "What framework are you using to rate the dataset openness?",
-                                            "requiredWhen": [
-                                                "other_openness_rating"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openness_other_rating_system",
-                                            "title": "Openness_other_rating_system"
-                                        },
                                         "protection_level": {
                                             "type": "string",
                                             "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html#s2\">www.canada.ca</a>",
@@ -36327,9 +36318,6 @@
                                             ],
                                             "example": "protected A",
                                             "question": "What is the protection level for these data?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/protection_level",
                                             "title": "Protection_level"
                                         },
@@ -36347,9 +36335,6 @@
                                             ],
                                             "example": "unclassified",
                                             "question": "What is the security classification of this distribution?",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/security_classification_level",
                                             "title": "Security_classification_level"
                                         },
@@ -36829,13 +36814,12 @@
                                                     "type": "array",
                                                     "items": {
                                                         "type": "string",
-                                                        "description": "Display language of the online service",
+                                                        "description": "Display language of the host system",
                                                         "example": "eng",
                                                         "question": "What is the display language of the online service?",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/language",
                                                         "title": "Language"
-                                                    },
-                                                    "minItems": 1
+                                                    }
                                                 },
                                                 "availability": {
                                                     "type": "string",
@@ -37008,9 +36992,6 @@
                                                 "description": "Format according to: <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> if appropriate, otherwise use the common name for this format.<a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> ",
                                                 "example": "csv",
                                                 "question": "What is this distribution’s file format?",
-                                                "requiredWhen": [
-                                                    "distribution"
-                                                ],
                                                 "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/format",
                                                 "title": "Format"
                                             }
@@ -37280,20 +37261,8 @@
                                         }
                                     },
                                     "required": [
-                                        "update_frequency",
-                                        "linked_data_star_rating",
                                         "title",
-                                        "issued",
-                                        "start_date",
-                                        "character_encoding_standard",
-                                        "character_unicode_block_code",
-                                        "character_unicode_block_name",
-                                        "quality_control_level",
                                         "data_access",
-                                        "openness_other_rating_system",
-                                        "protection_level",
-                                        "security_classification_level",
-                                        "format",
                                         "distribution_id"
                                     ],
                                     "allOf": [
@@ -37347,6 +37316,31 @@
                                                 },
                                                 "required": [
                                                     "license"
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "openness_other_rating": {
+                                                        "enum": [
+                                                            "<>null"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "openness_other_rating_system": {
+                                                        "type": "string",
+                                                        "description": "Describe which system is used to rate the dataset openness when it's not the Tim Berners-Lee 5-star rating system.",
+                                                        "question": "What framework are you using to rate the dataset openness?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/openness_other_rating_system",
+                                                        "title": "Openness_other_rating_system"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "openness_other_rating_system"
                                                 ]
                                             }
                                         },
@@ -37586,8 +37580,6 @@
                                                 }
                                             },
                                             "required": [
-                                                "required_perpetual_use",
-                                                "required_destruction",
                                                 "description"
                                             ],
                                             "allOf": [
@@ -37764,9 +37756,6 @@
                                             "description": "Indicate disposition authorization number and details when available. May also be used to document internal signoff.",
                                             "example": "DA 2018/001, Application Guide for National Registration version 2.0. Signoff by CIO on 2020-03-13.",
                                             "question": "What legal instrument authorized the disposition? ",
-                                            "requiredWhen": [
-                                                "disposition_action"
-                                            ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/disposition_action/properties/authorization",
                                             "title": "Authorization"
                                         },
@@ -37786,7 +37775,6 @@
                                     "required": [
                                         "type",
                                         "description",
-                                        "authorization",
                                         "date"
                                     ]
                                 }
@@ -37912,13 +37900,113 @@
                                         "affiliation": {
                                             "type": "array",
                                             "items": {
-                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation",
                                                 "type": "object",
+                                                "description": "Provide information about the organization the creator is affiliated with ",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation",
                                                 "title": "Affiliation",
                                                 "properties": {
-                                                    "creator_country": {
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_country",
+                                                    "creator_affiliation_name": {
+                                                        "type": "string",
+                                                        "description": "Name of the organization the creator is affiliated with",
+                                                        "example": "Transport Canada",
+                                                        "question": "What is the name of the organization the creator is affiliated with?",
+                                                        "requiredWhen": [
+                                                            "creator_affiliation"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_name",
+                                                        "title": "Creator_affiliation_name"
+                                                    },
+                                                    "creator_affiliation_id": {
                                                         "type": "object",
+                                                        "description": "Details about the organization's ID",
+                                                        "requiredWhen": [
+                                                            "creator_affiliation"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id",
+                                                        "title": "Creator_affiliation_id",
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "description": "To specify what type the organization identifier is.",
+                                                                "enum": [
+                                                                    "ror",
+                                                                    "grid",
+                                                                    "isni",
+                                                                    "other"
+                                                                ],
+                                                                "example": "ror",
+                                                                "question": "What type of identification system uniquely identifies the organization?",
+                                                                "requiredWhen": [
+                                                                    "creator_affiliation_id"
+                                                                ],
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/type",
+                                                                "title": "Type"
+                                                            },
+                                                            "identifier": {
+                                                                "type": "string",
+                                                                "description": "To indicate the specific value of the organization identifier ",
+                                                                "example": "0238rs311",
+                                                                "question": "What is the identifier of the creatore's organization?",
+                                                                "requiredWhen": [
+                                                                    "creator_affiliation_id"
+                                                                ],
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/identifier",
+                                                                "title": "Identifier"
+                                                            },
+                                                            "registry_url": {
+                                                                "type": "string",
+                                                                "description": "Link to the identifier system used to identify the organization",
+                                                                "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
+                                                                "question": "Where can the registry be found",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_url",
+                                                                "title": "Registry_url"
+                                                            },
+                                                            "registry_version": {
+                                                                "type": "string",
+                                                                "description": "To indicate the version number or date of the reference",
+                                                                "example": "2025-10-31",
+                                                                "question": "What version of the registry was used at the time where the identifier was entered",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_version",
+                                                                "title": "Registry_version"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "type",
+                                                            "identifier"
+                                                        ],
+                                                        "allOf": [
+                                                            {
+                                                                "if": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "enum": [
+                                                                                "Other"
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "then": {
+                                                                    "properties": {
+                                                                        "registry_name": {
+                                                                            "type": "string",
+                                                                            "description": "To indicate what identifier system is used to identify the organization when \"other\" as id type.",
+                                                                            "example": "Registre des entreprises du Quebec",
+                                                                            "question": "What registry was used to provide the organization ID?",
+                                                                            "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_name",
+                                                                            "title": "Registry_name"
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "registry_name"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "creator_country": {
+                                                        "type": "object",
+                                                        "description": "Country where the organization is located",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_country",
                                                         "title": "Creator_country",
                                                         "properties": {
                                                             "name": {
@@ -38195,108 +38283,9 @@
                                                                 "title": "Code"
                                                             }
                                                         },
-                                                        "description": "Country where the organization is located",
                                                         "required": [
                                                             "name",
                                                             "code"
-                                                        ]
-                                                    },
-                                                    "creator_affiliation_name": {
-                                                        "type": "string",
-                                                        "description": "Name of the organization the creator is affiliated with",
-                                                        "example": "Transport Canada",
-                                                        "question": "What is the name of the organization the creator is affiliated with?",
-                                                        "requiredWhen": [
-                                                            "creator_affiliation"
-                                                        ],
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_name",
-                                                        "title": "Creator_affiliation_name"
-                                                    },
-                                                    "creator_affiliation_id": {
-                                                        "type": "object",
-                                                        "description": "Details about the organization's ID",
-                                                        "requiredWhen": [
-                                                            "creator_affiliation"
-                                                        ],
-                                                        "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id",
-                                                        "title": "Creator_affiliation_id",
-                                                        "properties": {
-                                                            "type": {
-                                                                "type": "string",
-                                                                "description": "To specify what type the organization identifier is.",
-                                                                "enum": [
-                                                                    "ror",
-                                                                    "grid",
-                                                                    "isni",
-                                                                    "other"
-                                                                ],
-                                                                "example": "ror",
-                                                                "question": "What type of identification system uniquely identifies the organization?",
-                                                                "requiredWhen": [
-                                                                    "creator_affiliation_id"
-                                                                ],
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/type",
-                                                                "title": "Type"
-                                                            },
-                                                            "identifier": {
-                                                                "type": "string",
-                                                                "description": "To indicate the specific value of the organization identifier ",
-                                                                "example": "0238rs311",
-                                                                "question": "What is the identifier of the creatore's organization?",
-                                                                "requiredWhen": [
-                                                                    "creator_affiliation_id"
-                                                                ],
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/identifier",
-                                                                "title": "Identifier"
-                                                            },
-                                                            "registry_url": {
-                                                                "type": "string",
-                                                                "description": "Link to the identifier system used to identify the organization",
-                                                                "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
-                                                                "question": "Where can the registry be found",
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_url",
-                                                                "title": "Registry_url"
-                                                            },
-                                                            "registry_version": {
-                                                                "type": "string",
-                                                                "description": "To indicate the version number or date of the reference",
-                                                                "example": "2025-10-31",
-                                                                "question": "What version of the registry was used at the time where the identifier was entered",
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_version",
-                                                                "title": "Registry_version"
-                                                            }
-                                                        },
-                                                        "required": [
-                                                            "type",
-                                                            "identifier"
-                                                        ],
-                                                        "allOf": [
-                                                            {
-                                                                "if": {
-                                                                    "properties": {
-                                                                        "type": {
-                                                                            "enum": [
-                                                                                "Other"
-                                                                            ]
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "then": {
-                                                                    "properties": {
-                                                                        "registry_name": {
-                                                                            "type": "string",
-                                                                            "description": "To indicate what identifier system is used to identify the organization when \"other\" as id type.",
-                                                                            "example": "Registre des entreprises du Quebec",
-                                                                            "question": "What registry was used to provide the organization ID?",
-                                                                            "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_name",
-                                                                            "title": "Registry_name"
-                                                                        }
-                                                                    },
-                                                                    "required": [
-                                                                        "registry_name"
-                                                                    ]
-                                                                }
-                                                            }
                                                         ]
                                                     },
                                                     "creator_province_state": {
@@ -38334,7 +38323,6 @@
                                                         ]
                                                     }
                                                 },
-                                                "description": "Provide information about the organization the creator is affiliated with ",
                                                 "required": [
                                                     "creator_affiliation_name",
                                                     "creator_affiliation_id"
@@ -38362,10 +38350,8 @@
                         "required": [
                             "title",
                             "dataset_id",
-                            "data_governance_description",
                             "personal_data",
-                            "sensitive_data",
-                            "intellectual_property"
+                            "sensitive_data"
                         ]
                     },
                     "minItems": 1
@@ -39007,8 +38993,6 @@
                 }
             },
             "required": [
-                "approval",
-                "indigenous_considerations",
                 "dataset",
                 "contact"
             ]

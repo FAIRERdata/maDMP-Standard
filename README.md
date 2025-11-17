@@ -19,7 +19,11 @@
 
 <p>At the top right of this page, you can also click on ‘High level brief’ to find an elevator pitch, value proposition, user stories, FAQ, definitions, a list of 52 other standards with which this GCWG-RDA maDMP standard is compatible, and references. </p>
 
- <p><b>machine-actionable Data Management Plans: </b>An maDMP, updated during the entire data lifecycle, consists of structured information using controlled vocabularies to provide information about a project and its data in a discipline-agnostic standardized manner that is readable and reusable by both humans and machines. Information is structured in a consistent, logical format and recorded using standardized semantics (i.e. controlled vocabularies, ontologies, or other forms of standardized metadata) and persistent identifiers so that its meaning is unambiguous across different systems. </p>
+<p>Participation: If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire dot Austin at Canada dot ca or Dominique dot Charles at Canada dot ca. We would also welcome you as a member of the working group. For the technically inclined, you may also open issues in <a href="[https://github.com/FAIRERdata/maDMP-Standard/issues]" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>.</p>
+
+<p><i>Disclaimer: All views and opinions are those of the co-authors and working group participants, and do not necessarily reflect the official policy or position of any employer, or of any government, agency, or other organization.</i></p>
+
+<p><b>machine-actionable Data Management Plans: </b>An maDMP, updated during the entire data lifecycle, consists of structured information using controlled vocabularies to provide information about a project and its data in a discipline-agnostic standardized manner that is readable and reusable by both humans and machines. Information is structured in a consistent, logical format and recorded using standardized semantics (i.e. controlled vocabularies, ontologies, or other forms of standardized metadata) and persistent identifiers so that its meaning is unambiguous across different systems. </p>
 
 <p><b>Interoperability:</b> Machine-actionability is a prerequisite for interoperability. maDMPs compliant with the GCWG-RDA maDMP standard enable interoperability between systems producing or consuming maDMPs. The GCWG-RDA maDMP standard is also aligned with other metadata standards and international best practices to ensure interoperability with other tools used within organizations and by external partners.</p>
 
@@ -38,8 +42,6 @@
 <p><b>Phased implementation: </b>Phased implementation of maDMPs reduces the administrative burden of scientists, data stewards, and other stakeholders with minimal development overhead if Forms are used. The structured, extensible design of the metadata model adapts to specific organizational and disciplinary needs to achieve smooth metadata exchange between systems, enabling more efficient and collaborative data management. </p>
 
 <p><b>Outcome: </b>Implementation of maDMPs transforms data from disparate sources into a future-proofed strategic national asset ready for cutting-edge technologies like Big Data and artificial intelligence (AI). See the <a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">value proposition</a> for key benefits and return on investment. </p>
-
-<p><b>Questions: </b> If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire.Austin@canada.ca or Dominique.Charles@canada.ca. We would also welcome you as a member of the GCWG-RDA maDMP working group. For the technically inclined, you may also open issues in <a href=" https://github.com/FAIRERdata/maDMP-Standard/issues" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>. </p>
 
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
 

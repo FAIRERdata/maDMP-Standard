@@ -19,7 +19,7 @@
 
 <p>At the top right of this page, you can also click on ‘High level brief’ to find an elevator pitch, value proposition, user stories, FAQ, definitions, a list of 52 other standards with which this GCWG-RDA maDMP standard is compatible, and references. </p>
 
-<p>Participation: If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire dot Austin at Canada dot ca or Dominique dot Charles at Canada dot ca. We would also welcome you as a member of the working group. For the technically inclined, you may also open issues in <a href="[https://github.com/FAIRERdata/maDMP-Standard/issues]" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>.</p>
+<p>Participation: If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire dot Austin at Canada dot ca or Dominique dot Charles at Canada dot ca. We would also welcome you as a member of the working group. For the technically inclined, you may also open issues in <a href="https://github.com/FAIRERdata/maDMP-Standard/issues" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>.</p>
 
 <p><i>Disclaimer: All views and opinions are those of the co-authors and working group participants, and do not necessarily reflect the official policy or position of any employer, or of any government, agency, or other organization.</i></p>
 

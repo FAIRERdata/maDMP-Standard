@@ -44,7 +44,8 @@
 
 <p><b>Entity relationship diagram</b>: The ERD is a platform-independent logical model of the GCWG-RDA maDMP standard, more detailed than the conceptual model, showing all entities, their attributes, and the relationships between them. The ERD also identifies which fields are in common with the RDA maDMP standard. </p>
 <img src="docs/diagrams/GCWG-RDA maDMP Entity Relationship Diagram.png"/>
-Download full Entity Relationship Diagram <a href="https://drive.google.com/uc?export=download&id=1y-dSnhdLxH6UqQ0TFslf5rH8HuuHIYyj" download>here</a>.
+Download full ERD image <a href="https://drive.google.com/uc?export=download&id=1y-dSnhdLxH6UqQ0TFslf5rH8HuuHIYyj" download>here</a>.
+Download ERD graphml file <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/6381d4edf6cbcee94df1b53fdaa2d0e6b5b59515/docs/diagrams/GCWG-RDA%20maDMP%20Entity%20Relationship%20Diagram.graphml" download>here</a>
 
 <h3>Safeguarding Science</h3>
 <p>Safeguarding Science is the protection of scientific knowledge, technologies, data, and long-term research integrity. An important risk mitigation measure for any project is development of a data management plan. The purpose of the Safeguarding Science section in the maDMP is twofold: (1) Describe or link to project-specific safeguarding science issues or measures that are not already recorded in another section of the maDMP; and/or, (2) Describe or link to more broadly applicable safeguarding science information. There may be a link, for example to a risk assessment and mitigation plan that is specific to the project or that applies to all projects and data within the broader organization. </p>

@@ -15,9 +15,12 @@
 <p>At the top right of this page, you can click on ‘create your own maDMP’ to access an prototype online tool, fully compliant with the GCWG-RDA maDMP standard, to generate an maDMP. The tool is a structured <a href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">maDMP generation Form </a> with controlled vocabularies where you can answer user-friendly questions about any data asset then save the maDMP in human-readable PDF and machine-actionable JSON formats.  </p>
 
 <p>At the top right of this page, you can also click on ‘High level brief’ to find an elevator pitch, value proposition, user stories, FAQ, definitions, a list of 52 other standards with which this GCWG-RDA maDMP standard is compatible, and references. </p>
-<p>Participation: If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire dot Austin at Canada dot ca or Dominique dot Charles at Canada dot ca. We would also welcome you as a member of the working group. For the technically inclined, you may also open issues in <a href="https://github.com/FAIRERdata/maDMP-Standard/issues" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>.</p>
+
+<p>Authors: Austin C; Charles D; Cuffe J; and, the GC maDMP Working Group.</p>
 
 <p><i>Disclaimer: All views and opinions are those of the co-authors and working group participants, and do not necessarily reflect the official policy or position of any employer, or of any government, agency, or other organization.</i></p>
+
+<p>Participation: If you see opportunities for improvement to this standard, or if you have questions concerning its implementation, we invite you to contact Claire dot Austin at Canada dot ca or Dominique dot Charles at Canada dot ca. We would also welcome you as a member of the working group. For the technically inclined, you may also open issues in <a href="https://github.com/FAIRERdata/maDMP-Standard/issues" target="_blank">https://github.com/FAIRERdata/maDMP-Standard/issues</a>.</p>
 
  <p><b>machine-actionable Data Management Plans: </b>An maDMP, updated during the entire data lifecycle, consists of structured information using controlled vocabularies to provide information about a project and its data in a discipline-agnostic standardized manner that is readable and reusable by both humans and machines. Information is structured in a consistent, logical format and recorded using standardized semantics (i.e. controlled vocabularies, ontologies, or other forms of standardized metadata) and persistent identifiers so that its meaning is unambiguous across different systems. </p>
 

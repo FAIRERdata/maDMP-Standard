@@ -5,14 +5,10 @@
    <a href="https://sites.google.com/view/gcwg-madmp-standard/elevator-pitch" target="_blank">Elevator Pitch</a>
  <br><a href="https://sites.google.com/view/gcwg-madmp-standard/value-proposition" target="_blank">Value Proposition </a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/user-stories" target="_blank">User Stories</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/faq" target="_blank">FAQ</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/definitions" target="_blank">Definitions</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/compatibility-with-standards" target="_blank">Compatibility with Standards</a><br><a href="https://sites.google.com/view/gcwg-madmp-standard/references" target="_blank">References</a>
 </details>
-  <p><a style="color:blue;" href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">Create your maDMP here »</a>
-    </p>
-</Div> 
+
 <table id="table1"><tr><td valign="top">
  <h3>PREAMBLE</h3>
 <p><b>Content:</b> This page begins with a preamble to contextualize the GCWG-RDA maDMP standard, including a high-level conceptual model diagram, an entity relationship diagram, and brief user-friendly descriptions of the content of different parts of the standard. The human-readable metadata specification of the standard is found below the preamble. The right-hand side of the page shows the structure of the specification. Hover your mouse over any of the field labels to expand the structure and click on any of the labels to jump down the page to see its properties (technical details). Note that, for ease of reading, field labels are used on this page instead of the full field names which are found in the machine-actionable <a href="https://github.com/FAIRERdata/maDMP-Standard/blob/Master/JSON/GCWG-RDA-maDMP-schema.json" target="_blank">GCWG-RDA maDMP JSON schema</a> corresponding to this metadata specification.</p>
-
-<p>At the top right of this page, you can click on ‘create your own maDMP’ to access an prototype online tool, fully compliant with the GCWG-RDA maDMP standard, to generate an maDMP. The tool is a structured <a href="https://fairerdata.github.io/maDMP-Generation-Form/" target="_blank">maDMP generation Form </a> with controlled vocabularies where you can answer user-friendly questions about any data asset then save the maDMP in human-readable PDF and machine-actionable JSON formats.  </p>
 
 <p>At the top right of this page, you can also click on ‘High level brief’ to find an elevator pitch, value proposition, user stories, FAQ, definitions, a list of 52 other standards with which this GCWG-RDA maDMP standard is compatible, and references. </p>
 

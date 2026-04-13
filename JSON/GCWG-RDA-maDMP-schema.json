@@ -11541,41 +11541,45 @@
                                 "title": "Geographic_coverage"
                             },
                             "dataset_documentation": {
-                                "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation",
-                                "type": "object",
-                                "title": "Dataset_documentation",
-                                "properties": {
-                                    "name": {
-                                        "type": "string",
-                                        "description": "Document name",
-                                        "example": "code book",
-                                        "question": "What is the name of the dataset documentation?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/name",
-                                        "title": "Name"
-                                    },
-                                    "description": {
-                                        "type": "string",
-                                        "description": "To describe the documentation of the dataset",
-                                        "example": "includes all code required for data ingestion",
-                                        "question": "Describe the dataset documentation.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/description",
-                                        "title": "Description"
-                                    },
-                                    "access_url": {
-                                        "type": "string",
-                                        "description": "A URL of that gives access to the dataset documentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to dataset documentation, typically through a Web form, query or API call.",
-                                        "example": "some.intranet/.../project page.aspx",
-                                        "question": "Provide a link to the dataset documentation.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/access_url",
-                                        "title": "Access_url"
-                                    },
-                                    "download_url": {
-                                        "type": "string",
-                                        "description": "Download URL to the dataset documentation",
-                                        "example": "http://some.repo.../download/...",
-                                        "question": "Provide the download URL for the dataset documentation.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/download_url",
-                                        "title": "Download_url"
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data production specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
+                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation",
+                                    "title": "Dataset_documentation",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Document name",
+                                            "example": "code book",
+                                            "question": "What is the name of the dataset documentation?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/name",
+                                            "title": "Name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "description": "To describe the documentation of the dataset",
+                                            "example": "includes all code required for data ingestion",
+                                            "question": "Describe the dataset documentation.",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/description",
+                                            "title": "Description"
+                                        },
+                                        "access_url": {
+                                            "type": "string",
+                                            "description": "A URL of that gives access to the dataset documentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to dataset documentation, typically through a Web form, query or API call.",
+                                            "example": "some.intranet/.../project page.aspx",
+                                            "question": "Provide a link to the dataset documentation.",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/access_url",
+                                            "title": "Access_url"
+                                        },
+                                        "download_url": {
+                                            "type": "string",
+                                            "description": "Download URL to the dataset documentation",
+                                            "example": "http://some.repo.../download/...",
+                                            "question": "Provide the download URL for the dataset documentation.",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/download_url",
+                                            "title": "Download_url"
+                                        }
                                     }
                                 }
                             },
@@ -39366,22 +39370,6 @@
                 "dataset",
                 "contact"
             ]
-        },
-        "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA": {
-            "$id": "#/properties/Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA",
-            "type": "object",
-            "title": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (iso 19131 compliant), eln (electronic lab notebook) protocol, qa",
-            "properties": {
-                "QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "description": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data production specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
-                        "$id": "#/properties/Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/properties/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
-                        "title": "Qc methods, sop (standard operating procedure), workflows, etc.  if applicable, create an entry to indicate the classification plan code that applies to the dataset. in that case, enter \"classification plan code\" as the name and the actual code in the description. make sure you also provide the related computing environment information in the dedicated section."
-                    }
-                }
-            }
         }
     },
     "additionalProperties": false,

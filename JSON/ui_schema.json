@@ -250,6 +250,7 @@
                     "general_data_format",
                     "geodetic_datum",
                     "geographic_coverage",
+                    "dataset_documentation",
                     "data_completeness",
                     "issued",
                     "language",
@@ -298,12 +299,14 @@
                     }
                 },
                 "dataset_documentation": {
-                    "ui:order": [
-                        "name",
-                        "description",
-                        "access_url",
-                        "download_url"
-                    ]
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "description",
+                            "access_url",
+                            "download_url"
+                        ]
+                    }
                 },
                 "security_and_privacy": {
                     "items": {
@@ -833,10 +836,5 @@
                 }
             }
         }
-    },
-    "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA": {
-        "ui:order": [
-            "QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section."
-        ]
     }
 }

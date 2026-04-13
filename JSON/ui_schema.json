@@ -84,16 +84,27 @@
                 "ui:order": [
                     "title",
                     "description",
+                    "project_id",
                     "start",
                     "end",
                     "funding",
                     "partner_organization",
                     "safeguarding_science_measures",
-                    "succession_plan",
                     "algorithmic_impact_assessment_conducted",
                     "algorithmic_impact_assessment_conducted_url",
                     "classification_plan_code"
                 ],
+                "project_id": {
+                    "items": {
+                        "ui:order": [
+                            "id",
+                            "type",
+                            "registry_name",
+                            "registry_uri",
+                            "registry_version"
+                        ]
+                    }
+                },
                 "funding": {
                     "items": {
                         "ui:order": [
@@ -173,12 +184,10 @@
                         }
                     },
                     "redundant_backups": {
-                        "items": {
-                            "ui:order": [
-                                "description",
-                                "download_url"
-                            ]
-                        }
+                        "ui:order": [
+                            "description",
+                            "download_url"
+                        ]
                     }
                 }
             }
@@ -241,7 +250,6 @@
                     "general_data_format",
                     "geodetic_datum",
                     "geographic_coverage",
-                    "dataset_documentation",
                     "data_completeness",
                     "issued",
                     "language",
@@ -256,15 +264,18 @@
                     "technical_resource",
                     "data_quality_assurance",
                     "data_criticality",
+                    "rights",
                     "intellectual_property",
                     "disclaimer",
                     "metadata",
                     "distribution",
+                    "keyword",
                     "disposition_planning",
                     "disposition_action",
                     "disposition_completed",
                     "creator",
-                    "supported_works_url"
+                    "related_identifier",
+                    "dataset_alternate_identifier"
                 ],
                 "dataset_id": {
                     "ui:order": [
@@ -287,14 +298,12 @@
                     }
                 },
                 "dataset_documentation": {
-                    "items": {
-                        "ui:order": [
-                            "name",
-                            "description",
-                            "access_url",
-                            "download_url"
-                        ]
-                    }
+                    "ui:order": [
+                        "name",
+                        "description",
+                        "access_url",
+                        "download_url"
+                    ]
                 },
                 "security_and_privacy": {
                     "items": {
@@ -338,8 +347,8 @@
                         ],
                         "data_management_system": {
                             "ui:order": [
-                                "title",
                                 "support_checksum",
+                                "title",
                                 "type",
                                 "access_url",
                                 "version",
@@ -391,18 +400,20 @@
                             }
                         },
                         "hardware_requirements": {
-                            "ui:order": [
-                                "title",
-                                "description",
-                                "minimum_cpu_cores",
-                                "minimum_cpu_speed",
-                                "machine_type",
-                                "data_processing_minimum_RAM_Gb",
-                                "storage_capacity",
-                                "storage_capacity_unit",
-                                "processing_unit_requirements",
-                                "network_requirements"
-                            ]
+                            "items": {
+                                "ui:order": [
+                                    "title",
+                                    "description",
+                                    "minimum_cpu_cores",
+                                    "minimum_cpu_speed",
+                                    "machine_type",
+                                    "data_processing_minimum_RAM_Gb",
+                                    "storage_capacity",
+                                    "storage_capacity_unit",
+                                    "processing_unit_requirements",
+                                    "network_requirements"
+                                ]
+                            }
                         }
                     }
                 },
@@ -464,7 +475,6 @@
                             "security_classification_level_other_nomenclature",
                             "data_security-privacy_measures",
                             "security_classification_level_other_level",
-                            "preservation_flag",
                             "disposition_completed",
                             "host",
                             "physical_data_asset",
@@ -665,6 +675,35 @@
                             }
                         }
                     }
+                },
+                "related_identifier": {
+                    "items": {
+                        "ui:order": [
+                            "resource_type",
+                            "relation_type",
+                            "identifier",
+                            "type",
+                            "metadata_scheme",
+                            "metadata_scheme_version",
+                            "scheme_type",
+                            "scheme_uri"
+                        ]
+                    }
+                },
+                "dataset_alternate_identifier": {
+                    "items": {
+                        "ui:order": [
+                            "identifier"
+                        ],
+                        "identifier": {
+                            "ui:order": [
+                                "type",
+                                "registry_name",
+                                "registry_uri",
+                                "registry_version"
+                            ]
+                        }
+                    }
                 }
             }
         },
@@ -745,7 +784,8 @@
                 "ethical_issues_exist",
                 "ethical_issues_description",
                 "ethical_issues_report",
-                "linked_dmp"
+                "linked_dmp",
+                "alternate_identifier"
             ],
             "dmp_id": {
                 "ui:order": [
@@ -776,7 +816,27 @@
                         }
                     }
                 }
+            },
+            "alternate_identifier": {
+                "items": {
+                    "ui:order": [
+                        "identifier"
+                    ],
+                    "identifier": {
+                        "ui:order": [
+                            "type",
+                            "registry_name",
+                            "registry_uri",
+                            "registry_version"
+                        ]
+                    }
+                }
             }
         }
+    },
+    "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA": {
+        "ui:order": [
+            "QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section."
+        ]
     }
 }

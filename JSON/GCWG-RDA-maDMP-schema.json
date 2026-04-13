@@ -16,7 +16,7 @@
                         "title": {
                             "type": "string",
                             "description": "Title of the DMP",
-                            "example": "The most exciting project ever.",
+                            "example": "Data Management Plan of the most exciting project ever",
                             "question": "What is the title of this maDMP?",
                             "$id": "#/properties/dmp/properties/title",
                             "title": "Title"
@@ -53,14 +53,16 @@
                                 },
                                 "registry_uri": {
                                     "type": "string",
-                                    "description": "Link to the registry or system used to identify the linked dmp",
+                                    "description": "Link to the registry or system used to identify the dmp",
+                                    "example": "https://007myorg.sharepoint.com/sites/DataAssets/Lists/DMPRepository/AllItems.aspx",
                                     "question": "Where can the registry or system be found?",
                                     "$id": "#/properties/dmp/properties/dmp_id/properties/registry_uri",
                                     "title": "Registry_uri"
                                 },
                                 "registry_version": {
                                     "type": "string",
-                                    "description": "To indicate the version number or date of the reference",
+                                    "description": "To indicate the version number or the date when the system or registry was consulted",
+                                    "example": "2025-10-31",
                                     "question": "What version of the registry or system or what date was the registry or system consulted?",
                                     "$id": "#/properties/dmp/properties/dmp_id/properties/registry_version",
                                     "title": "Registry_version"
@@ -94,6 +96,7 @@
                                             "registry_name": {
                                                 "type": "string",
                                                 "description": "To indicate what registry or system is used to identify the dmp when selecting \"other\" as id type.",
+                                                "example": "organization's repository",
                                                 "question": "What registry or sytem was used to identify the dmp?",
                                                 "$id": "#/properties/dmp/properties/dmp_id/properties/registry_name",
                                                 "title": "Registry_name"
@@ -7656,6 +7659,7 @@
                         "protection_level_other_nomenclature": {
                             "type": "string",
                             "description": "To indicate the protection level of the dmp according to the nomenclature found in dmp_protection_level_other_nomenclature",
+                            "example": "level 2",
                             "question": "What protection level applies to the distribution according to the nomenclature?",
                             "$id": "#/properties/dmp/properties/protection_level_other_nomenclature",
                             "title": "Protection_level_other_nomenclature"
@@ -7663,6 +7667,7 @@
                         "protection_level_other_level": {
                             "type": "string",
                             "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
+                            "example": "MyOrg security",
                             "question": "What other nomenclature is used to indicate the distribution protection level?",
                             "$id": "#/properties/dmp/properties/protection_level_other_level",
                             "title": "Protection_level_other_level"
@@ -7687,6 +7692,7 @@
                         "security_classification_level_other_nomenclature": {
                             "type": "string",
                             "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
+                            "example": "level 2",
                             "question": "Indicate the level of classified information of the dmp according to the nomenclature",
                             "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
                             "title": "Security_classification_level_other_nomenclature"
@@ -7694,20 +7700,22 @@
                         "security_classification_level_other_level": {
                             "type": "string",
                             "description": "To indicate which nomenclature is used to qualify classified information",
+                            "example": "MyOrg security",
                             "question": "What other nomenclature is used to describe classified information?",
                             "$id": "#/properties/dmp/properties/security_classification_level_other_level",
                             "title": "Security_classification_level_other_level"
                         },
                         "schema_version": {
-                            "const": "v2.6",
+                            "const": "v3.0",
                             "title": "Schema_version",
-                            "description": "The version you are using is v2.6, you should not edit this field.",
+                            "description": "The version you are using is v3.0, you should not edit this field.",
                             "$id": "#/properties/dmp/properties/schema_version",
                             "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
                         "schema_version_uri": {
                             "type": "string",
                             "description": "DMP schema URI ",
+                            "example": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/PublishedSchemas/GCWG-RDA-maDMP-schema_v2.6.json",
                             "question": "What is the URI to the metadata schema version used when creating this maDMP?",
                             "$id": "#/properties/dmp/properties/schema_version_uri",
                             "title": "Schema_version_uri"
@@ -7762,7 +7770,7 @@
                                             "properties": {
                                                 "type": {
                                                     "type": "string",
-                                                    "description": "type of identifier",
+                                                    "description": "To specify what type the identifier is",
                                                     "enum": [
                                                         "handle",
                                                         "doi",
@@ -7782,13 +7790,15 @@
                                                 "registry_uri": {
                                                     "type": "string",
                                                     "description": "Link to the reference used to identify the linked dmp",
+                                                    "example": "https://007myorg.sharepoint.com/sites/DataAssets/Lists/DMPRepository/AllItems.aspx",
                                                     "question": "Where can the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id/properties/registry_uri",
                                                     "title": "Registry_uri"
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
+                                                    "example": "2025-10-31",
                                                     "question": "What version of the registry or system or what date was the registry or system consulted?",
                                                     "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id/properties/registry_version",
                                                     "title": "Registry_version"
@@ -7825,6 +7835,7 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what reference is used to identify the linked dmp when selecting \"other\" as id type.",
+                                                                "example": "organization's repository",
                                                                 "question": "What registry or sytem was used to identify the linked_dmp?",
                                                                 "$id": "#/properties/dmp/properties/linked_dmp/properties/linked_dmp_id/properties/registry_name",
                                                                 "title": "Registry_name"
@@ -7871,6 +7882,98 @@
                                     "relationship"
                                 ]
                             }
+                        },
+                        "alternate_identifier": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "description": "To provide alternative or secondary identifiers for a DMP, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include other PIDs from DMP storage systems, internal database IDs, or other unique codes assigned to the DMP by various organizations or services.",
+                                "$id": "#/properties/dmp/properties/alternate_identifier",
+                                "title": "Alternate_identifier",
+                                "properties": {
+                                    "identifier": {
+                                        "type": "object",
+                                        "description": "To indicate the specific value of the organization identifier ",
+                                        "example": "https://doi.org/10.1371/journal.pcbi.1006750",
+                                        "question": "What is the value of the DMP alternate identifier?",
+                                        "requiredWhen": [
+                                            "alternate_identifier"
+                                        ],
+                                        "$id": "#/properties/dmp/properties/alternate_identifier/properties/identifier",
+                                        "title": "Identifier",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string",
+                                                "description": "To specify what type the identifier is",
+                                                "enum": [
+                                                    "handle",
+                                                    "doi",
+                                                    "ark",
+                                                    "url",
+                                                    "other"
+                                                ],
+                                                "example": "doi",
+                                                "question": "What type it the identifier?",
+                                                "requiredWhen": [
+                                                    "alternate_identifier"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/alternate_identifier/properties/identifier/properties/type",
+                                                "title": "Type"
+                                            },
+                                            "registry_uri": {
+                                                "type": "string",
+                                                "description": "Link to the identifier system used to identify the organization",
+                                                "example": "https://007myorg.sharepoint.com/sites/DataAssets/Lists/DMPRepository/AllItems.aspx",
+                                                "question": "Where can the registry or system be found?",
+                                                "$id": "#/properties/dmp/properties/alternate_identifier/properties/identifier/properties/registry_uri",
+                                                "title": "Registry_uri"
+                                            },
+                                            "registry_version": {
+                                                "type": "string",
+                                                "description": "To indicate the version number or the date when the system or registry was consulted",
+                                                "example": "2025-10-31",
+                                                "question": "What version of the registr/system was used or what date the registry/system was consulted?",
+                                                "$id": "#/properties/dmp/properties/alternate_identifier/properties/identifier/properties/registry_version",
+                                                "title": "Registry_version"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "allOf": [
+                                            {
+                                                "if": {
+                                                    "properties": {
+                                                        "type": {
+                                                            "enum": [
+                                                                "Other"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                "then": {
+                                                    "properties": {
+                                                        "registry_name": {
+                                                            "type": "string",
+                                                            "description": "To indicate what identifier system is used to identify the organization when selecting \"other\" as id type.",
+                                                            "example": "organization's repository",
+                                                            "question": "What registry or system was used to provide the DMP alternate ID?",
+                                                            "$id": "#/properties/dmp/properties/alternate_identifier/properties/identifier/properties/registry_name",
+                                                            "title": "Registry_name"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "registry_name"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "identifier"
+                                ]
+                            }
                         }
                     },
                     "required": [
@@ -7895,6 +7998,9 @@
                                 "description": "Name of the contributor",
                                 "example": "Christopher Robin",
                                 "question": "What is the contributor's name?",
+                                "requiredWhen": [
+                                    "contributor_affiliation_id"
+                                ],
                                 "$id": "#/properties/dmp/properties/contributor/properties/name",
                                 "title": "Name"
                             },
@@ -7905,6 +8011,9 @@
                                     "description": "To specify contributors’ role(s) within the data management process, including planning. It is recommended to list contributor roles according to the <a href=\"https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/\" target=\"_blank\">contributor types of DataCite Metadata Schema</a>.",
                                     "example": "Data steward",
                                     "question": "What is the contributor's role?",
+                                    "requiredWhen": [
+                                        "contributor_affiliation_id"
+                                    ],
                                     "$id": "#/properties/dmp/properties/contributor/properties/role",
                                     "title": "Role"
                                 },
@@ -7954,7 +8063,7 @@
                                         "type": "string",
                                         "description": "To indicate the version number or date when the system was consulted",
                                         "example": "2024/12/30",
-                                        "question": "What version of the system was used or what date was the system consulted?",
+                                        "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                         "$id": "#/properties/dmp/properties/contributor/properties/contributor_id/properties/registry_version",
                                         "title": "Registry_version"
                                     },
@@ -8043,7 +8152,7 @@
                                                 },
                                                 "type": {
                                                     "type": "string",
-                                                    "description": "To specify what type the organization identifier is.",
+                                                    "description": "To specify what type the organization's identifier is.",
                                                     "enum": [
                                                         "ror",
                                                         "grid",
@@ -8068,9 +8177,9 @@
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
                                                     "example": "2025-10-31",
-                                                    "question": "what version of the registry was used at the time where the identifier was entered",
+                                                    "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                     "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/contributor_affiliation_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 }
@@ -8673,6 +8782,91 @@
                                 "$id": "#/properties/dmp/properties/project/properties/description",
                                 "title": "Description"
                             },
+                            "project_id": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Identifier associated with the project",
+                                    "$id": "#/properties/dmp/properties/project/properties/project_id",
+                                    "title": "Project_id",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "To indicate the specific value of the project ID",
+                                            "example": "STB-231",
+                                            "question": "What is the project ID?",
+                                            "requiredWhen": [
+                                                "project_id"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/project/properties/project_id/properties/id",
+                                            "title": "Id"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "description": "To specify what type the project identifier is.",
+                                            "enum": [
+                                                "url",
+                                                "other"
+                                            ],
+                                            "example": "url",
+                                            "question": "What type is the project identifier?",
+                                            "requiredWhen": [
+                                                "project_id"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/project/properties/project_id/properties/type",
+                                            "title": "Type"
+                                        },
+                                        "registry_uri": {
+                                            "type": "string",
+                                            "description": "Link to the reference used to identify the project",
+                                            "example": "https://007mydep.sharepoint.com/sites/PMAD/Lists/ProjectDB/AllItems.aspx",
+                                            "question": "Where can the registry or system be found?",
+                                            "$id": "#/properties/dmp/properties/project/properties/project_id/properties/registry_uri",
+                                            "title": "Registry_uri"
+                                        },
+                                        "registry_version": {
+                                            "type": "string",
+                                            "description": "To indicate the version number or the date when the system or registry was consulted",
+                                            "example": "2025-10-31",
+                                            "question": "What version of the registry/system was used or what date was the registry/system consulted?",
+                                            "$id": "#/properties/dmp/properties/project/properties/project_id/properties/registry_version",
+                                            "title": "Registry_version"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "type"
+                                    ],
+                                    "allOf": [
+                                        {
+                                            "if": {
+                                                "properties": {
+                                                    "type": {
+                                                        "enum": [
+                                                            "Other"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "registry_name": {
+                                                        "type": "string",
+                                                        "description": "To indicate what reference is used to identify the project when selecting \"other\" as id type.",
+                                                        "example": "departmental project database",
+                                                        "question": "What registry or system was used to identify the project?",
+                                                        "$id": "#/properties/dmp/properties/project/properties/project_id/properties/registry_name",
+                                                        "title": "Registry_name"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "registry_name"
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
                             "start": {
                                 "type": "string",
                                 "description": "Project start date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
@@ -8696,9 +8890,6 @@
                                 "items": {
                                     "type": "object",
                                     "description": "Funding related with a project",
-                                    "requiredWhen": [
-                                        "project"
-                                    ],
                                     "$id": "#/properties/dmp/properties/project/properties/funding",
                                     "title": "Funding",
                                     "properties": {
@@ -8742,7 +8933,7 @@
                                             "type": "object",
                                             "description": "Identifier associated with the project funder",
                                             "requiredWhen": [
-                                                "project"
+                                                "funder"
                                             ],
                                             "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id",
                                             "title": "Funder_id",
@@ -8751,14 +8942,15 @@
                                                     "type": "string",
                                                     "description": "To specify what type the funder identifier is.",
                                                     "enum": [
-                                                        "fundref",
-                                                        "url",
+                                                        "ror",
+                                                        "grid",
+                                                        "isni",
                                                         "other"
                                                     ],
-                                                    "example": "fundref",
-                                                    "question": "What type of identifier ID does the funder use (fundref, url, other)?",
+                                                    "example": "ror",
+                                                    "question": "What type is the funder identifier?",
                                                     "requiredWhen": [
-                                                        "project"
+                                                        "funder"
                                                     ],
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/type",
                                                     "title": "Type"
@@ -8766,6 +8958,7 @@
                                                 "registry_uri": {
                                                     "type": "string",
                                                     "description": "Link to the registry or system used to identify the funder",
+                                                    "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
                                                     "question": "Where can the registry or the system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/registry_uri",
                                                     "title": "Registry_uri"
@@ -8773,6 +8966,7 @@
                                                 "registry_version": {
                                                     "type": "string",
                                                     "description": "To indicate the version number or date when the registry or reference was consulted",
+                                                    "example": "2025-10-31",
                                                     "question": "What version of the registry/system was used or what date was the registry/system consulted?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/registry_version",
                                                     "title": "Registry_version"
@@ -8780,9 +8974,10 @@
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "To indicate the specific value of the funder’s identifier. It is recommended to use <a href=\"https://www.crossref.org/services/funder-registry/\" target=\"_blank\">CrossRef Funder Registry</a>.",
-                                                    "question": "Provide the funder identifier ID.",
+                                                    "example": "0238rs311",
+                                                    "question": "Provide the value of the funder identifier.",
                                                     "requiredWhen": [
-                                                        "project"
+                                                        "funder"
                                                     ],
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/identifier",
                                                     "title": "Identifier"
@@ -8808,6 +9003,7 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what registry or system is used to identify the funder when selecting \"other\" as id type.",
+                                                                "example": "Registre des entreprises du Quebec",
                                                                 "question": "What registry or system was used to identify the funder?",
                                                                 "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/registry_name",
                                                                 "title": "Registry_name"
@@ -8832,9 +9028,6 @@
                                             ],
                                             "example": "planned",
                                             "question": "What is the funding status?",
-                                            "requiredWhen": [
-                                                "project"
-                                            ],
                                             "$id": "#/properties/dmp/properties/project/properties/funding/properties/funding_status",
                                             "title": "Funding_status"
                                         },
@@ -8852,28 +9045,30 @@
                                                         "other"
                                                     ],
                                                     "example": "url",
-                                                    "question": "What is the funder identifier ID type (url, other)?",
+                                                    "question": "What type is the grant identifier?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/type",
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
                                                     "type": "string",
                                                     "description": "Link to the reference used to identify the grant",
+                                                    "example": "https://007myorg.sharepoint.com/sites/G&C/Lists/GrantsDB/AllItems.aspx",
                                                     "question": "Where can the the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/registry_uri",
                                                     "title": "Registry_uri"
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
-                                                    "question": "what version of the registry/system was used what date was the registry/system consulted?",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
+                                                    "example": "2025-10-31",
+                                                    "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                     "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 },
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "To indicate the specific value of the grant ID.",
-                                                    "example": "12345-987654",
+                                                    "example": "STB-231",
                                                     "question": "Provide the grant ID.",
                                                     "requiredWhen": [
                                                         "grant_id"
@@ -8901,7 +9096,7 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what reference is used to identify the grant when selecting \"other\" as id type.",
-                                                                "example": "Registre des entreprises de la chambre de commerce",
+                                                                "example": "organization's grant database",
                                                                 "question": "What is registry or system was used to identify the grant?",
                                                                 "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/registry_name",
                                                                 "title": "Registry_name"
@@ -8916,8 +9111,7 @@
                                         }
                                     },
                                     "required": [
-                                        "funder_id",
-                                        "funding_status"
+                                        "funder_id"
                                     ]
                                 }
                             },
@@ -8983,21 +9177,30 @@
                                             "properties": {
                                                 "type": {
                                                     "type": "string",
-                                                    "description": "Partner organization identifier type",
-                                                    "question": "What type of ID does the partner organization use?",
+                                                    "description": "To specify what type the identifier is",
+                                                    "enum": [
+                                                        "ror",
+                                                        "grid",
+                                                        "isni",
+                                                        "other"
+                                                    ],
+                                                    "example": "ror",
+                                                    "question": "What type of ID is used to identify the partner organization?",
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/type",
                                                     "title": "Type"
                                                 },
                                                 "registry_uri": {
                                                     "type": "string",
                                                     "description": "Link to the reference used to identify the partner organization",
+                                                    "example": "https://www.registreentreprises.gouv.qc.ca/reqna/gr/gr03/gr03a71.rechercheregistre.mvc/gr03a71?choixdomaine=RegistreEntreprisesQuebec",
                                                     "question": "Where can the registry or system be found?",
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_uri",
                                                     "title": "Registry_uri"
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
+                                                    "example": "2025-10-31",
                                                     "question": "What version of the registry/system was used or what date was the registry/system consulted?",
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_version",
                                                     "title": "Registry_version"
@@ -9005,6 +9208,7 @@
                                                 "identifier": {
                                                     "type": "string",
                                                     "description": "Partner organization identifier",
+                                                    "example": "0238rs311",
                                                     "question": "What is the partner organization's ID?",
                                                     "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/identifier",
                                                     "title": "Identifier"
@@ -9026,6 +9230,7 @@
                                                             "registry_name": {
                                                                 "type": "string",
                                                                 "description": "To indicate what reference is used to identify the partner organization when selecting \"other\" as id type.",
+                                                                "example": "Registre des entreprises du Quebec",
                                                                 "question": "What registry or system was used to identify the partner organization?",
                                                                 "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/registry_name",
                                                                 "title": "Registry_name"
@@ -9043,13 +9248,13 @@
                             },
                             "safeguarding_science_measures": {
                                 "type": "object",
-                                "description": "Science is defined broadly to include the natural, health, and social sciences, mathematics, engineering, and technology. Safeguarding science includes safeguarding research partnerships, opensource due diligence, and risk mitigation. Some elements of safeguarding science are recorded elsewhere in the maDMP (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, retention/disposition planning, security classification, succession plan, versioning). This section should be used for additional information (e.g., description and link to a risk assessment and mitigation plan). For guidance, see: <a href=\"https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/integrity-and-security-in-the-global-research-ecosystem_2bd8511d/1c416f43-en.pdf\">www.oecd.org</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/guidance-conducting-open-source-due-diligence/conducting-open-source-due-diligence-safeguarding-research-partnerships\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/mitigating-your-research-security-risks\">science.gc.ca</a>  ;  <a href=\"https://science.gc.ca/site/science/en/safeguarding-your-research/guidelines-and-tools-implement-research-security/national-security-guidelines-research-partnerships/national-security-guidelines-research-partnerships-risk-assessment-form\">science.gc.ca</a>",
+                                "description": "Some elements of safeguarding science are recorded elsewhere in the maDMP (e.g., checksum, data access, data security-privacy measures, ethical issues, intellectual property, partner agreement, protection level, retention/disposition planning, security classification, versioning). This section should be used for additional information (e.g., description and link to a risk assessment and mitigation plan, link to a succession plan, etc.). ",
                                 "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures",
                                 "title": "Safeguarding_science_measures",
                                 "properties": {
                                     "exist": {
                                         "type": "string",
-                                        "description": "To indicate if any measure has have been taken to safeguard the project",
+                                        "description": "To indicate if any measure has been taken to safeguard the project",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -9065,23 +9270,68 @@
                                     },
                                     "redundant_backups_exist": {
                                         "type": "string",
+                                        "description": "To indicate the url where the backup can be retrieved",
+                                        "example": "http://some.repo.../download/...",
+                                        "question": "Where can the backup be downloaded from?",
+                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
+                                        "title": "Redundant_backups_exist"
+                                    },
+                                    "redundant_backups": {
+                                        "type": "object",
                                         "description": "To indicate if any redundant backup of the source data exists",
                                         "enum": [
                                             "yes",
                                             "no",
                                             "unknown"
                                         ],
+                                        "example": "yes",
                                         "question": "Does any back up of the source data exist?",
                                         "requiredWhen": [
                                             "safeguarding_science_measures_documentation"
                                         ],
-                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
-                                        "title": "Redundant_backups_exist"
+                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups",
+                                        "title": "Redundant_backups",
+                                        "properties": {
+                                            "download_url": {
+                                                "type": "string",
+                                                "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
+                                                "example": "This backup includes the table XXX  of the 2023 survey",
+                                                "question": "Describe scope",
+                                                "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/download_url",
+                                                "title": "Download_url"
+                                            }
+                                        },
+                                        "allOf": [
+                                            {
+                                                "if": {
+                                                    "properties": {
+                                                        "redundant_backups_exist": {
+                                                            "enum": [
+                                                                "yes"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                "then": {
+                                                    "properties": {
+                                                        "description": {
+                                                            "type": "object",
+                                                            "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/description",
+                                                            "title": "Description"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "description"
+                                                    ]
+                                                }
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
                                     "exist",
-                                    "redundant_backups_exist"
+                                    "redundant_backups"
                                 ],
                                 "allOf": [
                                     {
@@ -9105,6 +9355,7 @@
                                                         "name": {
                                                             "type": "string",
                                                             "description": "Name of the reference related to science safeguarding",
+                                                            "example": "Project succession plan",
                                                             "question": "What is the name of the reference related to science safeguarging?",
                                                             "requiredWhen": [
                                                                 "safeguarding_science_measures_documentation"
@@ -9115,6 +9366,7 @@
                                                         "description": {
                                                             "type": "string",
                                                             "description": "Description of the reference related to science safeguarding",
+                                                            "example": "Identifies critical roles, ensures knowledge transfer, builds a succession pipeline, to protect the project from the disruptions caused by personnel changes and ensure successful project outcomes.",
                                                             "question": "Describe the reference related to science safeguarding.",
                                                             "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/description",
                                                             "title": "Description"
@@ -9122,6 +9374,7 @@
                                                         "access_url": {
                                                             "type": "string",
                                                             "description": "Access url of the reference related to science safeguarding",
+                                                            "example": "http://some.repo/.../...",
                                                             "question": "What is the url to access the reference related to science safeguarding?",
                                                             "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/access_url",
                                                             "title": "Access_url"
@@ -9129,6 +9382,7 @@
                                                         "download_url": {
                                                             "type": "string",
                                                             "description": "Download url of the reference related to science safeguarding",
+                                                            "example": "http://some.repo/.../download/...",
                                                             "question": "What is the url to download the reference related to science safeguarding?",
                                                             "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/documentation/properties/download_url",
                                                             "title": "Download_url"
@@ -9143,58 +9397,8 @@
                                                 "documentation"
                                             ]
                                         }
-                                    },
-                                    {
-                                        "if": {
-                                            "properties": {
-                                                "redundant_backups_exist": {
-                                                    "enum": [
-                                                        "yes"
-                                                    ]
-                                                }
-                                            }
-                                        },
-                                        "then": {
-                                            "properties": {
-                                                "redundant_backups": {
-                                                    "type": "object",
-                                                    "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
-                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups",
-                                                    "title": "Redundant_backups",
-                                                    "properties": {
-                                                        "description": {
-                                                            "type": "string",
-                                                            "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
-                                                            "example": "This backup includes the table XXX  of the 2023 survey",
-                                                            "question": "Describe scope",
-                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/description",
-                                                            "title": "Description"
-                                                        },
-                                                        "download_url": {
-                                                            "type": "string",
-                                                            "description": "To indicate the url where the backup can be retrieved",
-                                                            "example": "http://some.repo.../download/...",
-                                                            "question": "Where can the backup be downloaded from?",
-                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/download_url",
-                                                            "title": "Download_url"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "required": [
-                                                "redundant_backups"
-                                            ]
-                                        }
                                     }
                                 ]
-                            },
-                            "succession_plan": {
-                                "type": "string",
-                                "description": "Succession plan, or business continuity plan",
-                                "example": "No plan, project falls apart when P.I. leaves.",
-                                "question": "What is the project succession plan or business continuity plan?",
-                                "$id": "#/properties/dmp/properties/project/properties/succession_plan",
-                                "title": "Succession_plan"
                             },
                             "algorithmic_impact_assessment_conducted": {
                                 "type": "string",
@@ -9226,8 +9430,7 @@
                             }
                         },
                         "required": [
-                            "title",
-                            "funding"
+                            "title"
                         ]
                     }
                 },
@@ -11025,7 +11228,7 @@
                                 "properties": {
                                     "indigenous_control_over_data": {
                                         "type": "string",
-                                        "description": "To indicate if Indigenous communities control the data. Description of salient elements of data governance should be noted at the dataset level in the property “description”. Indigenous data sharing agreement would be identifed under partner organization agreement type. Indigenous traditional knowledge keeper would be identified under Contributor role. See, also: UNDRIP; Canada Tri-Agency requirements.",
+                                        "description": "To indicate if Indigenous communities control the data. Description of salient elements of data governance should be noted at the dataset level in the property “data_governance_description”. Indigenous data sharing agreement would be identified under partner organization agreement type. Indigenous traditional knowledge keeper would be identified under Contributor role. See, also: UNDRIP; Canada Tri-Agency requirements.",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -11126,8 +11329,8 @@
                                     "identifier": {
                                         "type": "string",
                                         "description": "To indicate the specific value of the dataset ID",
-                                        "example": "University of Vienna Phaidra (univie.ac.at)",
-                                        "question": "Provide the dataset identifier ID.",
+                                        "example": "project-dataset-a",
+                                        "question": "Provide the dataset identifier",
                                         "$id": "#/properties/dmp/properties/dataset/properties/dataset_id/properties/identifier",
                                         "title": "Identifier"
                                     },
@@ -11141,15 +11344,15 @@
                                             "url",
                                             "other"
                                         ],
-                                        "example": "url",
-                                        "question": "What is the dataset identifier ID type?",
+                                        "example": "other",
+                                        "question": "What type is the dataset identifier?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/dataset_id/properties/type",
                                         "title": "Type"
                                     },
                                     "registry_url": {
                                         "type": "string",
                                         "description": "Link to the registry or system used to identify the dataset",
-                                        "example": "https://ecollab.ncr.int.ec.gc.ca/theme/1275886/DataInventoryProject/Data-Asset-Inventory_Master-Spreadsheet_FINAL.xlsx",
+                                        "example": "https://007myorg.sharepoint.com/sites/DataAssets/Lists/DataAssetInventory/AllItems.aspx",
                                         "question": "Where can the registry or system be found?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/dataset_id/properties/registry_url",
                                         "title": "Registry_url"
@@ -11157,7 +11360,7 @@
                                     "registry_version": {
                                         "type": "string",
                                         "description": "To indicate the version number or date when the system or registry was consulted",
-                                        "example": "2024-12-30",
+                                        "example": "2025-10-31",
                                         "question": "What version of the registry/system was used or what date was the registry/system consulted?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/dataset_id/properties/registry_version",
                                         "title": "Registry_version"
@@ -11183,7 +11386,7 @@
                                                 "registry_name": {
                                                     "type": "string",
                                                     "description": "To indicate what registry or system is used to identify the dataset when selecting \"other\" as id type.",
-                                                    "example": "ECCC Data Asset Inventory",
+                                                    "example": "data asset inventory",
                                                     "question": "What registry or system was used to identify the dataset?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/dataset_id/properties/registry_name",
                                                     "title": "Registry_name"
@@ -11265,16 +11468,23 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string",
-                                    "description": "Keyword",
+                                    "description": "To flag distributions for digital preservation attention purposes.",
                                     "example": "keyword 1, keyword 2",
-                                    "question": "Provide some keywords related to this dataset.",
+                                    "question": "Does this distribution have a very long or perpetual retention period, or have archival value?",
                                     "$id": "#/properties/dmp/properties/dataset/properties/keyword",
-                                    "title": "Keyword"
+                                    "title": "Keyword",
+                                    "enum": [
+                                        "Retention --perpetual /indefinite",
+                                        "Retention -- long-term",
+                                        "Archival value",
+                                        "None",
+                                        "Unknown"
+                                    ]
                                 }
                             },
                             "type": {
                                 "type": "string",
-                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a> http://vocabularies.coar-repositories.org/pubby/resource_type.html",
+                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a> http://vocabularies.coar-repositories.org/resource_type.html",
                                 "example": "image",
                                 "question": "What type of dataset is this?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/type",
@@ -11331,44 +11541,41 @@
                                 "title": "Geographic_coverage"
                             },
                             "dataset_documentation": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data production specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
-                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation",
-                                    "title": "Dataset_documentation",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Document name",
-                                            "example": "code book",
-                                            "question": "What is the name of the dataset documentation?",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/name",
-                                            "title": "Name"
-                                        },
-                                        "description": {
-                                            "type": "string",
-                                            "description": "To describe the documentation of the dataset",
-                                            "question": "Describe the dataset documentation.",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/description",
-                                            "title": "Description"
-                                        },
-                                        "access_url": {
-                                            "type": "string",
-                                            "description": "A URL of that gives access to the dataset documentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to dataset documentation, typically through a Web form, query or API call.",
-                                            "example": "some.intranet/.../project page.aspx",
-                                            "question": "Provide a link to the dataset documentation.",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/access_url",
-                                            "title": "Access_url"
-                                        },
-                                        "download_url": {
-                                            "type": "string",
-                                            "description": "Download URL to the dataset documentation",
-                                            "example": "http://some.repo.../download/...",
-                                            "question": "Provide the download URL for the dataset documentation.",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/download_url",
-                                            "title": "Download_url"
-                                        }
+                                "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation",
+                                "type": "object",
+                                "title": "Dataset_documentation",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Document name",
+                                        "example": "code book",
+                                        "question": "What is the name of the dataset documentation?",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/name",
+                                        "title": "Name"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "To describe the documentation of the dataset",
+                                        "example": "includes all code required for data ingestion",
+                                        "question": "Describe the dataset documentation.",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/description",
+                                        "title": "Description"
+                                    },
+                                    "access_url": {
+                                        "type": "string",
+                                        "description": "A URL of that gives access to the dataset documentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to dataset documentation, typically through a Web form, query or API call.",
+                                        "example": "some.intranet/.../project page.aspx",
+                                        "question": "Provide a link to the dataset documentation.",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/access_url",
+                                        "title": "Access_url"
+                                    },
+                                    "download_url": {
+                                        "type": "string",
+                                        "description": "Download URL to the dataset documentation",
+                                        "example": "http://some.repo.../download/...",
+                                        "question": "Provide the download URL for the dataset documentation.",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/dataset_documentation/properties/download_url",
+                                        "title": "Download_url"
                                     }
                                 }
                             },
@@ -26416,6 +26623,7 @@
                             "data_governance_description": {
                                 "type": "string",
                                 "description": "Indicate if there is a data governance framework like, for example, a specified departmental data governance framework, and/or if data governance is aligned with published principles such as the CARE Principles for Indigenous Data Governance, the First Nations principles of ownership, control, access and possession (OCAP), the Māori data governance model, or some other specified data governance model.",
+                                "example": "Data governance is defined in the partneship agreement",
                                 "question": "Describe the data governance.",
                                 "$id": "#/properties/dmp/properties/dataset/properties/data_governance_description",
                                 "title": "Data_governance_description"
@@ -26616,7 +26824,7 @@
                                 "type": "boolean",
                                 "description": "Indication if the dataset is reused, i.e., not produced in project(s) covered by this DMP.",
                                 "example": "No",
-                                "question": "Was the dataset existing before and is being reused as aprt of the project related to this dmp?",
+                                "question": "Was the dataset existing before and is being reused as part of the project related to this dmp?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/dataset_is_reused",
                                 "title": "Dataset_is_reused"
                             },
@@ -26629,6 +26837,7 @@
                                     "description": {
                                         "type": "string",
                                         "description": "To describe the data collection processes",
+                                        "example": "See sampling calendar and protocol in the project documentation and the data SOPs including field observations, lab results ingestion etc.",
                                         "question": "Describe how data is collected",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/description",
                                         "title": "Description"
@@ -26709,7 +26918,7 @@
                                             "ZB - zettabyte",
                                             "YB - yottabyte"
                                         ],
-                                        "example": "PB - petabytes",
+                                        "example": "TB - terabytes",
                                         "question": "What units were used to measure the size of the dataset?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/dataset_size_units",
                                         "title": "Dataset_size_units"
@@ -26717,6 +26926,7 @@
                                     "growth_annual_terabytes": {
                                         "type": "number",
                                         "description": "The dataset annual growth rate in terabytes per year. Important information needed when planning storage and associated budget",
+                                        "example": "0,3",
                                         "question": "What is the expected annual growth rate of the dataset (terabytes per year)?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/growth_annual_terabytes",
                                         "title": "Growth_annual_terabytes"
@@ -26724,6 +26934,7 @@
                                     "growth_end_date": {
                                         "type": "string",
                                         "description": "Date on which data collection for this dataset is expected to cease",
+                                        "example": "2030",
                                         "question": "On what date is data collection anticipated to end?",
                                         "format": "date",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/growth_end_date",
@@ -26763,17 +26974,6 @@
                                             "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system",
                                             "title": "Data_management_system",
                                             "properties": {
-                                                "title": {
-                                                    "type": "string",
-                                                    "description": "Name of the active data management system used to store/process data (e.g., PostgreSQL, MySQL, Dataverse, iRODS, etc.)",
-                                                    "example": "NAQUA",
-                                                    "question": "How is the data management system called?",
-                                                    "requiredWhen": [
-                                                        "data_management_system"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/title",
-                                                    "title": "Title"
-                                                },
                                                 "support_checksum": {
                                                     "type": "string",
                                                     "description": "Indicates whether checksum verification is supported",
@@ -26784,6 +26984,17 @@
                                                     "question": "Does the data management system support checksum?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/support_checksum",
                                                     "title": "Support_checksum"
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "description": "Name of the active data management system used to store/process data (e.g., PostgreSQL, MySQL, Dataverse, iRODS, etc.)",
+                                                    "example": "NAQUA",
+                                                    "question": "How is the data management system called?",
+                                                    "requiredWhen": [
+                                                        "data_management_system"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/title",
+                                                    "title": "Title"
                                                 },
                                                 "type": {
                                                     "type": "string",
@@ -27539,127 +27750,130 @@
                                             }
                                         },
                                         "hardware_requirements": {
-                                            "type": "object",
-                                            "description": "Minimum requirements for processing data for a specific purpose",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements",
-                                            "title": "Hardware_requirements",
-                                            "properties": {
-                                                "title": {
-                                                    "type": "string",
-                                                    "description": "Identify the purpose requiring specific hardware",
-                                                    "example": "Mapping historical data",
-                                                    "question": "What process requires specific hardware?",
-                                                    "requiredWhen": [
-                                                        "hardware_requirement"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/title",
-                                                    "title": "Title"
-                                                },
-                                                "description": {
-                                                    "type": "string",
-                                                    "description": "Describe the hardware requirement",
-                                                    "question": "Describe the process requiring specific hardware",
-                                                    "requiredWhen": [
-                                                        "hardware_requirement"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/description",
-                                                    "title": "Description"
-                                                },
-                                                "minimum_cpu_cores": {
-                                                    "type": "number",
-                                                    "description": "Minimum CPU cores needed to process the data",
-                                                    "example": "8",
-                                                    "question": "What is the minimum number of cpu cores required to process the data?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/minimum_cpu_cores",
-                                                    "title": "Minimum_cpu_cores"
-                                                },
-                                                "minimum_cpu_speed": {
-                                                    "type": "number",
-                                                    "description": "Minimum clock speed needed to process the data in GHz",
-                                                    "example": "2.5 GHz",
-                                                    "question": "What is the minimum speed, in GHz, required to process the dataset?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/minimum_cpu_speed",
-                                                    "title": "Minimum_cpu_speed"
-                                                },
-                                                "machine_type": {
-                                                    "type": "string",
-                                                    "description": "Minimum computing type needed to process the data (e.g., desktop workstation, laptop, server, HPC, super computer)",
-                                                    "example": "HPC",
-                                                    "question": "What is the minimum machine type required process the dataset? (I'm not a fan of this at all, doesn't make sense)",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/machine_type",
-                                                    "title": "Machine_type"
-                                                },
-                                                "data_processing_minimum_RAM_Gb": {
-                                                    "type": "number",
-                                                    "description": "Minimum RAM needed to process the data in GB",
-                                                    "example": "16",
-                                                    "question": "What is the minimum RAM, in GB, required to process this dataset?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/data_processing_minimum_RAM_Gb",
-                                                    "title": "Data_processing_minimum_ram_gb"
-                                                },
-                                                "storage_capacity": {
-                                                    "type": "number",
-                                                    "description": "Minimum storage space required",
-                                                    "example": "1",
-                                                    "question": "What is the minimum storage capacity required to process this dataset?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/storage_capacity",
-                                                    "title": "Storage_capacity"
-                                                },
-                                                "processing_unit_requirements": {
-                                                    "type": "string",
-                                                    "description": "Need for specialized hardware like GPUs/TPUs for computation",
-                                                    "example": "NVIDIA Tesla V100",
-                                                    "question": "What processing units are required?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/processing_unit_requirements",
-                                                    "title": "Processing_unit_requirements"
-                                                },
-                                                "network_requirements": {
-                                                    "type": "number",
-                                                    "description": "Minimum bandwidth or network speed required in Mbps",
-                                                    "example": "100",
-                                                    "question": "What is the minimum bandwidth or netowrk speed required (Mbps)?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/network_requirements",
-                                                    "title": "Network_requirements"
-                                                }
-                                            },
-                                            "required": [
-                                                "title",
-                                                "description"
-                                            ],
-                                            "allOf": [
-                                                {
-                                                    "if": {
-                                                        "properties": {
-                                                            "storage_capacity_unit": {
-                                                                "enum": [
-                                                                    "non NULL"
-                                                                ]
-                                                            }
-                                                        }
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "description": "Minimum requirements for processing data for a specific purpose",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements",
+                                                "title": "Hardware_requirements",
+                                                "properties": {
+                                                    "title": {
+                                                        "type": "string",
+                                                        "description": "Identify the purpose requiring specific hardware",
+                                                        "example": "Mapping historical data",
+                                                        "question": "What process requires specific hardware?",
+                                                        "requiredWhen": [
+                                                            "hardware_requirement"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/title",
+                                                        "title": "Title"
                                                     },
-                                                    "then": {
-                                                        "properties": {
-                                                            "storage_capacity_unit": {
-                                                                "type": "string",
-                                                                "description": "Unit in which the storage capacity requirement is expressed",
-                                                                "enum": [
-                                                                    "MB",
-                                                                    "GB",
-                                                                    "TB",
-                                                                    "PB"
-                                                                ],
-                                                                "example": "TB",
-                                                                "question": "What unit is the minimum storage expressed in?",
-                                                                "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/storage_capacity_unit",
-                                                                "title": "Storage_capacity_unit"
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "Describe the hardware requirement",
+                                                        "question": "Describe the process requiring specific hardware",
+                                                        "requiredWhen": [
+                                                            "hardware_requirement"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/description",
+                                                        "title": "Description"
+                                                    },
+                                                    "minimum_cpu_cores": {
+                                                        "type": "number",
+                                                        "description": "Minimum CPU cores needed to process the data",
+                                                        "example": "8",
+                                                        "question": "What is the minimum number of cpu cores required to process the data?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/minimum_cpu_cores",
+                                                        "title": "Minimum_cpu_cores"
+                                                    },
+                                                    "minimum_cpu_speed": {
+                                                        "type": "number",
+                                                        "description": "Minimum clock speed needed to process the data in GHz",
+                                                        "example": "2.5 GHz",
+                                                        "question": "What is the minimum speed, in GHz, required to process the dataset?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/minimum_cpu_speed",
+                                                        "title": "Minimum_cpu_speed"
+                                                    },
+                                                    "machine_type": {
+                                                        "type": "string",
+                                                        "description": "Minimum computing type needed to process the data (e.g., desktop workstation, laptop, server, HPC, super computer)",
+                                                        "example": "HPC",
+                                                        "question": "What is the minimum machine type required process the dataset? (I'm not a fan of this at all, doesn't make sense)",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/machine_type",
+                                                        "title": "Machine_type"
+                                                    },
+                                                    "data_processing_minimum_RAM_Gb": {
+                                                        "type": "number",
+                                                        "description": "Minimum RAM needed to process the data in GB",
+                                                        "example": "16",
+                                                        "question": "What is the minimum RAM, in GB, required to process this dataset?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/data_processing_minimum_RAM_Gb",
+                                                        "title": "Data_processing_minimum_ram_gb"
+                                                    },
+                                                    "storage_capacity": {
+                                                        "type": "number",
+                                                        "description": "Minimum storage space required",
+                                                        "example": "1",
+                                                        "question": "What is the minimum storage capacity required to process this dataset?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/storage_capacity",
+                                                        "title": "Storage_capacity"
+                                                    },
+                                                    "processing_unit_requirements": {
+                                                        "type": "string",
+                                                        "description": "Need for specialized hardware like GPUs/TPUs for computation",
+                                                        "example": "NVIDIA Tesla V100",
+                                                        "question": "What processing units are required?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/processing_unit_requirements",
+                                                        "title": "Processing_unit_requirements"
+                                                    },
+                                                    "network_requirements": {
+                                                        "type": "number",
+                                                        "description": "Minimum bandwidth or network speed required in Mbps",
+                                                        "example": "100",
+                                                        "question": "What is the minimum bandwidth or netowrk speed required (Mbps)?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/network_requirements",
+                                                        "title": "Network_requirements"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "title",
+                                                    "description"
+                                                ],
+                                                "allOf": [
+                                                    {
+                                                        "if": {
+                                                            "properties": {
+                                                                "storage_capacity_unit": {
+                                                                    "enum": [
+                                                                        "non NULL"
+                                                                    ]
+                                                                }
                                                             }
                                                         },
-                                                        "required": [
-                                                            "storage_capacity_unit"
-                                                        ]
+                                                        "then": {
+                                                            "properties": {
+                                                                "storage_capacity_unit": {
+                                                                    "type": "string",
+                                                                    "description": "Unit in which the storage capacity requirement is expressed",
+                                                                    "enum": [
+                                                                        "MB",
+                                                                        "GB",
+                                                                        "TB",
+                                                                        "PB"
+                                                                    ],
+                                                                    "example": "TB",
+                                                                    "question": "What unit is the minimum storage expressed in?",
+                                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/hardware_requirements/properties/storage_capacity_unit",
+                                                                    "title": "Storage_capacity_unit"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "storage_capacity_unit"
+                                                            ]
+                                                        }
                                                     }
-                                                }
-                                            ]
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -27686,6 +27900,19 @@
                                 "$id": "#/properties/dmp/properties/dataset/properties/data_criticality",
                                 "title": "Data_criticality"
                             },
+                            "rights": {
+                                "type": "string",
+                                "description": "To indicate if any right, not addressed with license, such as copyright statements applies. If yes, enter details in the dmp/dataset/intellectual_property section.",
+                                "enum": [
+                                    "yes",
+                                    "no",
+                                    "unknown"
+                                ],
+                                "example": "yes",
+                                "question": "Should information about the dataset rights other than the license be considered?",
+                                "$id": "#/properties/dmp/properties/dataset/properties/rights",
+                                "title": "Rights"
+                            },
                             "intellectual_property": {
                                 "type": "object",
                                 "description": "Description of the copyright associated with dataset",
@@ -27702,7 +27929,7 @@
                                     },
                                     "copyright_extent": {
                                         "type": "string",
-                                        "description": "Main copyright holder ",
+                                        "description": "extent of the copyright",
                                         "example": "Part of the dataset",
                                         "question": "Does the copyright apply to the entire dataset?",
                                         "requiredWhen": [
@@ -27715,6 +27942,7 @@
                                         "type": "array",
                                         "items": {
                                             "type": "string",
+                                            "description": "Main copyright holder ",
                                             "enum": [
                                                 "crown copyright - Canada",
                                                 "crown copyright - Australia",
@@ -35310,9 +35538,9 @@
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
                                                     "example": "2024/10/10",
-                                                    "question": "what version of the reference was used at the time where the identifier was entered",
+                                                    "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/metadata/properties/metadata_standard_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 },
@@ -36285,7 +36513,7 @@
                                         },
                                         "linked_data_star_rating": {
                                             "type": "string",
-                                            "description": "To rate the level of openness of the dataset according to the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidence see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
+                                            "description": "To rate the level of openness of the dataset according to the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc. For guidance see,   <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>  ;  <a href=\"https://5stardata.info/en/\">5stardata.info</a>  ;  <a href=\"https://open.canada.ca/en/openness-rating\">open.canada.ca</a>  ",
                                             "enum": [
                                                 "1 star",
                                                 "2 stars",
@@ -36347,23 +36575,6 @@
                                                 "question": "What security measures are in places to ensure that security and privacy are not compromised?",
                                                 "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_security-privacy_measures",
                                                 "title": "Data_security-privacy_measures"
-                                            }
-                                        },
-                                        "preservation_flag": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "description": "To flag distributions for digital preservation attention purposes.",
-                                                "enum": [
-                                                    "Retention --perpetual /indefinite",
-                                                    "Retention -- long-term",
-                                                    "Archival value",
-                                                    "None",
-                                                    "Unknown"
-                                                ],
-                                                "question": "Does this distribution have a very long or perpetual retention period, or have archival value?",
-                                                "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/preservation_flag",
-                                                "title": "Preservation_flag"
                                             }
                                         },
                                         "disposition_completed": {
@@ -36441,14 +36652,6 @@
                                                 "storage_type": {
                                                     "type": "string",
                                                     "description": "The type of storage, including whether the host supports versioning of data distributions",
-                                                    "enum": [
-                                                        "SSD",
-                                                        "HDD",
-                                                        "cloud",
-                                                        "tape storage",
-                                                        "object storage",
-                                                        "other"
-                                                    ],
                                                     "example": "cloud",
                                                     "question": "What storage type does the host server use?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/host/properties/storage_type",
@@ -36941,7 +37144,7 @@
                                                     "type": {
                                                         "type": "string",
                                                         "description": "Physical object type the data is stored on (e.g., blue-ray, clay tablet, compact disk, dvd, hard drive, solid state drive, paper, parchment, stone, quipu, tape, thumb drive)",
-                                                        "example": "clay tablet",
+                                                        "example": "USB key",
                                                         "question": "What type of physical object is the data stored on?",
                                                         "requiredWhen": [
                                                             "distribution",
@@ -37007,7 +37210,7 @@
                                             "properties": {
                                                 "type": {
                                                     "type": "string",
-                                                    "description": "Identifier type",
+                                                    "description": "To specify what type the identifier is",
                                                     "example": "url",
                                                     "question": "What is the distribution identifier ID type?",
                                                     "requiredWhen": [
@@ -37026,9 +37229,9 @@
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
                                                     "example": "2024/12/30",
-                                                    "question": "What version of the registr/system or what date the registry/system was consulted?",
+                                                    "question": "What version of the registry/system or what date the registry/system was consulted?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/distribution_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 },
@@ -37530,7 +37733,6 @@
                                                     "items": {
                                                         "type": "string",
                                                         "description": "To record a fixed date marking the end of a retention period. Note the end of its retention period, the dataset should be reviewed for disposition, and disposition effected if possible. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                                        "example": "48091",
                                                         "question": "On what date does the retention period end?",
                                                         "format": "date",
                                                         "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/retention_period_end_date",
@@ -37799,6 +38001,7 @@
                                         "name": {
                                             "type": "string",
                                             "description": "Name of the creator",
+                                            "example": "John Doe",
                                             "question": "What is the name of the creator?",
                                             "requiredWhen": [
                                                 "creator_id"
@@ -37809,6 +38012,7 @@
                                         "mbox": {
                                             "type": "string",
                                             "description": "To provide an E-mail address of the creator",
+                                            "example": "john.doe@domain.com",
                                             "question": "What is the creator's email address?",
                                             "format": "email",
                                             "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/mbox",
@@ -37841,7 +38045,7 @@
                                                     "type": "string",
                                                     "description": "To indicate the specific value of the creator's identifier",
                                                     "example": "1111-1111-1111-1111",
-                                                    "question": "What is the creatpr's unique ID?",
+                                                    "question": "What is the creator's unique ID?",
                                                     "requiredWhen": [
                                                         "creator_id"
                                                     ],
@@ -37858,9 +38062,9 @@
                                                 },
                                                 "registry_version": {
                                                     "type": "string",
-                                                    "description": "To indicate the version number or date of the reference",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
                                                     "example": "2024/12/30",
-                                                    "question": "What version of the system was used or what date was the system consulted?",
+                                                    "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/creator_id/properties/registry_version",
                                                     "title": "Registry_version"
                                                 }
@@ -37945,7 +38149,7 @@
                                                             "identifier": {
                                                                 "type": "string",
                                                                 "description": "To indicate the specific value of the organization identifier ",
-                                                                "example": "0238rs311",
+                                                                "example": "1178788700                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ",
                                                                 "question": "What is the identifier of the creatore's organization?",
                                                                 "requiredWhen": [
                                                                     "creator_affiliation_id"
@@ -37963,9 +38167,9 @@
                                                             },
                                                             "registry_version": {
                                                                 "type": "string",
-                                                                "description": "To indicate the version number or date of the reference",
+                                                                "description": "To indicate the version number or the date when the system or registry was consulted",
                                                                 "example": "2025-10-31",
-                                                                "question": "What version of the registry was used at the time where the identifier was entered",
+                                                                "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/creator/properties/affiliation/properties/creator_affiliation_id/properties/registry_version",
                                                                 "title": "Registry_version"
                                                             }
@@ -38336,14 +38540,180 @@
                                     ]
                                 }
                             },
-                            "supported_works_url": {
+                            "related_identifier": {
                                 "type": "array",
                                 "items": {
-                                    "type": "string",
-                                    "description": "An URL or DOI that gives access to the supported work.",
-                                    "question": "Provide a URL to this supported work.",
-                                    "$id": "#/properties/dmp/properties/dataset/properties/supported_works_url",
-                                    "title": "Supported_works_url"
+                                    "type": "object",
+                                    "description": "To provide references to related resources, such as publications, datasets or software, that are associated with the dataset. This helps to establish connections between different research outputs and enhances the discoverability and context of the dataset.",
+                                    "$id": "#/properties/dmp/properties/dataset/properties/related_identifier",
+                                    "title": "Related_identifier",
+                                    "properties": {
+                                        "resource_type": {
+                                            "type": "string",
+                                            "description": "Type of the related resource, suggested values from DataCite resourceTypeGeneral",
+                                            "example": "Model",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/resource_type",
+                                            "title": "Resource_type"
+                                        },
+                                        "relation_type": {
+                                            "type": "string",
+                                            "description": "Type of relation between the resource and the related resource, suggested values from DataCite relationType",
+                                            "example": "HasMetadata",
+                                            "requiredWhen": [
+                                                "dataset_related_identifier"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/relation_type",
+                                            "title": "Relation_type"
+                                        },
+                                        "identifier": {
+                                            "type": "string",
+                                            "description": "Value of the identifier",
+                                            "example": "https://example.com/",
+                                            "question": "What is the maDMP identifier?",
+                                            "requiredWhen": [
+                                                "dataset_related_identifier"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/identifier",
+                                            "title": "Identifier"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "description": "Type of the identifier, suggested values from DataCite relatedIdentifierType",
+                                            "example": "url",
+                                            "question": "What is the maDMP identifier type?",
+                                            "requiredWhen": [
+                                                "dataset_related_identifier"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/type",
+                                            "title": "Type"
+                                        },
+                                        "metadata_scheme": {
+                                            "type": "string",
+                                            "description": "Name of the related metadata schema (if applicable)",
+                                            "example": "DDI-L",
+                                            "question": "What registry or sytem was used to identify the dmp?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/metadata_scheme",
+                                            "title": "Metadata_scheme"
+                                        },
+                                        "metadata_scheme_version": {
+                                            "type": "string",
+                                            "description": "To indicate the version number or date of the reference",
+                                            "question": "What version of the registry/system was used or what date was the registry/system consulted?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/metadata_scheme_version",
+                                            "title": "Metadata_scheme_version"
+                                        },
+                                        "scheme_type": {
+                                            "type": "string",
+                                            "description": "Type of the related metadata scheme linked with scheme URI (if applicable)",
+                                            "example": "XSD",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/scheme_type",
+                                            "title": "Scheme_type"
+                                        },
+                                        "scheme_uri": {
+                                            "type": "string",
+                                            "description": "Link to the scheme of the identifier (if applicable)",
+                                            "example": "http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd",
+                                            "question": "Where can the registry or system be found?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/related_identifier/properties/scheme_uri",
+                                            "title": "Scheme_uri"
+                                        }
+                                    },
+                                    "required": [
+                                        "relation_type",
+                                        "identifier",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "dataset_alternate_identifier": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Details about an alternate identifier for the dataset",
+                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier",
+                                    "title": "Dataset_alternate_identifier",
+                                    "properties": {
+                                        "identifier": {
+                                            "type": "object",
+                                            "description": "To indicate the specific value of the dataset alternate identifier ",
+                                            "example": "project-dataset-a",
+                                            "question": "What is the alternate dataset identifier ID?",
+                                            "requiredWhen": [
+                                                "dataset_alternate_identifier"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier/properties/identifier",
+                                            "title": "Identifier",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "To specify what type the alternate dataset identifier is.",
+                                                    "enum": [
+                                                        "ror",
+                                                        "grid",
+                                                        "isni",
+                                                        "other"
+                                                    ],
+                                                    "example": "other",
+                                                    "question": "What is the dataset alternate identifier ID type?",
+                                                    "requiredWhen": [
+                                                        "dataset_alternate_identifier"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier/properties/identifier/properties/type",
+                                                    "title": "Type"
+                                                },
+                                                "registry_uri": {
+                                                    "type": "string",
+                                                    "description": "Link to the identifier system used to identify the dataset",
+                                                    "example": "https://007myorg.sharepoint.com/sites/DataAssets/Lists/DataAssetInventory/AllItems.aspx",
+                                                    "question": "Where can the registry or system be found?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier/properties/identifier/properties/registry_uri",
+                                                    "title": "Registry_uri"
+                                                },
+                                                "registry_version": {
+                                                    "type": "string",
+                                                    "description": "To indicate the version number or the date when the system or registry was consulted",
+                                                    "example": "2025-10-31",
+                                                    "question": "What version of the registry/system was used or what date was the registry/system consulted?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier/properties/identifier/properties/registry_version",
+                                                    "title": "Registry_version"
+                                                }
+                                            },
+                                            "required": [
+                                                "type"
+                                            ],
+                                            "allOf": [
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "type": {
+                                                                "enum": [
+                                                                    "Other"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "registry_name": {
+                                                                "type": "string",
+                                                                "description": "To indicate what identifier system is used to identify the dataset when selecting \"other\" as id type.",
+                                                                "example": "data asset inventory",
+                                                                "question": "What registry or system was used to identify the dataset?",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/dataset_alternate_identifier/properties/identifier/properties/registry_name",
+                                                                "title": "Registry_name"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "registry_name"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "identifier"
+                                    ]
                                 }
                             }
                         },
@@ -38417,9 +38787,9 @@
                                 },
                                 "registry_version": {
                                     "type": "string",
-                                    "description": "To indicate the version number or date when the system was consulted",
+                                    "description": "To indicate the version number or the date when the system or registry was consulted",
                                     "example": "2024/12/30",
-                                    "question": "What version of the identifier system was used at the time where the identifier was entered?",
+                                    "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                     "$id": "#/properties/dmp/properties/contact/properties/contact_id/properties/registry_version",
                                     "title": "Registry_version"
                                 }
@@ -38578,9 +38948,9 @@
                                             },
                                             "registry_version": {
                                                 "type": "string",
-                                                "description": "To indicate the version number or date of the reference",
+                                                "description": "To indicate the version number or the date when the system or registry was consulted",
                                                 "example": "2025-10-31",
-                                                "question": "What version of the registry was used at the time where the identifier was entered",
+                                                "question": "What version of the registry/system was used or what date the registry/system was consulted?",
                                                 "$id": "#/properties/dmp/properties/contact/properties/affiliation/properties/contact_affiliation_id/properties/registry_version",
                                                 "title": "Registry_version"
                                             }
@@ -38996,6 +39366,22 @@
                 "dataset",
                 "contact"
             ]
+        },
+        "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA": {
+            "$id": "#/properties/Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA",
+            "type": "object",
+            "title": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (iso 19131 compliant), eln (electronic lab notebook) protocol, qa",
+            "properties": {
+                "QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data production specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
+                        "$id": "#/properties/Repeat as many times as needed to list all existing documentation, procedures for data processing, management, analysis and dissemination; for example: code book, contract, data dictionary, data product specification (ISO 19131 compliant), ELN (electronic lab notebook) protocol, QA/properties/QC methods, SOP (standard operating procedure), workflows, etc.  If applicable, create an entry to indicate the classification plan code that applies to the dataset. In that case, enter \"classification plan code\" as the name and the actual code in the description. Make sure you also provide the related computing environment information in the dedicated section.",
+                        "title": "Qc methods, sop (standard operating procedure), workflows, etc.  if applicable, create an entry to indicate the classification plan code that applies to the dataset. in that case, enter \"classification plan code\" as the name and the actual code in the description. make sure you also provide the related computing environment information in the dedicated section."
+                    }
+                }
+            }
         }
     },
     "additionalProperties": false,

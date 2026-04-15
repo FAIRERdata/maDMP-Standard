@@ -16,7 +16,7 @@
 
 <p><i>Disclaimer: All views and opinions are those of the co-authors and working group participants, and do not necessarily reflect the official policy or position of any employer, or of any government, agency, or other organization.</i></p>
 
-<p>&copy; Her Majesty the King in Right of Canada</p>
+<p>&copy; His Majesty the King in Right of Canada</p>
 
 <p><b>machine-actionable Data Management Plans: </b>An maDMP, updated during the entire data lifecycle, consists of structured information using controlled vocabularies to provide information about a project and its data in a discipline-agnostic standardized manner that is readable and reusable by both humans and machines. Information is structured in a consistent, logical format and recorded using standardized semantics (i.e. controlled vocabularies, ontologies, or other forms of standardized metadata) and persistent identifiers so that its meaning is unambiguous across different systems. </p>
 

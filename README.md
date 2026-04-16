@@ -1,4 +1,4 @@
-<center><h1 style='font-size: 1.2em;'>GCWG-RDA maDMP Standard<br> Metadata specification for machine-actionable Data Management Plans<br> v2.6</h1><p style="font-size: 18px;" style='color: grey;'>Status: Under review</p></center>
+<center><h1 style='font-size: 1.2em;'>Metadata specification for machine-actionable Data Management Plans<br> v2.6</h1><p style="font-size: 18px;" style='color: grey;'>Status: Under review</p></center>
 <Div Align=RIGHT>
   <details>
   <summary style="color:blue;">Link to HIGH LEVEL BRIEF »</summary>

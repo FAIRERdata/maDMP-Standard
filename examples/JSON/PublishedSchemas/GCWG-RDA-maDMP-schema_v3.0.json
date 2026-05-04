@@ -13,14 +13,6 @@
                     "type": "object",
                     "title": "General Information",
                     "properties": {
-                        "title": {
-                            "type": "string",
-                            "description": "Title of the DMP",
-                            "example": "Data Management Plan of the most exciting project ever",
-                            "question": "What is the title of this maDMP?",
-                            "$id": "#/properties/dmp/properties/title",
-                            "title": "Title"
-                        },
                         "description": {
                             "type": "string",
                             "description": "To provide any free-form text information on the Data Management Plan (maDMP). It can be a formal statement describing how research data will be managed and documented throughout a research project and the terms regarding the subsequent deposit of the data with a data repository for long-term management and preservation (Library and Archives Canada). DMP's are living documents that outline a project’s plans for research data management. The content, format and length of DMPs depend on the nature of the given research project. DMPs can be developed to guide a single research project or span a multiproject research initiative or longer-term program of research. The DMP submitted at the application stage could, depending on the complexity and duration of the project, be presented as a more high-level outline and then be expanded on throughout the life of the project enabling automatic exchange, integration, and validation of information provided in DMPs. Machine-actonable DMP's (maDMP) are designed to support the exchange of information between systems, to provide basic interoperability between systems producing or consuming maDMPs, acting on behalf of stakeholders involved in the research life cycle (researchers, funders, repository managers, ICT providers, librarians, etc.) and the information represented over the whole DMP lifecycle (Research Data Alliance).\n",
@@ -7640,21 +7632,20 @@
                             "$id": "#/properties/dmp/properties/access",
                             "title": "Access"
                         },
-                        "protection_level": {
+                        "protection_level_other_level": {
                             "type": "string",
-                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html#s2\">www.canada.ca</a>",
-                            "enum": [
-                                "unknown",
-                                "not protected",
-                                "Protected A",
-                                "Protected B",
-                                "Protected C",
-                                "other"
-                            ],
-                            "example": "protected A",
-                            "question": "What is the protection level for the maDMP?",
-                            "$id": "#/properties/dmp/properties/protection_level",
-                            "title": "Protection_level"
+                            "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
+                            "example": "MyOrg security",
+                            "question": "What other nomenclature is used to indicate the distribution protection level?",
+                            "$id": "#/properties/dmp/properties/protection_level_other_level",
+                            "title": "Protection_level_other_level"
+                        },
+                        "schema_version": {
+                            "const": "v3.0",
+                            "title": "Schema_version",
+                            "description": "The version you are using is v3.0, you should not edit this field.",
+                            "$id": "#/properties/dmp/properties/schema_version",
+                            "question": "Which maDMP metadata schema version was used when creating this maDMP?"
                         },
                         "protection_level_other_nomenclature": {
                             "type": "string",
@@ -7664,13 +7655,37 @@
                             "$id": "#/properties/dmp/properties/protection_level_other_nomenclature",
                             "title": "Protection_level_other_nomenclature"
                         },
-                        "protection_level_other_level": {
+                        "security_classification_level_other_level": {
                             "type": "string",
-                            "description": "To indicate which nomenclature is used to qualify the dmp protection level when \"other\" was chosen in dmp_protection_level",
+                            "description": "To indicate which nomenclature is used to qualify classified information",
                             "example": "MyOrg security",
-                            "question": "What other nomenclature is used to indicate the distribution protection level?",
-                            "$id": "#/properties/dmp/properties/protection_level_other_level",
-                            "title": "Protection_level_other_level"
+                            "question": "What other nomenclature is used to describe classified information?",
+                            "$id": "#/properties/dmp/properties/security_classification_level_other_level",
+                            "title": "Security_classification_level_other_level"
+                        },
+                        "title": {
+                            "type": "string",
+                            "description": "Title of the DMP",
+                            "example": "Data Management Plan of the most exciting project ever",
+                            "question": "What is the title of this maDMP?",
+                            "$id": "#/properties/dmp/properties/title",
+                            "title": "Title"
+                        },
+                        "security_classification_level_other_nomenclature": {
+                            "type": "string",
+                            "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
+                            "example": "level 2",
+                            "question": "Indicate the level of classified information of the dmp according to the nomenclature",
+                            "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
+                            "title": "Security_classification_level_other_nomenclature"
+                        },
+                        "schema_version_uri": {
+                            "type": "string",
+                            "description": "DMP schema URI ",
+                            "example": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/PublishedSchemas/GCWG-RDA-maDMP-schema_v2.6.json",
+                            "question": "What is the URI to the metadata schema version used when creating this maDMP?",
+                            "$id": "#/properties/dmp/properties/schema_version_uri",
+                            "title": "Schema_version_uri"
                         },
                         "security_classification_level": {
                             "type": "string",
@@ -7688,37 +7703,6 @@
                             "question": "What is the security classification of the maDMP?",
                             "$id": "#/properties/dmp/properties/security_classification_level",
                             "title": "Security_classification_level"
-                        },
-                        "security_classification_level_other_nomenclature": {
-                            "type": "string",
-                            "description": "To indicate the level of the classified information held by the dmp according to the nomenclature found in dmp_security_classification_level_other_nomenclature",
-                            "example": "level 2",
-                            "question": "Indicate the level of classified information of the dmp according to the nomenclature",
-                            "$id": "#/properties/dmp/properties/security_classification_level_other_nomenclature",
-                            "title": "Security_classification_level_other_nomenclature"
-                        },
-                        "security_classification_level_other_level": {
-                            "type": "string",
-                            "description": "To indicate which nomenclature is used to qualify classified information",
-                            "example": "MyOrg security",
-                            "question": "What other nomenclature is used to describe classified information?",
-                            "$id": "#/properties/dmp/properties/security_classification_level_other_level",
-                            "title": "Security_classification_level_other_level"
-                        },
-                        "schema_version": {
-                            "const": "v3.0",
-                            "title": "Schema_version",
-                            "description": "The version you are using is v3.0, you should not edit this field.",
-                            "$id": "#/properties/dmp/properties/schema_version",
-                            "question": "Which maDMP metadata schema version was used when creating this maDMP?"
-                        },
-                        "schema_version_uri": {
-                            "type": "string",
-                            "description": "DMP schema URI ",
-                            "example": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/PublishedSchemas/GCWG-RDA-maDMP-schema_v2.6.json",
-                            "question": "What is the URI to the metadata schema version used when creating this maDMP?",
-                            "$id": "#/properties/dmp/properties/schema_version_uri",
-                            "title": "Schema_version_uri"
                         },
                         "ethical_issues_exist": {
                             "type": "string",
@@ -7913,7 +7897,7 @@
                                                     "other"
                                                 ],
                                                 "example": "doi",
-                                                "question": "What type it the identifier?",
+                                                "question": "What type is the identifier?",
                                                 "requiredWhen": [
                                                     "alternate_identifier"
                                                 ],
@@ -7977,11 +7961,11 @@
                         }
                     },
                     "required": [
-                        "title",
                         "dmp_id",
                         "created",
                         "modified",
                         "language",
+                        "title",
                         "ethical_issues_exist"
                     ]
                 },
@@ -8763,17 +8747,6 @@
                         "$id": "#/properties/dmp/properties/project",
                         "title": "Project",
                         "properties": {
-                            "title": {
-                                "type": "string",
-                                "description": "Project title",
-                                "example": "Mission to the sun.",
-                                "question": "What is the project title?",
-                                "requiredWhen": [
-                                    "project"
-                                ],
-                                "$id": "#/properties/dmp/properties/project/properties/title",
-                                "title": "Title"
-                            },
                             "description": {
                                 "type": "string",
                                 "description": "Project abstract providing an overview of the project's goals and scope",
@@ -8867,14 +8840,16 @@
                                     ]
                                 }
                             },
-                            "start": {
+                            "title": {
                                 "type": "string",
-                                "description": "Project start date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                "example": "2023-07-20",
-                                "question": "What is the project start date?",
-                                "format": "date",
-                                "$id": "#/properties/dmp/properties/project/properties/start",
-                                "title": "Start"
+                                "description": "Project title",
+                                "example": "Mission to the sun.",
+                                "question": "What is the project title?",
+                                "requiredWhen": [
+                                    "project"
+                                ],
+                                "$id": "#/properties/dmp/properties/project/properties/title",
+                                "title": "Title"
                             },
                             "end": {
                                 "type": "string",
@@ -9270,14 +9245,6 @@
                                     },
                                     "redundant_backups_exist": {
                                         "type": "string",
-                                        "description": "To indicate the url where the backup can be retrieved",
-                                        "example": "http://some.repo.../download/...",
-                                        "question": "Where can the backup be downloaded from?",
-                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
-                                        "title": "Redundant_backups_exist"
-                                    },
-                                    "redundant_backups": {
-                                        "type": "object",
                                         "description": "To indicate if any redundant backup of the source data exists",
                                         "enum": [
                                             "yes",
@@ -9289,49 +9256,13 @@
                                         "requiredWhen": [
                                             "safeguarding_science_measures_documentation"
                                         ],
-                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups",
-                                        "title": "Redundant_backups",
-                                        "properties": {
-                                            "download_url": {
-                                                "type": "string",
-                                                "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
-                                                "example": "This backup includes the table XXX  of the 2023 survey",
-                                                "question": "Describe scope",
-                                                "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/download_url",
-                                                "title": "Download_url"
-                                            }
-                                        },
-                                        "allOf": [
-                                            {
-                                                "if": {
-                                                    "properties": {
-                                                        "redundant_backups_exist": {
-                                                            "enum": [
-                                                                "yes"
-                                                            ]
-                                                        }
-                                                    }
-                                                },
-                                                "then": {
-                                                    "properties": {
-                                                        "description": {
-                                                            "type": "object",
-                                                            "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
-                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/description",
-                                                            "title": "Description"
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "description"
-                                                    ]
-                                                }
-                                            }
-                                        ]
+                                        "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups_exist",
+                                        "title": "Redundant_backups_exist"
                                     }
                                 },
                                 "required": [
                                     "exist",
-                                    "redundant_backups"
+                                    "redundant_backups_exist"
                                 ],
                                 "allOf": [
                                     {
@@ -9397,6 +9328,48 @@
                                                 "documentation"
                                             ]
                                         }
+                                    },
+                                    {
+                                        "if": {
+                                            "properties": {
+                                                "redundant_backups_exist": {
+                                                    "enum": [
+                                                        "yes"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "then": {
+                                            "properties": {
+                                                "redundant_backups": {
+                                                    "type": "object",
+                                                    "description": "To describe how data used in the project have been saved to guarantee their security, integrity and long term access",
+                                                    "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups",
+                                                    "title": "Redundant_backups",
+                                                    "properties": {
+                                                        "description": {
+                                                            "type": "string",
+                                                            "description": "To describe the backup: scope, date backup was saved in a repository, version (or date) of the data at the time of the backup, etc.",
+                                                            "example": "This backup includes the table XXX  of the 2023 survey",
+                                                            "question": "Describe scope",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/description",
+                                                            "title": "Description"
+                                                        },
+                                                        "download_url": {
+                                                            "type": "string",
+                                                            "description": "To indicate the url where the backup can be retrieved",
+                                                            "example": "http://some.repo.../download/...",
+                                                            "question": "Where can the backup be downloaded from?",
+                                                            "$id": "#/properties/dmp/properties/project/properties/safeguarding_science_measures/properties/redundant_backups/properties/download_url",
+                                                            "title": "Download_url"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "redundant_backups"
+                                            ]
+                                        }
                                     }
                                 ]
                             },
@@ -9427,12 +9400,37 @@
                                 "question": "What code from the file plan applies to the documents of the project?",
                                 "$id": "#/properties/dmp/properties/project/properties/classification_plan_code",
                                 "title": "Classification_plan_code"
+                            },
+                            "start": {
+                                "type": "string",
+                                "description": "Project start date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                "example": "2023-07-20",
+                                "question": "What is the project start date?",
+                                "format": "date",
+                                "$id": "#/properties/dmp/properties/project/properties/start",
+                                "title": "Start"
                             }
                         },
                         "required": [
                             "title"
                         ]
                     }
+                },
+                "protection_level": {
+                    "type": "string",
+                    "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html#s2\">www.canada.ca</a>",
+                    "enum": [
+                        "unknown",
+                        "not protected",
+                        "Protected A",
+                        "Protected B",
+                        "Protected C",
+                        "other"
+                    ],
+                    "example": "protected A",
+                    "question": "What is the protection level for the maDMP?",
+                    "$id": "#/properties/dmp/properties/protection_level",
+                    "title": "Protection_level"
                 },
                 "cost": {
                     "type": "array",
@@ -11468,18 +11466,11 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string",
-                                    "description": "To flag distributions for digital preservation attention purposes.",
+                                    "description": "Keyword",
                                     "example": "keyword 1, keyword 2",
-                                    "question": "Does this distribution have a very long or perpetual retention period, or have archival value?",
+                                    "question": "Provide some keywords related to this dataset.",
                                     "$id": "#/properties/dmp/properties/dataset/properties/keyword",
-                                    "title": "Keyword",
-                                    "enum": [
-                                        "Retention --perpetual /indefinite",
-                                        "Retention -- long-term",
-                                        "Archival value",
-                                        "None",
-                                        "Unknown"
-                                    ]
+                                    "title": "Keyword"
                                 }
                             },
                             "type": {
@@ -26978,17 +26969,6 @@
                                             "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system",
                                             "title": "Data_management_system",
                                             "properties": {
-                                                "support_checksum": {
-                                                    "type": "string",
-                                                    "description": "Indicates whether checksum verification is supported",
-                                                    "enum": [
-                                                        "yes (with exportable checksum); yes (without confirmed ability to export); no; unknown"
-                                                    ],
-                                                    "example": "yes",
-                                                    "question": "Does the data management system support checksum?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/support_checksum",
-                                                    "title": "Support_checksum"
-                                                },
                                                 "title": {
                                                     "type": "string",
                                                     "description": "Name of the active data management system used to store/process data (e.g., PostgreSQL, MySQL, Dataverse, iRODS, etc.)",
@@ -26999,6 +26979,17 @@
                                                     ],
                                                     "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/title",
                                                     "title": "Title"
+                                                },
+                                                "support_checksum": {
+                                                    "type": "string",
+                                                    "description": "Indicates whether checksum verification is supported",
+                                                    "enum": [
+                                                        "yes (with exportable checksum); yes (without confirmed ability to export); no; unknown"
+                                                    ],
+                                                    "example": "yes",
+                                                    "question": "Does the data management system support checksum?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/technical_resource/properties/data_management_system/properties/support_checksum",
+                                                    "title": "Support_checksum"
                                                 },
                                                 "type": {
                                                     "type": "string",
@@ -36579,6 +36570,23 @@
                                                 "question": "What security measures are in places to ensure that security and privacy are not compromised?",
                                                 "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/data_security-privacy_measures",
                                                 "title": "Data_security-privacy_measures"
+                                            }
+                                        },
+                                        "preservation_flag": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "description": "To flag distributions for digital preservation attention purposes.",
+                                                "enum": [
+                                                    "Retention --perpetual /indefinite",
+                                                    "Retention -- long-term",
+                                                    "Archival value",
+                                                    "None",
+                                                    "Unknown"
+                                                ],
+                                                "question": "Does this distribution have a very long or perpetual retention period, or have archival value?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/preservation_flag",
+                                                "title": "Preservation_flag"
                                             }
                                         },
                                         "disposition_completed": {

@@ -5,6 +5,7 @@
             "contributor",
             "approval",
             "project",
+            "protection_level",
             "cost",
             "indigenous_considerations",
             "dataset",
@@ -82,17 +83,17 @@
         "project": {
             "items": {
                 "ui:order": [
-                    "title",
                     "description",
                     "project_id",
-                    "start",
+                    "title",
                     "end",
                     "funding",
                     "partner_organization",
                     "safeguarding_science_measures",
                     "algorithmic_impact_assessment_conducted",
                     "algorithmic_impact_assessment_conducted_url",
-                    "classification_plan_code"
+                    "classification_plan_code",
+                    "start"
                 ],
                 "project_id": {
                     "items": {
@@ -184,10 +185,12 @@
                         }
                     },
                     "redundant_backups": {
-                        "ui:order": [
-                            "description",
-                            "download_url"
-                        ]
+                        "items": {
+                            "ui:order": [
+                                "description",
+                                "download_url"
+                            ]
+                        }
                     }
                 }
             }
@@ -270,7 +273,6 @@
                     "disclaimer",
                     "metadata",
                     "distribution",
-                    "keyword",
                     "disposition_planning",
                     "disposition_action",
                     "disposition_completed",
@@ -350,8 +352,8 @@
                         ],
                         "data_management_system": {
                             "ui:order": [
-                                "support_checksum",
                                 "title",
+                                "support_checksum",
                                 "type",
                                 "access_url",
                                 "version",
@@ -478,6 +480,7 @@
                             "security_classification_level_other_nomenclature",
                             "data_security-privacy_measures",
                             "security_classification_level_other_level",
+                            "preservation_flag",
                             "disposition_completed",
                             "host",
                             "physical_data_asset",
@@ -769,21 +772,20 @@
         },
         "general_info": {
             "ui:order": [
-                "title",
                 "description",
                 "dmp_id",
                 "created",
                 "modified",
                 "language",
                 "access",
-                "protection_level",
-                "protection_level_other_nomenclature",
                 "protection_level_other_level",
-                "security_classification_level",
-                "security_classification_level_other_nomenclature",
-                "security_classification_level_other_level",
                 "schema_version",
+                "protection_level_other_nomenclature",
+                "security_classification_level_other_level",
+                "title",
+                "security_classification_level_other_nomenclature",
                 "schema_version_uri",
+                "security_classification_level",
                 "ethical_issues_exist",
                 "ethical_issues_description",
                 "ethical_issues_report",
